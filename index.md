@@ -30,9 +30,9 @@ While these projects were framed in cognitive science, they contribute to unders
 ### Second Project
 **Is it me, or is A larger than B: Uncovering the determinants of relational cognitive dissonance resolution**  
 T. Barak, Y. Loewenstein. Arxiv, Nov 2024.  
-[Paper](#) | [Github](#)
+[Paper](https://arxiv.org/abs/2411.05809) | [Github](https://github.com/Tomer-Barak/relational_cognitive_dissonances)
 
 ### First Project
 **Untrained neural networks can demonstrate memorization-independent abstract reasoning**  
 T. Barak, Y. Loewenstein. Scientific Reports, Nov 2024.  
-[Paper](#) | [Github](#)
+[Paper](https://www.nature.com/articles/s41598-024-78530-z) | [Github](https://github.com/Tomer-Barak/learning-independent_abstract_reasoning)
