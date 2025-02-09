@@ -7,7 +7,7 @@ title: Tomer Barak
 
 **Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem.**
 
-**Email:** [tomer.barak@mail.huji.ac.il](mailto:tomer.barak@mail.huji.ac.il)  
+**Email:** [tomer.barak@mail.huji.ac.il](mailto:tomer.barak.mail@gmail.com)  
 **Twitter:** [@Barak_Tomer](https://twitter.com/Barak_Tomer)  
 **Google Scholar:** [Link](https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw)
 
