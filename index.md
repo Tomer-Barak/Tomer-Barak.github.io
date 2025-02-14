@@ -7,11 +7,12 @@ title: Tomer Barak
 
 **Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem.**
 
+**Projects:** [Link](projects.md)
+
 **Email:** [tomer.barak.mail@gmail.com](mailto:tomer.barak.mail@gmail.com)  
 **Twitter:** [@Barak_Tomer](https://twitter.com/Barak_Tomer)  
 **Google Scholar:** [Link](https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw)
 
-[Projects](projects.md)
 
 ## My Research (Updated: November 24)
 I am interested in scales of description in science and physics. For example, we can view a person as a collection of atoms or as part of a community. How do these different scales relate? Advances in machine learning provide tools to study these questions. Artificial neural networks (ANNs) transform high-dimensional inputs, such as images, into lower-dimensional categories, making them useful models for relating different scales of description.
