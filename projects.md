@@ -25,7 +25,3 @@ We studied how theories change in response to observations that contradict them.
 
 ### Third Project
 We are studying how ANNs form analogies in general, particularly between scales of description. This work relates to the Renormalization Group framework in physics, which preserves theory structure across scales.
-
-## Future Projects
-
-(You can add details about your future projects here.)
