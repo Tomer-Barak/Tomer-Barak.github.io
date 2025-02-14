@@ -36,3 +36,5 @@ T. Barak, Y. Loewenstein. Arxiv, Nov 2024.
 **Untrained neural networks can demonstrate memorization-independent abstract reasoning**  
 T. Barak, Y. Loewenstein. Scientific Reports, Nov 2024.  
 [Paper](https://www.nature.com/articles/s41598-024-78530-z) | [Github](https://github.com/Tomer-Barak/learning-independent_abstract_reasoning)
+
+[Projects](projects.md)
