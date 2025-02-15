@@ -3,7 +3,6 @@ layout: default
 title: Projects
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +13,7 @@ title: Projects
     <header>
         <h1>Projects</h1>
         <nav>
-            <a href="index.md">Back to Home</a>
+            <a href="index.html">Back to Home</a>
         </nav>
     </header>
     <section>
