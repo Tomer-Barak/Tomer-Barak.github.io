@@ -3,7 +3,6 @@ layout: default
 title: Tomer Barak
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +16,7 @@ title: Tomer Barak
     </header>
     <nav>
         <ul>
-            <li><a href="projects.md">Projects</a></li>
+            <li><a href="projects.html">Projects</a></li>
         </ul>
     </nav>
     <section>
