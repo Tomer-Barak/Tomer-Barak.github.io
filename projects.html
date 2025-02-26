@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tomer Barak's academic and development projects including research on neural networks and the BarakBot application">
+    <meta name="keywords" content="Tomer Barak, projects, neural networks, BarakBot, LLM, research projects">
+    <title>Projects | Tomer Barak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="header-title">Projects</h1>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">TB</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Development Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">BarakBot</h3>
+                        <p class="project-text">BarakBot is a Telegram bot that utilizes Language Learning Models (LLMs) for personalized interactions. The project features session management, scheduler integration, and photo captioning.</p>
+                        <ul class="project-features">
+                            <li>Session Management for conversations</li>
+                            <li>Scheduler LLM for reminders</li>
+                            <li>Photo captioning with AI</li>
+                            <li>Web UI for interaction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Ph.D. Research Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Abstract Reasoning in Neural Networks</h3>
+                        <p class="project-text">We tested an ANN's ability to extract a predictably changing feature from image sequences with various changing features. The ANN performed well on intelligence tests requiring this ability, validating its use in modeling the extraction of abstract theories.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Theory Adaptation in Response to Contradictions</h3>
+                        <p class="project-text">We studied how theories change in response to observations that contradict them. Our ANN's choice of resolution depended on the inconsistency's magnitude, highlighting flexibility in forming descriptions.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Analogies Between Scales of Description</h3>
+                        <p class="project-text">We are studying how ANNs form analogies in general, particularly between scales of description. This work relates to the Renormalization Group framework in physics, which preserves theory structure across scales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; <span id="currentYear"></span> Tomer Barak. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
