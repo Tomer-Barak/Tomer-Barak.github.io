@@ -2,7 +2,7 @@
 layout: default
 title: Home
 header_title: Tomer Barak
-header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem.
+header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC)<br>The Hebrew University of Jerusalem.
 ---
 
 <!-- About Section -->
