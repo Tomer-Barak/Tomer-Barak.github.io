@@ -979,3 +979,31 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Project Full Details Styling */
+.project-full-details {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.project-detail-content {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.project-detail-content h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin: 20px 0 15px;
+}
+
+.project-detail-content h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin: 15px 0 10px;
+}

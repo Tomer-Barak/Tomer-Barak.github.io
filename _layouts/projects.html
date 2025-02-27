@@ -17,7 +17,7 @@ layout: default
             <div class="projects-container">
                 {% assign all_projects = site.projects | sort: 'order' %}
                 {% for project in all_projects %}
-                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
+                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}" id="project-{{ forloop.index }}">
                     <div class="project-img">
                         <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
                     </div>
@@ -36,9 +36,14 @@ layout: default
                         <div class="project-links">
                             {% if project.github %}
                             <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
-                            {% elsif project.link %}
-                            <a href="{{ project.link }}" class="project-btn">{{ project.link_text | default: "Learn More" }}</a>
                             {% endif %}
+                            <button onclick="toggleProjectDetails('project-detail-{{ forloop.index }}')" class="project-btn">Learn More</button>
+                        </div>
+                    </div>
+                    <!-- Hidden Project Details Section -->
+                    <div id="project-detail-{{ forloop.index }}" class="project-full-details" style="display: none;">
+                        <div class="project-detail-content">
+                            {{ project.content }}
                         </div>
                     </div>
                 </div>
@@ -51,7 +56,7 @@ layout: default
             <div class="projects-container">
                 {% assign dev_projects = site.projects | where: "category", "development" | sort: 'order' %}
                 {% for project in dev_projects %}
-                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
+                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}" id="dev-project-{{ forloop.index }}">
                     <div class="project-img">
                         <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
                     </div>
@@ -70,9 +75,14 @@ layout: default
                         <div class="project-links">
                             {% if project.github %}
                             <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
-                            {% elsif project.link %}
-                            <a href="{{ project.link }}" class="project-btn">{{ project.link_text | default: "Learn More" }}</a>
                             {% endif %}
+                            <button onclick="toggleProjectDetails('dev-detail-{{ forloop.index }}')" class="project-btn">Learn More</button>
+                        </div>
+                    </div>
+                    <!-- Hidden Project Details Section -->
+                    <div id="dev-detail-{{ forloop.index }}" class="project-full-details" style="display: none;">
+                        <div class="project-detail-content">
+                            {{ project.content }}
                         </div>
                     </div>
                 </div>
@@ -85,7 +95,7 @@ layout: default
             <div class="projects-container">
                 {% assign research_projects = site.projects | where: "category", "research" | sort: 'order' %}
                 {% for project in research_projects %}
-                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
+                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}" id="research-project-{{ forloop.index }}">
                     <div class="project-img">
                         <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
                     </div>
@@ -104,9 +114,14 @@ layout: default
                         <div class="project-links">
                             {% if project.github %}
                             <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
-                            {% elsif project.link %}
-                            <a href="{{ project.link }}" class="project-btn">{{ project.link_text | default: "Learn More" }}</a>
                             {% endif %}
+                            <button onclick="toggleProjectDetails('research-detail-{{ forloop.index }}')" class="project-btn">Learn More</button>
+                        </div>
+                    </div>
+                    <!-- Hidden Project Details Section -->
+                    <div id="research-detail-{{ forloop.index }}" class="project-full-details" style="display: none;">
+                        <div class="project-detail-content">
+                            {{ project.content }}
                         </div>
                     </div>
                 </div>
@@ -133,4 +148,52 @@ layout: default
             document.getElementById(this.dataset.tab).classList.add('active');
         });
     });
+    
+    // Function to toggle project details
+    function toggleProjectDetails(detailId) {
+        const detailSection = document.getElementById(detailId);
+        if (detailSection.style.display === "none") {
+            detailSection.style.display = "block";
+        } else {
+            detailSection.style.display = "none";
+        }
+    }
 </script>
+
+<style>
+    /* Additional CSS for Project Detail Display */
+    .project-full-details {
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        border-top: 3px solid var(--primary-color);
+    }
+    
+    .project-detail-content {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .project-detail-content h2 {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin: 20px 0 15px;
+    }
+    
+    .project-detail-content h3 {
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+        margin: 15px 0 10px;
+    }
+    
+    .project-detail-content ul {
+        margin-bottom: 15px;
+        padding-left: 20px;
+    }
+    
+    .project-detail-content li {
+        margin-bottom: 5px;
+    }
+</style>
