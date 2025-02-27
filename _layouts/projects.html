@@ -1,0 +1,136 @@
+---
+layout: default
+---
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">{{ page.section_title | default: "My Projects" }}</h2>
+        
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="all">All Projects</button>
+            <button class="tab-btn" data-tab="development">Development</button>
+            <button class="tab-btn" data-tab="research">Research</button>
+        </div>
+        
+        <!-- All Projects Tab -->
+        <div id="all" class="tab-content active">
+            <div class="projects-container">
+                {% assign all_projects = site.projects | sort: 'order' %}
+                {% for project in all_projects %}
+                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
+                    <div class="project-img">
+                        <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <p class="project-text">
+                            {{ project.excerpt | strip_html | truncatewords: 30 }}
+                        </p>
+                        {% if project.features %}
+                        <ul class="project-features">
+                            {% for feature in project.features %}
+                            <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <div class="project-links">
+                            {% if project.github %}
+                            <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
+                            {% elsif project.link %}
+                            <a href="{{ project.link }}" class="project-btn">{{ project.link_text | default: "Learn More" }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Development Projects Tab -->
+        <div id="development" class="tab-content">
+            <div class="projects-container">
+                {% assign dev_projects = site.projects | where: "category", "development" | sort: 'order' %}
+                {% for project in dev_projects %}
+                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
+                    <div class="project-img">
+                        <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <p class="project-text">
+                            {{ project.excerpt | strip_html | truncatewords: 30 }}
+                        </p>
+                        {% if project.features %}
+                        <ul class="project-features">
+                            {% for feature in project.features %}
+                            <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <div class="project-links">
+                            {% if project.github %}
+                            <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
+                            {% elsif project.link %}
+                            <a href="{{ project.link }}" class="project-btn">{{ project.link_text | default: "Learn More" }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Research Projects Tab -->
+        <div id="research" class="tab-content">
+            <div class="projects-container">
+                {% assign research_projects = site.projects | where: "category", "research" | sort: 'order' %}
+                {% for project in research_projects %}
+                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
+                    <div class="project-img">
+                        <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <p class="project-text">
+                            {{ project.excerpt | strip_html | truncatewords: 30 }}
+                        </p>
+                        {% if project.features %}
+                        <ul class="project-features">
+                            {% for feature in project.features %}
+                            <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <div class="project-links">
+                            {% if project.github %}
+                            <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
+                            {% elsif project.link %}
+                            <a href="{{ project.link }}" class="project-btn">{{ project.link_text | default: "Learn More" }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Tab functionality
+    document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons and tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Add active class to clicked button and corresponding tab
+            this.classList.add('active');
+            document.getElementById(this.dataset.tab).classList.add('active');
+        });
+    });
+</script>

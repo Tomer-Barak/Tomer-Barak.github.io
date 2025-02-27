@@ -5,6 +5,7 @@ description: >-
   for Brain Sciences (ELSC), researching scales of description in science and physics.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol, e.g. http://example.com
+keywords: neural networks, cognitive science, physics, scales of description, researcher, PhD student, ELSC
 
 # Author information
 author:
@@ -19,10 +20,23 @@ author:
 
 # Build settings
 theme: jekyll-theme-cayman
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+paginate: 5
+paginate_path: "/blog/page:num/"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 # Navigation
 navigation:
@@ -35,35 +49,40 @@ navigation:
   - title: Publications
     url: /#publications
   - title: Projects
-    url: /projects
+    url: /projects/
   - title: Blog
-    url: /blog
+    url: /blog/
   - title: Contact
     url: /#contact
 
-# Collections
-collections:
-  projects:
-    output: true
-  blog:
-    output: true
-
-# Defaults
+# Default front matter
 defaults:
   - scope:
       path: ""
-      type: "projects"
-    values:
-      layout: "project"
-  - scope:
-      path: ""
-      type: "blog"
+      type: "posts"
     values:
       layout: "post"
   - scope:
       path: ""
+      type: "projects"
     values:
       layout: "default"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Social media
+social:
+  twitter: Barak_Tomer
+  github: Tomer-Barak
+  scholar: https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw
+
+# SEO settings
+twitter:
+  username: Barak_Tomer
+  card: summary
+logo: /assets/images/profile.jpg
 
 # Exclude from processing
 exclude:
@@ -74,3 +93,5 @@ exclude:
   - .sass-cache
   - .jekyll-cache
   - dev_projects/
+  - README.md
+  - LICENSE
