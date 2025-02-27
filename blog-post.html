@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Untrained Neural Networks and Emergent Properties - A blog post by Tomer Barak discussing recent findings in neural network research">
+    <meta name="keywords" content="Tomer Barak, neural networks, emergent properties, abstract reasoning, AI research">
+    <title>Untrained Neural Networks and Emergent Properties | Tomer Barak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --text-color: #333;
+            --light-text: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .header-title {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .header-meta {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 15px 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            padding: 15px 10px;
+            display: inline-block;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Blog Post */
+        .blog-post {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin: 60px 0;
+        }
+        
+        .post-header {
+            margin-bottom: 30px;
+        }
+        
+        .post-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .post-title {
+            font-size: 2.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .post-tag {
+            background-color: #e0e0e0;
+            color: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .post-featured-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .post-content p {
+            margin-bottom: 20px;
+        }
+        
+        .post-content h2 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+        }
+        
+        .post-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .post-content li {
+            margin-bottom: 10px;
+        }
+        
+        .post-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            font-style: italic;
+            color: #555;
+            margin: 30px 0;
+        }
+        
+        .post-content img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .post-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary-color);
+        }
+        
+        .post-content a:hover {
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        /* Author Section */
+        .author-section {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            background-color: #f0f5fa;
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        
+        .author-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 30px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .author-bio {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .author-links a {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            margin-top: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+        
+        .comment {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .comment-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .commenter-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .commenter-info {
+            flex: 1;
+        }
+        
+        .commenter-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .comment-date {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .comment-text {
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .comment-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .form-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            margin-top: 60px;
+        }
+        
+        .related-posts-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .related-post {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .related-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .related-post-img {
+            height: 150px;
+            background-color: var(--secondary-color);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .related-post-content {
+            padding: 20px;
+        }
+        
+        .related-post-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .related-post-excerpt {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+            opacity: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                padding-bottom: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .blog-post {
+                padding: 20px;
+            }
+            
+            .post-title {
+                font-size: 1.8rem;
+            }
+            
+            .author-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-img {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .related-posts-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="header-title">Blog Post</h1>
+            <p class="header-meta">Published in Neural Networks</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">TB</a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="index.html#publications">Publications</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <article class="blog-post fade-in">
+                <header class="post-header">
+                    <span class="post-date">February 20, 2025</span>
+                    <h1 class="post-title">Untrained Neural Networks and Emergent Properties</h1>
+                    <div class="post-tags">
+                        <span class="post-tag">Neural Networks</span>
+                        <span class="post-tag">Emergent Properties</span>
+                        <span class="post-tag">Research</span>
+                    </div>
+                </header>
+                
+                <img src="/api/placeholder/1200/600" alt="Neural Network Visualization" class="post-featured-img">
+                
+                <div class="post-content">
+                    <p>
+                        In our recent paper published in Scientific Reports, we made a fascinating discovery that challenges conventional wisdom in the field of artificial intelligence: even untrained neural networks can demonstrate abstract reasoning capabilities. This finding has profound implications for how we understand emergent properties in artificial intelligence systems and may help bridge the gap between artificial and biological neural networks.
+                    </p>
+                    
+                    <h2>The Unexpected Capabilities of Untrained Networks</h2>
+                    
+                    <p>
+                        It's widely assumed that neural networks develop their impressive capabilities through extensive training on large datasets. The learning process—adjusting millions of connection weights through backpropagation—is considered essential for the network to perform complex tasks. However, our research reveals that certain core capabilities might be inherent to the architecture itself, emerging even without any training.
+                    </p>
+                    
+                    <p>
+                        We designed an experiment where we presented neural networks with sequences of images containing various changing features. One of these features changed in a predictable pattern across the sequence. The networks' task was to identify this predictably changing feature among various other randomly changing elements—essentially a core component of abstract reasoning.
+                    </p>
+                    
+                    <p>
+                        Surprisingly, even untrained networks with random weights performed significantly above chance level on this task. This suggests that the basic architecture of neural networks might inherently support certain forms of abstract pattern recognition without requiring weight optimization through learning.
+                    </p>
+                    
+                    <blockquote>
+                        "The network's ability to extract abstract patterns without training suggests that certain cognitive capabilities might be more dependent on architecture than learning." — From our paper
+                    </blockquote>
+                    
+                    <h2>Implications for Understanding Intelligence</h2>
+                    
+                    <p>
+                        These findings challenge the strict dichotomy often drawn between "innate" and "learned" capabilities in both artificial and biological systems. Instead, they suggest a more nuanced view where architectural properties set the stage for certain capabilities that are then refined and enhanced through learning.
+                    </p>
+                    
+                    <p>
+                        For AI research, this means that more attention should be paid to the inherent properties of network architectures, not just training algorithms and datasets. Some capabilities might be best achieved not through more extensive training but through thoughtful architectural choices.
+                    </p>
+                    
+                    <p>
+                        For cognitive science, our findings provide a new perspective on the nature-nurture debate. Just as certain neural network architectures inherently support abstract reasoning without learning, biological neural circuits might similarly possess innate architectural properties that support core cognitive functions before experience-driven learning.
+                    </p>
+                    
+                    <h2>Connecting to Scales of Description</h2>
+                    
+                    <p>
+                        This work ties directly to my broader research interest in scales of description in science. The emergent reasoning capabilities we observed represent a higher-level description (abstract pattern recognition) arising from a lower-level system (a randomly-initialized neural network). Understanding how different levels of description relate to each other is central to fields ranging from physics to cognitive science.
+                    </p>
+                    
+                    <p>
+                        The framework of renormalization group theory from physics provides powerful tools for analyzing how properties at one scale relate to properties at another. In future work, we hope to formalize connections between this physics framework and the emergence of cognitive capabilities in neural systems.
+                    </p>
+                    
+                    <h2>Looking Forward</h2>
+                    
+                    <p>
+                        Our findings open numerous directions for future research:
+                    </p>
+                    
+                    <ul>
+                        <li>What other cognitive capabilities might be inherent to neural network architectures?</li>
+                        <li>How do architectural properties and learning interact to produce more sophisticated capabilities?</li>
+                        <li>Can we design architectures specifically to enhance certain innate capabilities?</li>
+                        <li>What parallels exist between these findings and developmental psychology?</li>
+                    </ul>
+                    
+                    <p>
+                        We're particularly excited about exploring the third research direction. If certain reasoning capabilities emerge naturally from specific architectural features, we might be able to design networks that inherently excel at abstract reasoning tasks without requiring extensive training—potentially leading to more efficient and explainable AI systems.
+                    </p>
+                    
+                    <p>
+                        If you're interested in learning more, our <a href="https://www.nature.com/articles/s41598-024-78530-z" target="_blank">paper is available in Scientific Reports</a>, and the code for replicating our experiments is <a href="https://github.com/Tomer-Barak/learning-independent_abstract_reasoning" target="_blank">available on GitHub</a>.
+                    </p>
+                </div>
+                
+                <!-- Author Section -->
+                <div class="author-section">
+                    <div class="author-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h3 class="author-name">Tomer Barak</h3>
+                        <p class="author-bio">
+                            Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem. My research focuses on scales of description in science and physics, exploring how different levels of abstraction relate to one another.
+                        </p>
+                        <div class="author-links">
+                            <a href="https://twitter.com/Barak_Tomer" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://github.com/Tomer-Barak" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h2 class="section-title">Comments (2)</h2>
+                    
+                    <!-- Comment 1 -->
+                    <div class="comment">
+                        <div class="comment-meta">
+                            <div class="commenter-img">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="commenter-info">
+                                <div class="commenter-name">Alex Chen</div>
+                                <div class="comment-date">February 22, 2025</div>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            <p>Fascinating work! Have you explored if different activation functions affect these emergent properties? I wonder if ReLU networks would show different innate capabilities compared to sigmoid ones.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 2 -->
+                    <div class="comment">
+                        <div class="comment-meta">
+                            <div class="commenter-img">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="commenter-info">
+                                <div class="commenter-name">Sarah Johnson</div>
+                                <div class="comment-date">February 21, 2025</div>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            <p>This reminds me of research on "lottery ticket hypotheses" where certain random initializations seem primed for success. I wonder if there's a connection here - perhaps some random initializations are better suited for abstract reasoning than others?</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment Form -->
+                    <div class="comment-form">
+                        <h3 style="margin-bottom: 20px;">Leave a Comment</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="comment" class="form-label">Comment</label>
+                                <textarea id="comment" class="form-textarea" required></textarea>
+                            </div>
+                            <button type="submit" class="form-btn">Submit Comment</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h2 class="section-title">Related Posts</h2>
+                    <div class="related-posts-list">
+                        <!-- Related Post 1 -->
+                        <div class="related-post">
+                            <div class="related-post-img" style="background-image: url('/api/placeholder/400/200');"></div>
+                            <div class="related-post-content">
+                                <h3 class="related-post-title">Renormalization Group and Deep Learning: Finding Connections</h3>
+                                <p class="related-post-excerpt">
+                                    The Renormalization Group framework in physics provides a powerful way to understand how patterns and laws persist across different scales.
+                                </p>
+                                <a href="blog-post-2.html" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Related Post 2 -->
+                        <div class="related-post">
+                            <div class="related-post-img" style="background-image: url('/api/placeholder/400/200');"></div>
+                            <div class="related-post-content">
+                                <h3 class="related-post-title">Resolving Cognitive Dissonance: Lessons from AI</h3>
+                                <p class="related-post-excerpt">
+                                    Cognitive dissonance occurs when we hold contradictory beliefs or when new observations contradict existing theories.
+                                </p>
+                                <a href="blog-post-3.html" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Related Post 3 -->
+                        <div class="related-post">
+                            <div class="related-post-img" style="background-image: url('/api/placeholder/400/200');"></div>
+                            <div class="related-post-content">
+                                <h3 class="related-post-title">Scales of Description in Complex Systems</h3>
+                                <p class="related-post-excerpt">
+                                    How do we bridge the gap between microscopic and macroscopic descriptions of complex systems? This question lies at the heart of many scientific disciplines.
+                                </p>
+                                <a href="blog-post-4.html" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://twitter.com/Barak_Tomer" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/Tomer-Barak" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+            <p class="footer-text">© <span id="currentYear"></span> Tomer Barak. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+        
+        // Current year for footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Animate elements when they enter the viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
+                

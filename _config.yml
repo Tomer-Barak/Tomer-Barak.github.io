@@ -1,1 +1,76 @@
+# Site settings
+title: Tomer Barak | Researcher
+description: >-
+  Personal website of Tomer Barak, Ph.D. student at Edmond and Lily Safra Center 
+  for Brain Sciences (ELSC), researching scales of description in science and physics.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol, e.g. http://example.com
+
+# Author information
+author:
+  name: Tomer Barak
+  email: tomer.barak.mail@gmail.com
+  twitter: Barak_Tomer
+  github: Tomer-Barak
+  scholar: https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw
+  bio: >-
+    Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC),
+    The Hebrew University of Jerusalem.
+
+# Build settings
 theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /#about
+  - title: Research
+    url: /#research
+  - title: Publications
+    url: /#publications
+  - title: Projects
+    url: /projects
+  - title: Blog
+    url: /blog
+  - title: Contact
+    url: /#contact
+
+# Collections
+collections:
+  projects:
+    output: true
+  blog:
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - dev_projects/
