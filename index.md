@@ -26,7 +26,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
         </p>
         <div class="research-container">
             <!-- Research Item 1 -->
-            <div class="research-item fade-in delay-1">
+            <div class="research-item">
                 <div class="research-content">
                     <h3 class="research-title">Abstract Reasoning in Neural Networks</h3>
                     <p class="research-text">
@@ -36,7 +36,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
             </div>
             
             <!-- Research Item 2 -->
-            <div class="research-item fade-in delay-2">
+            <div class="research-item">
                 <div class="research-content">
                     <h3 class="research-title">Theory Adaptation in Response to Contradictions</h3>
                     <p class="research-text">
@@ -46,7 +46,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
             </div>
             
             <!-- Research Item 3 -->
-            <div class="research-item fade-in delay-3">
+            <div class="research-item">
                 <div class="research-content">
                     <h3 class="research-title">Analogies Between Scales of Description</h3>
                     <p class="research-text">
@@ -64,7 +64,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
         <h2 class="section-title">Publications</h2>
         
         <!-- Publication 1 -->
-        <div class="pub-item fade-in">
+        <div class="pub-item">
             <h3 class="pub-title">Is it me, or is A larger than B: Uncovering the determinants of relational cognitive dissonance resolution</h3>
             <p class="pub-meta">T. Barak, Y. Loewenstein. Arxiv, Nov 2024.</p>
             <p>We studied how theories change in response to observations that contradict them. Our ANN's choice of resolution depended on the inconsistency's magnitude, highlighting flexibility in forming descriptions.</p>
@@ -75,7 +75,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
         </div>
         
         <!-- Publication 2 -->
-        <div class="pub-item fade-in delay-1">
+        <div class="pub-item">
             <h3 class="pub-title">Untrained neural networks can demonstrate memorization-independent abstract reasoning</h3>
             <p class="pub-meta">T. Barak, Y. Loewenstein. Scientific Reports, Nov 2024.</p>
             <p>We tested an ANN's ability to extract a predictably changing feature from image sequences with various changing features. The ANN performed well on intelligence tests requiring this ability, validating its use in modeling the extraction of abstract theories.</p>
@@ -92,7 +92,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
     <div class="container">
         <h2 class="section-title">Contact</h2>
         <div class="contact-info">
-            <div class="contact-item fade-in">
+            <div class="contact-item">
                 <div class="contact-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -102,7 +102,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
                 </p>
             </div>
             
-            <div class="contact-item fade-in delay-1">
+            <div class="contact-item">
                 <div class="contact-icon">
                     <i class="fab fa-twitter"></i>
                 </div>
@@ -112,7 +112,7 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
                 </p>
             </div>
             
-            <div class="contact-item fade-in delay-2">
+            <div class="contact-item">
                 <div class="contact-icon">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
