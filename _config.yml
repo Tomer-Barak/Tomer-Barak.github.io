@@ -4,7 +4,7 @@ description: >-
   Personal website of Tomer Barak, Ph.D. student at Edmond and Lily Safra Center 
   for Brain Sciences (ELSC), researching scales of description in science and physics.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol, e.g. http://example.com
+url: "" # the base hostname & protocol, e.g. http://tomer-barak.github.io
 keywords: neural networks, cognitive science, physics, scales of description, researcher, PhD student, ELSC
 
 # Author information

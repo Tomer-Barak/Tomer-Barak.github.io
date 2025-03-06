@@ -14,11 +14,7 @@ layout: default
         </header>
         
         {% if page.image %}
-        <img src="{{ page.image }}" alt="{{ page.title }}" class="post-featured-img">
-        <!--
-        {% else %}
-        <img src="/assets/images/placeholder.jpg" alt="{{ page.title }}" class="post-featured-img">
-        -->
+        <img src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/assets/images/{{ page.image }}{% endif %}" alt="{{ page.title }}" class="post-featured-img">
         {% endif %}
         
         <div class="post-content">
@@ -64,9 +60,7 @@ layout: default
                     {% if sameTagCount >= minCommonTags and maxRelatedCounter < maxRelated %}
                         <div class="related-post">
                             {% if post.image %}
-                            <div class="related-post-img" style="background-image: url('{{ post.image }}');"></div>
-                            {% else %}
-                            <div class="related-post-img" style="background-image: url('/assets/images/placeholder.jpg');"></div>
+                            <div class="related-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
                             {% endif %}
                             <div class="related-post-content">
                                 <h3 class="related-post-title">{{ post.title }}</h3>
@@ -85,9 +79,7 @@ layout: default
                         {% if post.url != page.url %}
                             <div class="related-post">
                                 {% if post.image %}
-                                <div class="related-post-img" style="background-image: url('{{ post.image }}');"></div>
-                                {% else %}
-                                <div class="related-post-img" style="background-image: url('/assets/images/placeholder.jpg');"></div>
+                                <div class="related-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
                                 {% endif %}
                                 <div class="related-post-content">
                                     <h3 class="related-post-title">{{ post.title }}</h3>

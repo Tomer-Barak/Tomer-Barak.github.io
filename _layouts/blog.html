@@ -18,11 +18,7 @@ layout: default
                 <article class="featured-post fade-in">
                     <div class="featured-post-label">Latest Post</div>
                     {% if post.image %}
-                    <div class="featured-post-img" style="background-image: url('{{ post.image }}');"></div>
-                    <!--
-                    {% else %}
-                    <div class="featured-post-img" style="background-image: url('/assets/images/placeholder.jpg');"></div>
-                    -->
+                    <div class="featured-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
                     {% endif %}
                     <div class="featured-post-content">
                         <p class="featured-post-date">{{ post.date | date: "%B %d, %Y" }}</p>
@@ -45,11 +41,7 @@ layout: default
                     {% for post in paginator.posts offset:1 %}
                     <article class="blog-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
                         {% if post.image %}
-                        <div class="blog-img" style="background-image: url('{{ post.image }}');"></div>
-                        <!--
-                        {% else %}
-                        <div class="blog-img" style="background-image: url('/assets/images/placeholder.jpg');"></div>
-                        -->
+                        <div class="blog-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
                         {% endif %}
                         <div class="blog-content">
                             <p class="blog-date">{{ post.date | date: "%B %d, %Y" }}</p>
