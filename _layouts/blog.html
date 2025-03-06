@@ -15,7 +15,7 @@ layout: default
             <div class="blog-main">
                 <!-- Featured Post (if exists) -->
                 {% for post in site.posts limit:1 %}
-                <article class="featured-post fade-in">
+                <article class="featured-post">
                     <div class="featured-post-label">Latest Post</div>
                     {% if post.image %}
                     <div class="featured-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
@@ -39,7 +39,7 @@ layout: default
                 <!-- Regular Posts -->
                 <div class="blog-posts-grid">
                     {% for post in paginator.posts offset:1 %}
-                    <article class="blog-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}">
+                    <article class="blog-card">
                         {% if post.image %}
                         <div class="blog-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
                         {% endif %}

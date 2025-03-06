@@ -17,7 +17,7 @@ layout: default
             <div class="projects-container">
                 {% assign all_projects = site.projects | sort: 'order' %}
                 {% for project in all_projects %}
-                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}" id="project-{{ forloop.index }}">
+                <div class="project-card" id="project-{{ forloop.index }}">
                     <div class="project-img">
                         <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
                     </div>
@@ -56,7 +56,7 @@ layout: default
             <div class="projects-container">
                 {% assign dev_projects = site.projects | where: "category", "development" | sort: 'order' %}
                 {% for project in dev_projects %}
-                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}" id="dev-project-{{ forloop.index }}">
+                <div class="project-card" id="dev-project-{{ forloop.index }}">
                     <div class="project-img">
                         <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
                     </div>
@@ -95,7 +95,7 @@ layout: default
             <div class="projects-container">
                 {% assign research_projects = site.projects | where: "category", "research" | sort: 'order' %}
                 {% for project in research_projects %}
-                <div class="project-card fade-in {% if forloop.index > 1 %}delay-{{ forloop.index | minus: 1 }}{% endif %}" id="research-project-{{ forloop.index }}">
+                <div class="project-card" id="research-project-{{ forloop.index }}">
                     <div class="project-img">
                         <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
                     </div>

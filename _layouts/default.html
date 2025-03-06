@@ -77,19 +77,7 @@
         // Current year for footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Animate elements when they enter the viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.fade-in').forEach(item => {
-            observer.observe(item);
-        });
+        // Removed fade-in animation IntersectionObserver code
     </script>
     
     {% if page.extra_js %}
