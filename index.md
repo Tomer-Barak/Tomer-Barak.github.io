@@ -9,11 +9,9 @@ header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Science
 <section id="about">
     <div class="container">
         <h2 class="section-title">About Me</h2>
-        <div class="fade-in">
             <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
                 I am a Ph.D. student at the Edmond and Lily Safra Center for Brain Sciences (ELSC) at The Hebrew University of Jerusalem. My research focuses on scales of description in science and physics, exploring how different levels of abstraction relate to one another. Using machine learning tools, particularly artificial neural networks (ANNs), I study how high-dimensional information can be transformed into meaningful lower-dimensional representations.
             </p>
-        </div>
     </div>
 </section>
 
