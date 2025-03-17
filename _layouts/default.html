@@ -39,31 +39,200 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     
     <!-- Schema.org structured data for a researcher -->
-    <script type="application/ld+json">
+    <!-- Add this to the head section of your default.html layout -->
+
+<!-- Structured data for Scholar -->
+<script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "{{ site.author.name }}",
-        "url": "{{ site.url }}",
-        "image": "{{ site.url }}{{ site.logo }}",
-        "jobTitle": "Ph.D. student",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem"
-        },
-        "sameAs": [
-            "https://twitter.com/{{ site.author.twitter }}",
-            "https://github.com/{{ site.author.github }}",
-            "{{ site.author.scholar }}"
-        ]
-        {% if page.layout == 'post' %},
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ site.url }}{{ page.url }}"
-        }
-        {% endif %}
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "{{ site.url }}/#author",
+      "name": "{{ site.author.name }}",
+      "givenName": "Tomer",
+      "familyName": "Barak",
+      "url": "{{ site.url }}",
+      "image": "{{ site.url }}{{ site.logo }}",
+      "jobTitle": "Ph.D. student",
+      "email": "{{ site.author.email }}",
+      "telephone": "",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "The Hebrew University of Jerusalem",
+        "url": "https://www.huji.ac.il/"
+      },
+      "affiliation": {
+        "@type": "EducationalOrganization",
+        "name": "Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem",
+        "url": "https://elsc.huji.ac.il/"
+      },
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem",
+        "url": "https://elsc.huji.ac.il/"
+      },
+      "knowsAbout": ["Neural Networks", "Cognitive Science", "Scales of Description", "Physics", "Abstract Reasoning", "Artificial Intelligence", "Theory Adaptation"],
+      "sameAs": [
+        "https://twitter.com/{{ site.author.twitter }}",
+        "https://github.com/{{ site.author.github }}",
+        "{{ site.author.scholar }}"
+      ]
     }
     </script>
+    
+    <!-- Structured data for Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}",
+      "name": "{{ site.title }}",
+      "description": "{{ site.description }}",
+      "publisher": {
+        "@id": "{{ site.url }}/#author"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ site.url }}/search.html?query={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Structured data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchOrganization",
+      "@id": "{{ site.url }}/#organization",
+      "name": "Tomer Barak Research",
+      "url": "{{ site.url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ site.logo }}"
+      },
+      "member": {
+        "@id": "{{ site.url }}/#author"
+      }
+    }
+    </script>
+    
+    {% if page.layout == 'post' %}
+    <!-- Structured data for BlogPosting -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url }}"
+      },
+      "headline": "{{ page.title }}",
+      "image": "{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.date | date_to_xmlschema }}",
+      "author": {
+        "@id": "{{ site.url }}/#author"
+      },
+      "publisher": {
+        "@id": "{{ site.url }}/#organization"
+      },
+      "description": "{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | truncatewords: 30 }}{% endif %}",
+      "keywords": "{% if page.keywords %}{{ page.keywords }}{% else %}{{ page.tags | join: ', ' }}{% endif %}"
+    }
+    </script>
+    {% endif %}
+    
+    {% if page.layout == 'default' and page.url == '/' %}
+    <!-- Structured data for collectionPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {% for post in site.posts limit:3 %}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "url": "{{ site.url }}{{ post.url }}"
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }
+    }
+    </script>
+    {% endif %}
+    
+    {% if page.layout == 'projects' %}
+    <!-- Structured data for Project collectionPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {% for project in site.projects %}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "{{ project.title }}",
+              "description": "{{ project.excerpt | strip_html | truncatewords: 30 }}",
+              "url": "{{ site.url }}{{ project.url }}"
+            }
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }
+    }
+    </script>
+    {% endif %}
+    
+    {% if page.title == 'Publications' or page.url contains 'publications' or page.url == '/' %}
+    <!-- Structured data for Publications -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "ScholarlyArticle",
+            "headline": "Is it me, or is A larger than B: Uncovering the determinants of relational cognitive dissonance resolution",
+            "author": {
+              "@id": "{{ site.url }}/#author"
+            },
+            "publisher": "arXiv",
+            "datePublished": "2024-11",
+            "url": "https://arxiv.org/abs/2411.05809",
+            "description": "We studied how theories change in response to observations that contradict them. Our ANN's choice of resolution depended on the inconsistency's magnitude, highlighting flexibility in forming descriptions."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "ScholarlyArticle",
+            "headline": "Untrained neural networks can demonstrate memorization-independent abstract reasoning",
+            "author": {
+              "@id": "{{ site.url }}/#author"
+            },
+            "publisher": "Scientific Reports",
+            "datePublished": "2024-11",
+            "url": "https://www.nature.com/articles/s41598-024-78530-z",
+            "description": "We tested an ANN's ability to extract a predictably changing feature from image sequences with various changing features. The ANN performed well on intelligence tests requiring this ability, validating its use in modeling the extraction of abstract theories."
+          }
+        }
+      ]
+    }
+    </script>
+    {% endif %}
     
     {% if page.layout == 'post' %}
     <!-- Additional structured data for blog posts -->
