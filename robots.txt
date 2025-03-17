@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Specify the sitemap location
+Sitemap: https://tomer-barak.github.io/sitemap.xml
+
+# Prevent indexing of utility pages
+Disallow: /search.html
+Disallow: /favicon_generator.html
+Disallow: /profile_image_generator.html

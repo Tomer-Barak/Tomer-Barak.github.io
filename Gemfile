@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
 # Comment out either github-pages or jekyll, but not both
-# gem "jekyll", "~> 4.2.0"
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll", "~> 4.2.0"
+# gem "github-pages", group: :jekyll_plugins
 
 gem "webrick"
 gem 'jekyll-theme-cayman'

@@ -3,6 +3,8 @@ layout: default
 title: Home
 header_title: Tomer Barak
 header_subtitle: Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC)<br>The Hebrew University of Jerusalem.
+description: Tomer Barak is a Ph.D. researcher at ELSC studying neural networks, cognitive science, and scales of description in physics.
+keywords: Tomer Barak, neural networks, cognitive science, physics, scales of description, ELSC, abstract reasoning, AI research, Hebrew University
 ---
 
 <!-- About Section -->

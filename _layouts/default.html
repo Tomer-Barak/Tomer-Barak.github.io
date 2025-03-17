@@ -1,13 +1,35 @@
 ---
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en_US' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
+    <meta name="author" content="{{ site.author.name }}">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="{{ site.twitter.card }}">
+    <meta name="twitter:site" content="@{{ site.twitter.username }}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    
+    <!-- Stylesheets and icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -15,6 +37,61 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- Schema.org structured data for a researcher -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{{ site.author.name }}",
+        "url": "{{ site.url }}",
+        "image": "{{ site.url }}{{ site.logo }}",
+        "jobTitle": "Ph.D. student",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem"
+        },
+        "sameAs": [
+            "https://twitter.com/{{ site.author.twitter }}",
+            "https://github.com/{{ site.author.github }}",
+            "{{ site.author.scholar }}"
+        ]
+        {% if page.layout == 'post' %},
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}{{ page.url }}"
+        }
+        {% endif %}
+    }
+    </script>
+    
+    {% if page.layout == 'post' %}
+    <!-- Additional structured data for blog posts -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ page.title }}",
+        "image": "{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}",
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "dateModified": "{{ page.date | date_to_xmlschema }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ site.author.name }}",
+            "url": "{{ site.url }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ site.url }}{{ site.logo }}"
+            }
+        },
+        "description": "{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | truncatewords: 30 }}{% endif %}"
+    }
+    </script>
+    {% endif %}
 </head>
 <body>
     <!-- Header -->
@@ -52,11 +129,6 @@
                 <li><a href="/projects/" class="external-link">Projects</a></li>
                 <li><a href="/blog/" class="external-link">Blog</a></li>
             </ul>
-            <!-- <ul class="nav-links" id="navLinks">
-                {% for item in site.navigation %}
-                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-                {% endfor %}
-            </ul> -->
         </div>
     </nav>
     
@@ -68,9 +140,9 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://github.com/{{ site.author.github }}" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="{{ site.author.scholar }}" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/{{ site.author.github }}" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="{{ site.author.scholar }}" target="_blank" aria-label="Google Scholar Profile"><i class="fas fa-graduation-cap"></i></a>
             </div>
             <p class="footer-text">© <span id="currentYear"></span> {{ site.author.name }}. All rights reserved.</p>
         </div>
@@ -91,8 +163,6 @@
         
         // Current year for footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Removed fade-in animation IntersectionObserver code
     </script>
     
     {% if page.extra_js %}

@@ -1,11 +1,12 @@
 # Site settings
-title: Tomer Barak | Researcher
+title: Tomer Barak | Researcher & PhD Student
 description: >-
   Personal website of Tomer Barak, Ph.D. student at Edmond and Lily Safra Center 
-  for Brain Sciences (ELSC), researching scales of description in science and physics.
+  for Brain Sciences (ELSC), researching scales of description in science and physics,
+  artificial neural networks, and cognitive science.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol, e.g. http://tomer-barak.github.io
-keywords: neural networks, cognitive science, physics, scales of description, researcher, PhD student, ELSC
+url: "https://tomer-barak.github.io" # Update with your actual GitHub Pages URL or custom domain
+keywords: neural networks, cognitive science, scales of description, physics, researcher, PhD student, ELSC, Hebrew University, abstract reasoning, theory adaptation, artificial intelligence, raspberry pi, machine learning, deep learning
 
 # Author information
 author:
@@ -62,6 +63,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      author: "Tomer Barak"
+      image: "/assets/images/blog-default.jpg"
   - scope:
       path: ""
       type: "projects"
@@ -81,8 +84,16 @@ social:
 # SEO settings
 twitter:
   username: Barak_Tomer
-  card: summary
+  card: summary_large_image
 logo: /assets/images/profile.jpg
+lang: en_US
+locale: en_US
+
+# Open Graph/Facebook settings
+facebook:
+  app_id: # Only if you have a Facebook app
+  publisher: # Your Facebook page URL (if applicable)
+  admins: # Your Facebook user ID (if applicable)
 
 # Exclude from processing
 exclude:
@@ -95,3 +106,6 @@ exclude:
   - dev_projects/
   - README.md
   - LICENSE
+  - implementation-guide.md
+  - profile_image_generator.html
+  - favicon_generator.html

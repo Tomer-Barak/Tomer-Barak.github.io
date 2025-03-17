@@ -21,6 +21,22 @@ layout: default
             {{ content }}
         </div>
         
+        <!-- Share buttons -->
+        <div class="post-share">
+            <h3>Share this article:</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}&via={{ site.twitter.username }}" target="_blank" aria-label="Share on Twitter" class="share-btn twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url_encode }}&title={{ page.title | url_encode }}&summary={{ page.description | default: page.excerpt | strip_html | truncatewords: 30 | url_encode }}" target="_blank" aria-label="Share on LinkedIn" class="share-btn linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:?subject={{ page.title | url_encode }}&body=Check out this article: {{ site.url }}{{ page.url | url_encode }}" aria-label="Share by Email" class="share-btn email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+        
         <!-- Author Section -->
         <div class="author-section">
             <div class="author-img">
@@ -32,9 +48,9 @@ layout: default
                     {{ site.author.bio }}
                 </p>
                 <div class="author-links">
-                    <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://github.com/{{ site.author.github }}" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="{{ site.author.scholar }}" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/{{ site.author.github }}" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="{{ site.author.scholar }}" target="_blank" aria-label="Google Scholar Profile"><i class="fas fa-graduation-cap"></i></a>
                 </div>
             </div>
         </div>
@@ -60,7 +76,7 @@ layout: default
                     {% if sameTagCount >= minCommonTags and maxRelatedCounter < maxRelated %}
                         <div class="related-post">
                             {% if post.image %}
-                            <div class="related-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
+                            <div class="related-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');" aria-label="Featured image for {{ post.title }}"></div>
                             {% endif %}
                             <div class="related-post-content">
                                 <h3 class="related-post-title">{{ post.title }}</h3>
@@ -79,7 +95,7 @@ layout: default
                         {% if post.url != page.url %}
                             <div class="related-post">
                                 {% if post.image %}
-                                <div class="related-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
+                                <div class="related-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');" aria-label="Featured image for {{ post.title }}"></div>
                                 {% endif %}
                                 <div class="related-post-content">
                                     <h3 class="related-post-title">{{ post.title }}</h3>
@@ -96,3 +112,56 @@ layout: default
         </div>
     </article>
 </div>
+
+<style>
+    /* Additional CSS for share buttons */
+    .post-share {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+    
+    .post-share h3 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+    }
+    
+    .share-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .share-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 15px;
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: opacity 0.3s;
+    }
+    
+    .share-btn:hover {
+        opacity: 0.9;
+    }
+    
+    .share-btn i {
+        margin-right: 8px;
+    }
+    
+    .twitter {
+        background-color: #1DA1F2;
+    }
+    
+    .linkedin {
+        background-color: #0077B5;
+    }
+    
+    .email {
+        background-color: #666;
+    }
+</style>
