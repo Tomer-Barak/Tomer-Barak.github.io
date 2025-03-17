@@ -38,10 +38,25 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
+                <!-- Internal links (sections on homepage) -->
+                <li><a href="/" class="internal-link">Home</a></li>
+                <li><a href="/#about" class="internal-link">About</a></li>
+                <li><a href="/#research" class="internal-link">Research</a></li>
+                <li><a href="/#publications" class="internal-link">Publications</a></li>
+                <li><a href="/#contact" class="internal-link">Contact</a></li>
+                
+                <!-- Visual separator -->
+                <li class="nav-separator">|</li>
+                
+                <!-- External page links -->
+                <li><a href="/projects/" class="external-link">Projects</a></li>
+                <li><a href="/blog/" class="external-link">Blog</a></li>
+            </ul>
+            <!-- <ul class="nav-links" id="navLinks">
                 {% for item in site.navigation %}
                 <li><a href="{{ item.url }}">{{ item.title }}</a></li>
                 {% endfor %}
-            </ul>
+            </ul> -->
         </div>
     </nav>
     

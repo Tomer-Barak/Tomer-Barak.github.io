@@ -1221,3 +1221,29 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* Navigation group styling */
+.nav-separator {
+    margin: 0 5px;
+    color: #ddd;
+    align-self: center;
+}
+
+.internal-link {
+    /* Styling for internal section links */
+    color: var(--secondary-color);
+}
+
+.external-link {
+    /* Styling for external page links */
+    color: var(--primary-color);
+    font-weight: 600; /* Make slightly bolder */
+}
+
+/* Optional: Add subtle icons to external links */
+.external-link::after {
+    content: '›';
+    margin-left: 3px;
+    font-size: 1.2em;
+    line-height: 1;
+}
