@@ -48,4 +48,4 @@ This approach simplifies multi-agent coordination without requiring additional i
 
 More broadly, this highlights an interesting parallel between AI coordination and human cognition. Just as people maintain a stable sense of identity despite shifting internal processes, AI agents can function cohesively within a larger system while operating independently behind the scenes.
 
-There is still much to explore, especially in understanding the implications of self-referential communication in AI systems. As BarakBot evolves, these insights will help refine its design and expand its capabilities. For more details, visit the [project page](/projects/barakbot).
+There is still much to explore, especially in understanding the implications of self-referential communication in AI systems. As BarakBot evolves, these insights will help refine its design and expand its capabilities. For more details, visit the [projects page](/projects).
