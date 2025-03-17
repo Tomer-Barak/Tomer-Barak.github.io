@@ -64,7 +64,7 @@ defaults:
     values:
       layout: "post"
       author: "Tomer Barak"
-      image: "/assets/images/blog-default.jpg"
+      # Removed the default image that was causing the error
   - scope:
       path: ""
       type: "projects"

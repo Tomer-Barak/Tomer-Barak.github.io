@@ -15,10 +15,10 @@ layout: default
             <div class="blog-main">
                 <!-- Featured Post (if exists) -->
                 {% for post in site.posts limit:1 %}
-                <article class="featured-post">
+                <article class="featured-post {% unless post.image %}no-image{% endunless %}">
                     <div class="featured-post-label">Latest Post</div>
                     {% if post.image %}
-                    <div class="featured-post-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
+                    <div class="featured-post-img" style="background-image: url('{{ post.image }}');"></div>
                     {% endif %}
                     <div class="featured-post-content">
                         <p class="featured-post-date">{{ post.date | date: "%B %d, %Y" }}</p>
@@ -39,9 +39,9 @@ layout: default
                 <!-- Regular Posts -->
                 <div class="blog-posts-grid">
                     {% for post in paginator.posts offset:1 %}
-                    <article class="blog-card">
+                    <article class="blog-card {% unless post.image %}no-image{% endunless %}">
                         {% if post.image %}
-                        <div class="blog-img" style="background-image: url('{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/images/{{ post.image }}{% endif %}');"></div>
+                        <div class="blog-img" style="background-image: url('{{ post.image }}');"></div>
                         {% endif %}
                         <div class="blog-content">
                             <p class="blog-date">{{ post.date | date: "%B %d, %Y" }}</p>
