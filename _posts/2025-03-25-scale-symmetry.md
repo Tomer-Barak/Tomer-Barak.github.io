@@ -47,3 +47,5 @@ In this view, the universe has always existed and will always exist if we abando
 The hypothetical framework of scale relativity represents not a rejection of current physics but an invitation to consider its contextual nature. Just as the Copernican Revolution didn't invalidate Earth-based astronomical observations but rather placed them in proper context, acknowledging our scale-bound perspective doesn't invalidate our physics but helps us understand its scope and limitations.
 
 By recognizing that our particular spatiotemporal scale might not be privileged, we open ourselves to a richer conception of reality—one where each level of description reveals unique aspects of a fundamentally multi-scale universe. Perhaps the true legacy of the Copernican principle is not merely that we occupy no special place, but that there is no special place or scale at all.
+
+![Scale relativity visualization](/assets/images/20250325_1059_The Vast Cosmos_simple_compose.gif)
