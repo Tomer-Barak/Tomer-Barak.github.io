@@ -48,4 +48,6 @@ The hypothetical framework of scale relativity represents not a rejection of cur
 
 By recognizing that our particular spatiotemporal scale might not be privileged, we open ourselves to a richer conception of reality—one where each level of description reveals unique aspects of a fundamentally multi-scale universe. Perhaps the true legacy of the Copernican principle is not merely that we occupy no special place, but that there is no special place or scale at all.
 
-![Scale relativity visualization](/assets/images/20250325_1059_The Vast Cosmos_simple_compose.gif)
+<div style="width: 100%; margin: 30px 0;">
+  <img src="/assets/images/20250325_1059_The Vast Cosmos_simple_compose.gif" alt="Scale relativity visualization" style="width: 100%; border-radius: 8px;">
+</div>
