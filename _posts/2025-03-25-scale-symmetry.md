@@ -6,6 +6,7 @@ categories: [Physics, Philosophy of Science, Cosmology]
 tags: [Scale Relativity, Cosmology, Metaphysics, Copernican Principle, Multi-scale Universe]
 description: "An exploration of how our understanding of the universe might be biased by our particular spatiotemporal scale, and what insights might emerge from considering all scales as equally central."
 keywords: scale relativity, philosophy of physics, cosmology, multi-scale universe, spatiotemporal scales, epistemic bias, ontology of physics
+image: /assets/images/scales.png
 ---
 
 The Copernican Revolution famously displaced Earth from the center of the cosmos, forcing humanity to confront its non-privileged position in space. However, I propose that we may need another revolution—one that challenges our implicit assumption that our particular spatiotemporal scale occupies a privileged position in physical theory. Just as we no longer consider ourselves spatially central, perhaps we should question whether our scale of observation is fundamentally special.
