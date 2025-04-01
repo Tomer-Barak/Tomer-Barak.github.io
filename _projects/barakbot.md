@@ -85,7 +85,5 @@ This creates a consistent interface between components and allows for:
 - OpenAI's GPT models for language understanding and natural responses
 - Obsidian for structured information and task management
 - Flask for the web testing interface
-- Redis for session management and state persistence
-- Docker for containerization and deployment
 - JSON for configuration and scheduling data
 - Web search capabilities for real-time information access
