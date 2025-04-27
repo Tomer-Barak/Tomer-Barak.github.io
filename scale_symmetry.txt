@@ -1,6 +1,0 @@
-Title: Scale Relativity & the Copernican Principle
-
-Description:
-What if our human scale is not privileged in the universe? This topic introduces the idea of scale symmetry—a Copernican revolution for our perception of size and time. It suggests that every scale, from subatomic to cosmic, could be equally central, and that our physics may be just a cross-section of a multi-scale reality. This perspective challenges conventional thinking in physics and cosmology, proposing that time and structure may be fractal-like, with nested universes and endless evolution at every scale.
-
-Learn more: https://tomer-barak.github.io/blog/2025/03/20/scale-symmetry/

@@ -1,6 +1,0 @@
-Title: BarakBot: AI-Powered Telegram Assistant
-
-Description:
-BarakBot is a multi-agent AI assistant that operates through Telegram, integrating specialized agents for tasks like scheduling, photo captioning, and task management. Its self-referential architecture allows agents to collaborate naturally, making the system both powerful and easy to extend. With features like Obsidian integration, session management, and a web UI for prompt testing, BarakBot demonstrates the potential of advanced, user-friendly AI assistants for everyday productivity and communication.
-
-Learn more: https://tomer-barak.github.io/projects/barakbot/
