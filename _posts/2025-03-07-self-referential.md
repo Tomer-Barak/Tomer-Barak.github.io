@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Self-Referential Agent Architecture: How BarakBot Agents Talk to Themselves"
+title: "Self-referential agent architecture: how BarakBot agents talk to themselves"
 date: 2025-03-07
 categories: [AI, Bot Development, Natural Language Processing]
 tags: [BarakBot, Agent Architecture, LLM Agents, Multi-Agent Systems, Cognitive Modeling]
@@ -8,7 +8,7 @@ tags: [BarakBot, Agent Architecture, LLM Agents, Multi-Agent Systems, Cognitive 
 
 In developing BarakBot, I encountered a fundamental challenge in multi-agent coordination. How should distinct AI agents communicate effectively while keeping the architecture simple and scalable? The solution turned out to be surprisingly intuitive: let them talk to themselves.
 
-## The Multi-Agent Challenge
+## The multi-agent challenge
 
 BarakBot consists of multiple specialized LLM agents operating within a Telegram bot interface:
 
@@ -18,7 +18,7 @@ BarakBot consists of multiple specialized LLM agents operating within a Telegram
 
 Each agent performs well in isolation, but they often need to collaborate. For example, the photo agent might need the scheduler agent to remind a user about an analyzed image. The naive approach—hardcoding direct interactions—quickly becomes unmanageable.
 
-## The Conventional Approach: Centralized Agent Hub
+## The conventional approach: centralized agent hub
 
 A typical solution is to implement an "agent hub," a structured interface where agents formally request services from each other. While common in multi-agent systems, this method introduces unnecessary complexity:
 
@@ -28,7 +28,7 @@ A typical solution is to implement an "agent hub," a structured interface where 
 
 This approach felt artificial—unlike how humans coordinate thoughts and actions internally.
 
-## The Self-Referential Solution
+## The self-referential solution
 
 The breakthrough came when I reframed the problem from an agent's perspective. If an agent needed another agent's help, what would be the most natural way to request it? The answer: do exactly what a human user does—send a message to the bot.
 
@@ -36,7 +36,7 @@ This is related to an interesting observation: while the agents were switching b
 
 If the system was coherent enough for users to treat it as one entity, why not let the agents do the same? Instead of addressing specific subcomponents, each agent could simply refer to a single, overarching "assistant"—which, in reality, **is just the bot itself**. When an agent requires a capability it lacks, it simply asks the bot, which routes the request appropriately—just as it does for human users.
 
-### Why This Works
+### Why this works
 
 - **Simplicity:** No additional communication protocols or infrastructure.
 - **Consistency:** The same mechanism handles human and agent interactions.

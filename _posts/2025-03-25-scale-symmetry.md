@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "One more Copernican revolution: Reconsidering scale-centrism"
+title: "One more Copernican revolution: reconsidering scale-centrism"
 date: 2025-03-20
 categories: [Physics, Philosophy of Science, Cosmology]
 tags: [Scale Relativity, Cosmology, Metaphysics, Copernican Principle, Multi-scale Universe]
@@ -11,7 +11,7 @@ image: /assets/images/scales.png
 
 The Copernican Revolution famously displaced Earth from the center of the cosmos, forcing humanity to confront its non-privileged position in space. However, I propose that we may need another revolution—one that challenges our implicit assumption that our particular spatiotemporal scale occupies a privileged position in physical theory. Just as we no longer consider ourselves spatially central, perhaps we should question whether our scale of observation is fundamentally special.
 
-## Scale Symmetry as a Fundamental Principle
+## Scale symmetry as a fundamental principle
 
 What if we adopt the perspective that every scale is equally "central" to understanding reality? This represents a radical extension of the Copernican principle: not only is our spatial location non-privileged, but our temporal and spatial *scale* of observation may also be arbitrary.
 
@@ -19,7 +19,7 @@ When we observe the universe, we notice a pattern: entities larger than us tend 
 
 From this perspective, our human-scale physics might be the "particle physics" of larger-scale structures and simultaneously the "cosmology" of smaller-scale entities. The physics we observe at any given scale would represent only a cross-section of a multi-scale reality.
 
-## Epistemic Constraints vs. Ontological Reality
+## Epistemic constraints vs. ontological reality
 
 This multi-scale framework suggests that many properties we attribute to physical reality may be epistemic (related to how we know) rather than ontological (related to what exists). Consider elementary particles, which appear identical and indivisible at our scale of observation. Their apparent simplicity and indistinguishability might be an artifact of how they manifest at our scale.
 
@@ -27,7 +27,7 @@ Just as a distant galaxy appears as a mere point of light despite containing bil
 
 This perspective admittedly challenges conventional approaches to physics, which traditionally resist positing unmeasurable entities. However, as a metaphysical framework, it offers intriguing insights about the relationship between scale and knowledge.
 
-## The Recursive Nature of Cosmic Evolution
+## The recursive nature of cosmic evolution
 
 Perhaps the most profound implication of scale-relativity concerns our understanding of cosmic time. Consider that from the perspective of a sufficiently large-scale observer, our entire present cosmic age (approximately 13.7 billion years) might be equivalent to what we would consider "the first second after the big bang."
 
@@ -35,7 +35,7 @@ By the same token, what we perceive as the first second after the big bang—a s
 
 This presents a profoundly hopeful view: the apparently vast structures of our cosmos—galaxy superclusters stretching across billions of light-years—might themselves be mere particles in the formation of even larger structures, potentially supporting complex emergent phenomena including life, albeit at scales and timeframes inconceivable to us.
 
-## Beginning-less and Endless Time
+## Beginning-less and endless time
 
 This framework suggests a universe without a true beginning or end. While we might place the origin of our observable universe at 13.7 billion years ago, each moment of cosmic time could be subdivided into smaller and smaller intervals, each potentially containing the equivalent of billions of years when appropriately rescaled.
 

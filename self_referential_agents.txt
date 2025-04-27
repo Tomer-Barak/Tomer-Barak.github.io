@@ -1,0 +1,6 @@
+Title: Self-Referential Multi-Agent AI Architectures
+
+Description:
+Coordinating multiple AI agents can be complex, but a self-referential approach simplifies the process. Instead of using a central hub, each agent communicates with the system as if it were a user, allowing for seamless collaboration and scalability. This topic explores how self-referential design in multi-agent systems, like BarakBot, leads to more natural, unified, and maintainable AI architectures—mirroring how humans coordinate internal thoughts and actions.
+
+Learn more: https://tomer-barak.github.io/blog/2025/03/07/self-referential/
