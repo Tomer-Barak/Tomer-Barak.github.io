@@ -14,7 +14,7 @@ BarakBot is an experiment in pushing the boundaries of what large language model
 
 ### Self-messaging as a core mechanism
 
-In BarakBot, when an agent completes an action, it doesn't just update its internal state or wait for a user prompt. Instead, it sends itself a message like "the task was completed"—treating this as if it were a user action. This blurs the line between user and environment: **user actions become just one kind of message from the world**, and the world itself can "talk" to the agent.
+In BarakBot, when an agent completes an action, it doesn't just update its internal state or wait for a user prompt. Instead, it sends itself a message like "the task was completed"—treating this as if it were a user message. This blurs the line between user and environment: **user messages become just one kind of message from the world**, and the world itself can "talk" to the agent.
 
 This approach transforms the LLM from a passive chatbot, bound to the classic chat/response cycle, into an **active agent**—one that can act on the world, receive feedback, and keep moving forward autonomously. The world, in this paradigm, is not just a source of prompts, but a participant in the conversation with the agent.
 
