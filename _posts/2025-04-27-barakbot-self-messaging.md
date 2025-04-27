@@ -38,4 +38,4 @@ This highlights a key design challenge: **how do we help agents recognize when t
 
 BarakBot's self-messaging architecture is a step toward more autonomous, world-aware LLM agents. It shows that by rethinking the boundaries between user, world, and agent, we can give LLMs a richer, more active role. But it also reminds us that autonomy brings new failure modes—and that designing agents who know when to stop, ask for help, or try a new approach is just as important as giving them the freedom to act.
 
-If you're interested in the technical details or want to try BarakBot yourself, check out the [project page](../_projects/barakbot.md).
+If you're interested in the technical details or want to try BarakBot yourself, check out the project page.
