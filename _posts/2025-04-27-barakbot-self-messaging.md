@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Giving LLM agents a fife of their own through self-messaging"
+title: "Giving LLM agents a life of their own through self-messaging"
 date: 2025-04-27
 categories: [AI Agents, LLMs, Self-Messaging]
 tags: [BarakBot, Self-Referential, LLM Agents, AI Autonomy, Agent Design]
