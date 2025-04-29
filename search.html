@@ -1,9 +1,29 @@
 ---
 layout: default
-title: Search
+title: Search Results
 permalink: /search.html
 ---
-<div class="container">
-  <h1>Search Results</h1>
-  <p>This is a placeholder for search functionality.</p>
-</div>
+<section>
+  <div class="container">
+    <div class="search-page">
+      <h1>Search Results</h1>
+      
+      <p>Search results for: <span id="search-query" class="search-highlight"></span></p>
+      
+      <div class="search-form-container">
+        <form class="search-form" action="/search.html" method="get">
+          <input type="text" id="search-term" name="query" class="search-input" placeholder="Search again...">
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      
+      <div id="search-results" class="search-results">
+        <p>Loading results...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/search.js"></script>
