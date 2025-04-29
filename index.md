@@ -87,6 +87,50 @@ keywords: Tomer Barak, neural networks, cognitive science, physics, scales of de
     </div>
 </section>
 
+<!-- Recent Blog Posts Section -->
+<section id="blog-posts" style="background-color: #f7f9fc;">
+    <div class="container">
+        <h2 class="section-title">Recent Blog Posts</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">
+            Explore my latest thoughts on neural networks, cognitive science, and scales of description.
+        </p>
+        
+        <div class="blog-posts-container">
+            <!-- Blog Post 1 -->
+            <div class="blog-post-item">
+                <div class="blog-post-content">
+                    <h3 class="blog-post-title">
+                        <a href="/blog/2025/04/29/scales-math-descriptions/">The mathematical foundations of scale theory: Bridging micro and macro phenomena</a>
+                    </h3>
+                    <p class="blog-post-meta">April 29, 2025 | Physics, Mathematics, Complexity Theory</p>
+                    <p class="blog-post-excerpt">
+                        Exploring the theoretical foundations for understanding how different scales of observation relate to each other, and the mathematical formalisms that might unify our understanding of multi-scale phenomena.
+                    </p>
+                    <a href="/blog/2025/04/29/scales-math-descriptions/" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <!-- Blog Post 2 -->
+            <div class="blog-post-item">
+                <div class="blog-post-content">
+                    <h3 class="blog-post-title">
+                        <a href="/blog/2025/04/27/barakbot-self-messaging/">Giving LLM agents a life of their own through self-messaging</a>
+                    </h3>
+                    <p class="blog-post-meta">April 27, 2025 | AI Agents, LLMs, Self-Messaging</p>
+                    <p class="blog-post-excerpt">
+                        Exploring how BarakBot leverages self-messaging to transform LLMs from chatbots into autonomous actors, and the challenges and opportunities this approach brings.
+                    </p>
+                    <a href="/blog/2025/04/27/barakbot-self-messaging/" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-all-posts">
+                <a href="/blog/" class="all-posts-button">View All Posts</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Contact Section -->
 <section id="contact" style="background-color: #f0f5fa;">
     <div class="container">
