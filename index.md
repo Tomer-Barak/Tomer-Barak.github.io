@@ -88,7 +88,7 @@ keywords: Tomer Barak, neural networks, cognitive science, physics, scales of de
 </section>
 
 <!-- Recent Blog Posts Section -->
-<section id="blog-posts" style="background-color: #f7f9fc;">
+<section id="blog-posts" style="background-color: #f0f5fa;">
     <div class="container">
         <h2 class="section-title">Recent Blog Posts</h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">
@@ -132,7 +132,7 @@ keywords: Tomer Barak, neural networks, cognitive science, physics, scales of de
 </section>
 
 <!-- Contact Section -->
-<section id="contact" style="background-color: #f0f5fa;">
+<section id="contact">
     <div class="container">
         <h2 class="section-title">Contact</h2>
         <div class="contact-info">
