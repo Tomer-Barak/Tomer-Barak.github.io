@@ -22,25 +22,27 @@ keywords: Tomer Barak, neural networks, cognitive science, physics, scales of de
     <div class="container">
         <h2 class="section-title">Publications</h2>
         
-        <!-- Publication 1 -->
-        <div class="pub-item">
-            <h3 class="pub-title">Two pathways to resolve relational inconsistencies</h3>
-            <p class="pub-meta">T. Barak, Y. Loewenstein. Arxiv, Mar 2025.</p>
-            <p>We studied how theories change in response to observations that contradict them. Our ANN's choice of resolution depended on the inconsistency's magnitude, highlighting flexibility in forming descriptions.</p>
-            <div class="pub-links">
-                <a href="https://arxiv.org/abs/2411.05809" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-                <a href="https://github.com/Tomer-Barak/relational_expectation_violations" target="_blank"><i class="fab fa-github"></i> Github</a>
+        <div class="publications-container" style="max-width: 800px; margin: 0 auto;">
+            <!-- Publication 1 -->
+            <div class="pub-item">
+                <h3 class="pub-title">Two pathways to resolve relational inconsistencies</h3>
+                <p class="pub-meta">T. Barak, Y. Loewenstein. Arxiv, Mar 2025.</p>
+                <p>We studied how theories change in response to observations that contradict them. Our ANN's choice of resolution depended on the inconsistency's magnitude, highlighting flexibility in forming descriptions.</p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2411.05809" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/Tomer-Barak/relational_expectation_violations" target="_blank"><i class="fab fa-github"></i> Github</a>
+                </div>
             </div>
-        </div>
-        
-        <!-- Publication 2 -->
-        <div class="pub-item">
-            <h3 class="pub-title">Untrained neural networks can demonstrate memorization-independent abstract reasoning</h3>
-            <p class="pub-meta">T. Barak, Y. Loewenstein. Scientific Reports, Nov 2024.</p>
-            <p>We tested an ANN's ability to extract a predictably changing feature from image sequences with various changing features. The ANN performed well on intelligence tests requiring this ability, validating its use in modeling the extraction of abstract theories.</p>
-            <div class="pub-links">
-                <a href="https://www.nature.com/articles/s41598-024-78530-z" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-                <a href="https://github.com/Tomer-Barak/learning-independent_abstract_reasoning" target="_blank"><i class="fab fa-github"></i> Github</a>
+            
+            <!-- Publication 2 -->
+            <div class="pub-item">
+                <h3 class="pub-title">Untrained neural networks can demonstrate memorization-independent abstract reasoning</h3>
+                <p class="pub-meta">T. Barak, Y. Loewenstein. Scientific Reports, Nov 2024.</p>
+                <p>We tested an ANN's ability to extract a predictably changing feature from image sequences with various changing features. The ANN performed well on intelligence tests requiring this ability, validating its use in modeling the extraction of abstract theories.</p>
+                <div class="pub-links">
+                    <a href="https://www.nature.com/articles/s41598-024-78530-z" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/Tomer-Barak/learning-independent_abstract_reasoning" target="_blank"><i class="fab fa-github"></i> Github</a>
+                </div>
             </div>
         </div>
     </div>
