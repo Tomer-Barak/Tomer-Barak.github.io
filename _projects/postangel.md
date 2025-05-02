@@ -1,14 +1,15 @@
 ---
-layout: default
-title: "PostAngel: AI-powered social media assistant"
-category: development
-icon: smartphone
+layout: project
+title: "PostAngel: Social Media Assistant"
+subtitle: "PostAngel is a privacy-focused Android app that helps users engage meaningfully with social media. Whether you're writing new posts or crafting replies, PostAngel uses AI to generate content tailored to your personal knowledge base."
+category: project
+icon: mobile
 order: 2
-link: "#"
-link_text: "Learn More"
+permalink: /projects/postangel/
+github: https://github.com/Tomer-Barak/PostAngel
 ---
 
-# PostAngel: AI-Powered Social Media Assistant
+# PostAngel: Social Media Assistant
 
 PostAngel is a privacy-focused Android app that helps users engage meaningfully with social media. Whether you're writing new posts or crafting replies, PostAngel uses AI to generate content tailored to your personal knowledge base. It’s built with power users in mind—those who want to maintain control over their voice while leveraging intelligent automation.
 

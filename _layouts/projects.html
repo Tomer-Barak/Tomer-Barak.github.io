@@ -5,14 +5,7 @@ layout: default
     <div class="container">
         <h2 class="section-title">{{ page.section_title | default: "My Projects" }}</h2>
         
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="all">All Projects</button>
-            <button class="tab-btn" data-tab="development">Development</button>
-            <button class="tab-btn" data-tab="research">Research</button>
-        </div>
-        
-        <!-- All Projects Tab -->
+        <!-- All Projects -->
         <div id="all" class="tab-content active">
             <div class="projects-container">
                 {% assign all_projects = site.projects | sort: 'order' %}
@@ -24,7 +17,11 @@ layout: default
                     <div class="project-content">
                         <h3 class="project-title">{{ project.title }}</h3>
                         <p class="project-text">
-                            {{ project.excerpt | strip_html | truncatewords: 30 }}
+                            {% if project.subtitle %}
+                                {{ project.subtitle | truncatewords: 40 }}
+                            {% else %}
+                                {{ project.excerpt | strip_html | truncatewords: 40 }}
+                            {% endif %}
                         </p>
                         {% if project.features %}
                         <ul class="project-features">
@@ -34,94 +31,10 @@ layout: default
                         </ul>
                         {% endif %}
                         <div class="project-links">
+                            <a href="{{ site.baseurl }}/projects/{{ project.slug }}/" class="project-btn">Learn More</a>
                             {% if project.github %}
-                            <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
+                            <a href="{{ project.github }}" target="_blank" class="project-btn"><i class="fab fa-github"></i> View on GitHub</a>
                             {% endif %}
-                            <button onclick="toggleProjectDetails('project-detail-{{ forloop.index }}')" class="project-btn">Learn More</button>
-                        </div>
-                    </div>
-                    <!-- Hidden Project Details Section -->
-                    <div id="project-detail-{{ forloop.index }}" class="project-full-details" style="display: none;">
-                        <div class="project-detail-content">
-                            {{ project.content }}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!-- Development Projects Tab -->
-        <div id="development" class="tab-content">
-            <div class="projects-container">
-                {% assign dev_projects = site.projects | where: "category", "development" | sort: 'order' %}
-                {% for project in dev_projects %}
-                <div class="project-card" id="dev-project-{{ forloop.index }}">
-                    <div class="project-img">
-                        <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">{{ project.title }}</h3>
-                        <p class="project-text">
-                            {{ project.excerpt | strip_html | truncatewords: 30 }}
-                        </p>
-                        {% if project.features %}
-                        <ul class="project-features">
-                            {% for feature in project.features %}
-                            <li>{{ feature }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        <div class="project-links">
-                            {% if project.github %}
-                            <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
-                            {% endif %}
-                            <button onclick="toggleProjectDetails('dev-detail-{{ forloop.index }}')" class="project-btn">Learn More</button>
-                        </div>
-                    </div>
-                    <!-- Hidden Project Details Section -->
-                    <div id="dev-detail-{{ forloop.index }}" class="project-full-details" style="display: none;">
-                        <div class="project-detail-content">
-                            {{ project.content }}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!-- Research Projects Tab -->
-        <div id="research" class="tab-content">
-            <div class="projects-container">
-                {% assign research_projects = site.projects | where: "category", "research" | sort: 'order' %}
-                {% for project in research_projects %}
-                <div class="project-card" id="research-project-{{ forloop.index }}">
-                    <div class="project-img">
-                        <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">{{ project.title }}</h3>
-                        <p class="project-text">
-                            {{ project.excerpt | strip_html | truncatewords: 30 }}
-                        </p>
-                        {% if project.features %}
-                        <ul class="project-features">
-                            {% for feature in project.features %}
-                            <li>{{ feature }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        <div class="project-links">
-                            {% if project.github %}
-                            <a href="{{ project.github }}" target="_blank" class="project-btn">View on GitHub</a>
-                            {% endif %}
-                            <button onclick="toggleProjectDetails('research-detail-{{ forloop.index }}')" class="project-btn">Learn More</button>
-                        </div>
-                    </div>
-                    <!-- Hidden Project Details Section -->
-                    <div id="research-detail-{{ forloop.index }}" class="project-full-details" style="display: none;">
-                        <div class="project-detail-content">
-                            {{ project.content }}
                         </div>
                     </div>
                 </div>
@@ -131,69 +44,109 @@ layout: default
     </div>
 </section>
 
-<script>
-    // Tab functionality
-    document.querySelectorAll('.tab-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons and tabs
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Add active class to clicked button and corresponding tab
-            this.classList.add('active');
-            document.getElementById(this.dataset.tab).classList.add('active');
-        });
-    });
-    
-    // Function to toggle project details
-    function toggleProjectDetails(detailId) {
-        const detailSection = document.getElementById(detailId);
-        if (detailSection.style.display === "none") {
-            detailSection.style.display = "block";
-        } else {
-            detailSection.style.display = "none";
-        }
-    }
-</script>
-
 <style>
-    /* Additional CSS for Project Detail Display */
-    .project-full-details {
-        width: 100%;
-        padding: 20px;
-        margin-top: 20px;
-        background-color: #f8f9fa;
+    /* Project Cards Styling */
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    .project-card {
+        background-color: #fff;
         border-radius: 8px;
-        border-top: 3px solid var(--primary-color);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+        width: 100%;
+        max-width: 400px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        height: 400px; /* Fixed height for all cards */
     }
     
-    .project-detail-content {
-        font-size: 1rem;
-        line-height: 1.6;
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
     
-    .project-detail-content h2 {
-        font-size: 1.5rem;
+    .project-img {
+        height: 120px;
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0; /* Prevent the image from shrinking */
+    }
+    
+    .project-img i {
+        font-size: 3rem;
+    }
+    
+    .project-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Allow content to grow and fill available space */
+    }
+    
+    .project-title {
         color: var(--secondary-color);
-        margin: 20px 0 15px;
-    }
-    
-    .project-detail-content h3 {
-        font-size: 1.2rem;
-        color: var(--secondary-color);
-        margin: 15px 0 10px;
-    }
-    
-    .project-detail-content ul {
+        margin-top: 0;
         margin-bottom: 15px;
-        padding-left: 20px;
+        font-size: 1.4rem;
+        flex-shrink: 0; /* Prevent title from shrinking */
     }
     
-    .project-detail-content li {
-        margin-bottom: 5px;
+    .project-text {
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        flex-grow: 1; /* Allow text to grow */
+        overflow: hidden; /* Hide overflow text */
+        display: -webkit-box;
+        -webkit-line-clamp: 5; /* Limit to ~5 lines */
+        line-clamp: 5; /* Standard property */
+        -webkit-box-orient: vertical;
+    }
+    
+    .project-features {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        flex-shrink: 0; /* Prevent features from shrinking */
+    }
+    
+    .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: auto; /* Push links to bottom */
+        flex-shrink: 0; /* Prevent links from shrinking */
+    }
+    
+    .project-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background-color 0.2s;
+    }
+    
+    .project-btn i {
+        margin-right: 6px;
+    }
+    
+    .project-btn:hover {
+        background-color: var(--secondary-color);
     }
 </style>
