@@ -11,7 +11,7 @@ keywords: Tomer Barak, neural networks, cognitive science, physics, scales of de
 <section id="about" style="background-color: #f0f5fa;">
     <div class="container">
         <h2 class="section-title">About Me</h2>
-            <p style="text-align: left; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; white-space: normal; word-break: normal; hyphens: none;">
+            <p style="text-align: justify; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; hyphens: none; word-break: keep-all;">
                 I am a Ph.D. student at the Edmond and Lily Safra Center for Brain Sciences (ELSC) at The Hebrew University of Jerusalem. My research focuses on scales of description in science and physics, exploring how different levels of abstraction relate to one another. Using machine learning tools, particularly artificial neural networks (ANNs), I study how high-dimensional information can be transformed into meaningful lower-dimensional representations.
             </p>
     </div>
