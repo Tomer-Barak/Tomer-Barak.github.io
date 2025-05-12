@@ -1022,6 +1022,25 @@ footer {
     .related-posts-list {
         grid-template-columns: 1fr;
     }
+
+    /* Make content cards wider on mobile */
+    .blog-posts-container,
+    .blog-posts,
+    .projects-container,
+    .publications-container {
+        max-width: 90%;
+        width: 90%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container {
+        max-width: 90%;
+        width: 90%;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 /* Project Full Details Styling */
