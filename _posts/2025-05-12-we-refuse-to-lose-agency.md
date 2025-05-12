@@ -6,7 +6,7 @@ categories: [AI, Psychology, Technology Ethics]
 tags: [AI Agents, Agency, LLM Agents, Autonomy, Technology Adoption]
 description: "Exploring our psychological reluctance to cede control to AI agents, even when doing so might be beneficial and efficient."
 keywords: ai agency, autonomous agents, psychology of control, technology adoption barriers, llm agents, ai ethics
-image:/assets/images/lose-agency.png
+image: /assets/images/lose-agency.png
 ---
 
 In the rapidly evolving landscape of AI assistants and agents, there's a curious psychological barrier I've encountered—one that may significantly shape how we build and deploy these technologies. Despite the growing capabilities of LLM-based agents to operate autonomously, we seem inherently reluctant to grant them true agency in our world.
