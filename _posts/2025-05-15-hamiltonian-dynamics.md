@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "From Time to Scale: A Gentle Introduction to Scale Dynamics"
+title: "From time to scale: A gentle introduction to scale dynamics"
 date: 2025-05-15
 categories: [Physics, Mathematics, Theoretical Physics]
 tags: [Scale Dynamics, Renormalization Group, Hamiltonian Mechanics, Theoretical Physics, Quantum Field Theory]
 description: "A proposal for treating the Hamiltonian itself as a dynamical variable that evolves with scale, offering a unified framework for understanding renormalization group flows and cross-scale phenomena."
 keywords: scale dynamics, renormalization group, Hamiltonian mechanics, effective theories, multi-scale physics, beta functions
-image: /assets/images/scale_dynamics.png
 ---
 
 Physics is full of **levels of description** – atoms, molecules, fluids; spins, domains, magnets. We usually *fix* the level and then ask how the variables at that level evolve in time. The idea explored here is the reverse:
