@@ -6,6 +6,7 @@ categories: [Physics, Mathematics, Theoretical Physics]
 tags: [Scale Dynamics, Renormalization Group, Hamiltonian Mechanics, Theoretical Physics, Quantum Field Theory]
 description: "A proposal for treating the Hamiltonian itself as a dynamical variable that evolves with scale, offering a unified framework for understanding renormalization group flows and cross-scale phenomena."
 keywords: scale dynamics, renormalization group, Hamiltonian mechanics, effective theories, multi-scale physics, beta functions
+mathjax: true
 ---
 
 Physics is full of **levels of description** – atoms, molecules, fluids; spins, domains, magnets. We usually *fix* the level and then ask how the variables at that level evolve in time. The idea explored here is the reverse:
@@ -22,11 +23,30 @@ Our goal is **not** to build the full mathematical machinery today, but to sketc
 
 ## 1. Analogy: Newtonian motion ↔ "scale motion"
 
-| Ordinary dynamics                                    | Proposed scale dynamics                               |
-| ---------------------------------------------------- | ----------------------------------------------------- |
-| Coordinate $x(t)$ evolves in time $t$            | Hamiltonian $H(\mu)$ evolves with scale $\mu$     |
-| Energy $E=\tfrac12 m v^2 + V(x)$ may be conserved  | A "scale energy" $\mathcal E$ may be conserved      |
-| Equations of motion come from *Hamilton's equations* | Equations of "scale motion" come from analogous rules |
+<div class="table-responsive">
+<table>
+  <thead>
+    <tr>
+      <th>Ordinary dynamics</th>
+      <th>Proposed scale dynamics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Coordinate $x(t)$ evolves in time $t$</td>
+      <td>Hamiltonian $H(\mu)$ evolves with scale $\mu$</td>
+    </tr>
+    <tr>
+      <td>Energy $E=\tfrac12 m v^2 + V(x)$ may be conserved</td>
+      <td>A "scale energy" $\mathcal E$ may be conserved</td>
+    </tr>
+    <tr>
+      <td>Equations of motion come from <em>Hamilton's equations</em></td>
+      <td>Equations of "scale motion" come from analogous rules</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 The key swap is
 
@@ -76,9 +96,11 @@ where ${g_i}$ are couplings in the Hamiltonian. The proposal is to **embed** the
 1. **Doubling variables.** Treat $g_i$ as coordinates and introduce conjugate "momenta" $p_i$.
 2. **Choosing a scale Hamiltonian**
 
+   <div class="boxed-equation">
    $$
-   \boxed{\,H_\mathrm{scale}(\{g\},\{p\}) = \sum_i p_i\,\beta_i(\{g\})\; +\; F(\{g\})\,},
+   \boxed{H_\mathrm{scale}(\{g\},\{p\}) = \sum_i p_i\,\beta_i(\{g\})\; +\; F(\{g\})}
    $$
+   </div>
 
    whose first Hamilton equation reproduces the beta functions.
 3. **Interpreting $p_i$.** They measure the *sensitivity* of the effective action to changes in the couplings – a notion already familiar from functional RG and holographic RG.
@@ -169,12 +191,34 @@ What does this mathematical framework tell us about the physical world?
 
 ## 9. Relations to existing work
 
-| Theme                                            | Key references & remarks                                                                                                      |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| Symplectic structure of RG                       | Wegner (1974), Polchinski (1984) re-cast RG as canonical flow in functional space.                                            |
-| Hamilton–Jacobi in scale space                   | de Boer *et al.* (2000), Skenderis (2002) in AdS/CFT; functional HJ acts as master RG equation.                               |
-| Scale-dependent Hamiltonians in condensed matter | Shankar (1994) RG for Fermi liquids implicitly treats effective Hamiltonian as scale-flowing. |
-| Geometric approaches to RG                       | Ruppeiner (1995) thermodynamic geometry                            |
+<div class="table-responsive">
+<table>
+  <thead>
+    <tr>
+      <th>Theme</th>
+      <th>Key references & remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Symplectic structure of RG</td>
+      <td>Wegner (1974), Polchinski (1984) re-cast RG as canonical flow in functional space.</td>
+    </tr>
+    <tr>
+      <td>Hamilton–Jacobi in scale space</td>
+      <td>de Boer <em>et al.</em> (2000), Skenderis (2002) in AdS/CFT; functional HJ acts as master RG equation.</td>
+    </tr>
+    <tr>
+      <td>Scale-dependent Hamiltonians in condensed matter</td>
+      <td>Shankar (1994) RG for Fermi liquids implicitly treats effective Hamiltonian as scale-flowing.</td>
+    </tr>
+    <tr>
+      <td>Geometric approaches to RG</td>
+      <td>Ruppeiner (1995) thermodynamic geometry</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ## 10. Limitations & open questions
 

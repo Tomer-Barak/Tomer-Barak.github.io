@@ -38,6 +38,24 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/assets/css/styles.css">
     
+    <!-- MathJax for rendering mathematics -->
+    <script type="text/javascript">
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+    };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    
     <!-- Schema.org structured data for a researcher -->
     <!-- Add this to the head section of your default.html layout -->
 

@@ -1447,3 +1447,86 @@ footer {
 .search-read-more:hover::after {
     transform: scaleX(1);
 }
+
+/* Styling for tables in blog posts */
+.post-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    display: block;
+}
+
+.post-content table thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.post-content table th,
+.post-content table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.post-content table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.post-content table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* Make tables scrollable on mobile */
+@media (max-width: 768px) {
+    .post-content table {
+        white-space: nowrap;
+    }
+}
+
+/* Math equations styling */
+.MathJax {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+
+/* For display equations */
+.post-content .MathJax_Display {
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Special box styling for important equations */
+.post-content .boxed-equation {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 4px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.post-content .boxed-equation .MathJax_Display {
+    margin: 0.5rem 0;
+}
+
+/* Improved styling for inline math */
+.post-content p .MathJax {
+    vertical-align: middle;
+}
+
+/* Responsive styles for mathematics on smaller screens */
+@media (max-width: 768px) {
+    .post-content .MathJax_Display {
+        font-size: 90%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .post-content .boxed-equation {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+}
