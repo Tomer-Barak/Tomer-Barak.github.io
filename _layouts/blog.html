@@ -14,50 +14,75 @@ layout: default
             <!-- Main Content -->
             <div class="blog-main">
                 <!-- Featured Post (if exists) -->
-                {% for post in site.posts limit:1 %}
-                <article class="featured-post {% unless post.image %}no-image{% endunless %}">
-                    <div class="featured-post-label">Latest Post</div>
-                    {% if post.image %}
-                    <div class="featured-post-img" style="background-image: url('{{ post.image }}');"></div>
-                    {% endif %}
-                    <div class="featured-post-content">
-                        <p class="featured-post-date">{{ post.date | date: "%B %d, %Y" }}</p>
-                        <h2 class="featured-post-title">{{ post.title }}</h2>
-                        <div class="featured-post-tags">
-                            {% for tag in post.tags limit:3 %}
-                            <span class="featured-post-tag">{{ tag }}</span>
-                            {% endfor %}
-                        </div>
-                        <p class="featured-post-excerpt">
-                            {{ post.excerpt | strip_html | truncatewords: 50 }}
-                        </p>
-                        <a href="{{ post.url }}" class="featured-post-btn">Read More</a>
-                    </div>
-                </article>
-                {% endfor %}
-                
-                <!-- Regular Posts -->
-                <div class="blog-posts-grid">
-                    {% for post in paginator.posts offset:1 %}
-                    <article class="blog-card {% unless post.image %}no-image{% endunless %}">
+                {% if paginator.page == 1 %}
+                    {% for post in site.posts limit:1 %}
+                    <article class="featured-post {% unless post.image %}no-image{% endunless %}">
+                        <div class="featured-post-label">Latest Post</div>
                         {% if post.image %}
-                        <div class="blog-img" style="background-image: url('{{ post.image }}');"></div>
+                        <div class="featured-post-img" style="background-image: url('{{ post.image }}');"></div>
                         {% endif %}
-                        <div class="blog-content">
-                            <p class="blog-date">{{ post.date | date: "%B %d, %Y" }}</p>
-                            <h2 class="blog-title">{{ post.title }}</h2>
-                            <div class="blog-tags">
+                        <div class="featured-post-content">
+                            <p class="featured-post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                            <h2 class="featured-post-title">{{ post.title }}</h2>
+                            <div class="featured-post-tags">
                                 {% for tag in post.tags limit:3 %}
-                                <span class="blog-tag">{{ tag }}</span>
+                                <span class="featured-post-tag">{{ tag }}</span>
                                 {% endfor %}
                             </div>
-                            <p class="blog-excerpt">
-                                {{ post.excerpt | strip_html | truncatewords: 25 }}
+                            <p class="featured-post-excerpt">
+                                {{ post.excerpt | strip_html | truncatewords: 50 }}
                             </p>
-                            <a href="{{ post.url }}" class="read-more">Read More</a>
+                            <a href="{{ post.url }}" class="featured-post-btn">Read More</a>
                         </div>
                     </article>
                     {% endfor %}
+                {% endif %}
+                
+                <!-- Regular Posts -->
+                <div class="blog-posts-grid">
+                    {% if paginator.page == 1 %}
+                        {% for post in paginator.posts offset:1 %}
+                        <article class="blog-card {% unless post.image %}no-image{% endunless %}">
+                            {% if post.image %}
+                            <div class="blog-img" style="background-image: url('{{ post.image }}');"></div>
+                            {% endif %}
+                            <div class="blog-content">
+                                <p class="blog-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                                <h2 class="blog-title">{{ post.title }}</h2>
+                                <div class="blog-tags">
+                                    {% for tag in post.tags limit:3 %}
+                                    <span class="blog-tag">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                                <p class="blog-excerpt">
+                                    {{ post.excerpt | strip_html | truncatewords: 25 }}
+                                </p>
+                                <a href="{{ post.url }}" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    {% else %}
+                        {% for post in paginator.posts %}
+                        <article class="blog-card {% unless post.image %}no-image{% endunless %}">
+                            {% if post.image %}
+                            <div class="blog-img" style="background-image: url('{{ post.image }}');"></div>
+                            {% endif %}
+                            <div class="blog-content">
+                                <p class="blog-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                                <h2 class="blog-title">{{ post.title }}</h2>
+                                <div class="blog-tags">
+                                    {% for tag in post.tags limit:3 %}
+                                    <span class="blog-tag">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                                <p class="blog-excerpt">
+                                    {{ post.excerpt | strip_html | truncatewords: 25 }}
+                                </p>
+                                <a href="{{ post.url }}" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 
                 <!-- Pagination -->

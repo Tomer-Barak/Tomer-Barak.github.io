@@ -7,6 +7,7 @@ tags: [Scale Dynamics, Renormalization Group, Hamiltonian Mechanics, Theoretical
 description: "Exploring recent advances in scale dynamics: canonical transformations, irreversible flows, and non-linear momentum corrections to renormalization group equations."
 keywords: scale dynamics, renormalization group, Hamiltonian mechanics, effective theories, contact geometry, scheme independence
 mathjax: true
+image: /assets/images/scales2.png
 ---
 
 *This post builds on our earlier work, ["From time to scale: A gentle introduction to scale dynamics"](/2025/05/15/hamiltonian-dynamics.html), where we introduced the idea of treating the Hamiltonian itself as a dynamic coordinate that evolves with scale rather than time.*
