@@ -1,6 +1,19 @@
 # Tomer Barak's Academic Website
 
-This repository contains the source code for my academic portfolio website, built using Jekyll and GitHub Pages.
+
+This repository contains the source code and content for my academic portfolio website, built using Jekyll and GitHub Pages. The website is not only a technical showcase but also a comprehensive collection of my research, projects, and reflective insights.
+
+## Website Contents
+
+The website is organized into several key sections:
+
+- **Home Page**: Presents an overview of my research interests, academic background, and a summary of recent activities.
+- **Projects Page**: Showcases a curated list of research and development projects. Each project page provides a detailed description, key features, and links to related resources such as GitHub repositories or live demos.
+- **Project Insights**: For each project, there is a dedicated "insights" section that dives deeper into the project's context, methodology, challenges, and outcomes. These insights are organized as a collection of posts, offering in-depth analysis, technical discussions, and reflections on the project's significance and impact. The insights are accessible via a "Dive Deeper" button on each project page, leading to a collection of related articles and explorations specific to that project.
+- **Blog**: Contains posts on research updates, technical explorations, and personal thoughts related to my academic journey. Blog posts are organized chronologically and by category.
+- **Contact Information**: Provides ways to get in touch for collaboration, questions, or networking.
+
+This structure is designed to not only present my work but also to provide context and deeper understanding through the insights associated with each project, making the website a living academic portfolio and knowledge base.
 
 ## Website Structure
 
