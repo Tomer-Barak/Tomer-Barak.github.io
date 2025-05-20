@@ -43,6 +43,8 @@ $$\tilde{p}_i = \sum_j \frac{\partial g_j}{\partial \tilde{g}_i}p_j$$
 
 This elegant formulation explains why certain quantities remain invariant across schemes. For instance, in $\phi^4$ theory, the one-loop coefficient is scheme-independent while higher-order terms transform in specific ways. This perspective offers practical tools for optimizing perturbative calculations and discovering scheme-independent quantities.
 
+[Read more: Scheme Independence via Canonical Transformations](/projects/scale-theory-insights.html#scheme-independence-via-canonical-transformations)
+
 ## 2. Irreversibility Through Contact Geometry
 
 Standard RG flows are irreversible - coarse-graining destroys microscopic information, and we can't undo this process. Yet our original symplectic framework is time-reversible, creating a conceptual tension.
@@ -67,6 +69,8 @@ This behavior perfectly matches the famous $C$-theorem in 2D conformal field the
 
 In the $\phi^4$ example, trajectories now spiral toward fixed points while entropy (measured by $s$) increases - just as expected in physical RG transformations.
 
+[Read more: Irreversible Scale Dynamics Using Contact Geometry](/projects/scale-theory-insights.html#irreversible-scale-dynamics-using-contact-geometry)
+
 ## 3. Beyond Linear Momentum: Higher-Order Corrections
 
 Our initial Hamiltonian was linear in momenta $p_i$. But what if this is just the leading approximation? The most general analytic scale Hamiltonian would be a power series:
@@ -87,7 +91,7 @@ $$H = p(-\varepsilon g + \lambda g^2) + \frac{1}{2}c\,g\,p^2$$
 
 Depending on the magnitude of $c$, the behavior ranges from conventional flow toward fixed points to closed orbits exhibiting discrete scale invariance, to runaway trajectories.
 
-## When Do Higher-Order Terms Matter?
+### When Do Higher-Order Terms Matter?
 
 The linear approximation (standard RG) holds when:
 - We're in the perturbative ultraviolet regime
@@ -95,6 +99,8 @@ The linear approximation (standard RG) holds when:
 - Contact friction dominates momentum growth
 
 However, at strong coupling or near irrelevant fixed points, higher-order terms can dominate, requiring a non-perturbative treatment. This explains why conventional RG techniques sometimes break down in these regimes.
+
+[Read more: Beyond Linear Momentum—Higher-Order Scale Corrections](/projects/scale-theory-insights.html#beyond-linear-momentum-higher-order-scale-corrections)
 
 ## Outlook and Open Questions
 
