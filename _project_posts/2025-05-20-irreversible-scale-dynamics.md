@@ -15,8 +15,6 @@ Real renormalization‑group (RG) flows, however, are **irreversible**.  Coarse�
 
 > **Key idea.**  Enlarge phase space from symplectic to **contact** by adding one extra coordinate $s$ that measures lost information.  Contact flows naturally spiral into fixed points, matching the physical arrow of renormalization.
 
-All algebra below incorporates the referee fixes: signs are consistent, the monotone genuinely *decreases*, and the rôle of the friction constant $\gamma$ is explicit.
-
 ---
 
 ## 0  Lightning recap (conservative case)
