@@ -24,6 +24,8 @@ In our recent series of posts on scale dynamics ([From Time to Scale]({{ site.ba
 
 5. **Hamilton-Jacobi approach to glassy systems** – Applying the Hamilton-Jacobi formulation reproduces the Vogel–Fulcher–Tammann law, linking microscopic RG parameters to macroscopic observables.
 
+This structure also mirrors holographic RG in AdS/CFT, where the bulk radial direction acts as the RG scale and symplectic structure arises from the Hamiltonian formulation of the bulk action.
+
 ## Connections to Recent Literature
 
 ### Holographic RG flows with symplectic structure
