@@ -193,8 +193,6 @@ which directly connects microscopic parameters to experimentally measurable quan
 
 Our approach not only unifies different perspectives on RG and multiscale phenomena but also offers testable predictions. Future work will aim to generalize the method to more complex systems and explore its connections with holographic and non-equilibrium RG frameworks.
 
-## Acknowledgments
-We thank colleagues in the theoretical physics and applied mathematics communities for insightful discussions. This work was supported by [Funding Agency] under Grant No. [Grant Number].
 
 ## References
 1. K. G. Wilson and J. Kogut, "The renormalization group and the epsilon expansion," Phys. Rep. 12, 75–199 (1974).
