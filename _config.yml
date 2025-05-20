@@ -38,6 +38,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  project_posts:
+    output: true
+    permalink: /projects/:path/
 
 # Navigation
 navigation:
@@ -69,7 +72,13 @@ defaults:
       path: ""
       type: "projects"
     values:
-      layout: "default"
+      layout: "project"
+  - scope:
+      path: ""
+      type: "project_posts"
+    values:
+      layout: "project_post"
+      author: "Tomer Barak"
   - scope:
       path: ""
     values:

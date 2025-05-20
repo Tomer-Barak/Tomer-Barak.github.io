@@ -86,6 +86,41 @@ To work with this website locally, you'll need:
 
 3. Write your project description in Markdown below the front matter.
 
+#### Project Insights (Dive Deeper)
+
+1. Create a project insights index page in the `projects` directory:
+   ```yaml
+   ---
+   layout: project_insights
+   title: "Project Name Insights"
+   description: "A description of what these insights cover about the project."
+   project: "Exact Project Title"  # Must match the project title
+   project_slug: "project-slug"    # Must match the project slug
+   ---
+   ```
+
+2. Create insight posts in the `_project_posts` directory with the naming convention:
+   ```
+   YYYY-MM-DD-title-of-insight.md
+   ```
+
+3. Add front matter to the insight post:
+   ```yaml
+   ---
+   layout: project_post
+   title: "Your Insight Title"
+   date: YYYY-MM-DD
+   project: "Exact Project Title"  # Must match the project title
+   project_slug: "project-slug"    # Must match the project slug
+   tags: [tag1, tag2, tag3]
+   image: /assets/images/your-image.jpg  # Optional
+   ---
+   ```
+
+4. Write your insight content in Markdown below the front matter.
+
+5. A "Dive Deeper" button will automatically appear on the project page, linking to the insights collection for that project.
+
 ### Customization
 
 - **Site configuration**: Edit `_config.yml` to update site-wide settings.
@@ -103,14 +138,19 @@ The site is automatically deployed to GitHub Pages when changes are pushed to th
 ├── _layouts/                 # Page templates
 │   ├── default.html          # Base template
 │   ├── post.html             # Blog post template
+│   ├── project.html          # Project template
+│   ├── project_post.html     # Project insight post template
+│   ├── project_insights.html # Project insights index template
 │   ├── projects.html         # Projects page template
 │   └── blog.html             # Blog index template
 ├── _posts/                   # Blog posts
+├── _project_posts/           # Project-specific insight posts
 ├── _projects/                # Project files
 ├── assets/                   # Static assets
 │   ├── css/                  # Stylesheets
 │   │   └── styles.css        # Main CSS file
 │   └── images/               # Image files
+├── projects/                 # Project insight index pages
 ├── index.md                  # Home page
 ├── projects.md               # Projects page
 ├── blog.md                   # Blog index page
