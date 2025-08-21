@@ -26,10 +26,10 @@ keywords: Tomer Barak, neural networks, cognitive science, physics, scales of de
             <!-- Publication 1 -->
             <div class="pub-item">
                 <h3 class="pub-title">Two pathways to resolve relational inconsistencies</h3>
-                <p class="pub-meta">T. Barak, Y. Loewenstein. Arxiv, Mar 2025.</p>
+                <p class="pub-meta">T. Barak, Y. Loewenstein. Scientific Reports, Aug 2025.</p>
                 <p>We studied how theories change in response to observations that contradict them. Our ANN's choice of resolution depended on the inconsistency's magnitude, highlighting flexibility in forming descriptions.</p>
                 <div class="pub-links">
-                    <a href="https://arxiv.org/abs/2411.05809" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://www.nature.com/articles/s41598-025-16135-w" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                     <a href="https://github.com/Tomer-Barak/relational_expectation_violations" target="_blank"><i class="fab fa-github"></i> Github</a>
                 </div>
             </div>
