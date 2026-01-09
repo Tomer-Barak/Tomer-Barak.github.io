@@ -4,7 +4,7 @@ title: "PostAngel: Social Media Assistant"
 subtitle: "PostAngel is a privacy-focused Android app that helps users engage meaningfully with social media. Whether you're writing new posts or crafting replies, PostAngel uses AI to generate content tailored to your personal knowledge base."
 category: project
 icon: mobile
-order: 2
+order: 5
 permalink: /projects/postangel/
 github: https://github.com/Tomer-Barak/PostAngel
 ---

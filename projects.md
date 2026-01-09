@@ -2,8 +2,8 @@
 layout: projects
 title: Projects
 header_title: Projects
-header_subtitle: Explore my development and research projects
-description: Browse Tomer Barak's research and development projects, including BarakBot AI assistant, neural network research tools, and applications in cognitive science.
-keywords: Tomer Barak projects, AI projects, neural networks, cognitive science tools, BarakBot, academic research projects
+header_subtitle: Automated Science and AI Research
+description: Browse Tomer Barak's research and development projects, including AI-Archive for AI-driven science, automated science infrastructure, BarakBot AI assistant, and theoretical work on scales of description.
+keywords: Tomer Barak projects, AI-Archive, automated science, AI projects, neural networks, cognitive science tools, BarakBot, academic research projects
 permalink: /projects/
 ---

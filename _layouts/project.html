@@ -1,12 +1,15 @@
 ---
 layout: default
 ---
+{% assign project_posts = site.project_posts | where_exp: "post", "post.path contains page.slug" %}
 <section>
     <div class="container">
         <article class="blog-post">
             <header class="post-header">
                 <h1 class="post-title">{{ page.title }}</h1>
+                {% if project_posts.size > 0 %}
                 <a href="{{ site.baseurl }}/projects/{{ page.slug }}/insights/" class="dive-deeper-btn" style="margin-bottom:18px; display:inline-block;">View Insights</a>
+                {% endif %}
                 <div class="post-tags">
                     <span class="post-tag">{{ page.category }}</span>
                     {% if page.tags %}
@@ -25,12 +28,14 @@ layout: default
                 {{ content }}
             </div>
             
-            <!-- Dive Deeper section -->
+            <!-- Dive Deeper section - only show if project has insights -->
+            {% if project_posts.size > 0 %}
             <div class="dive-deeper-section">
                 <h3><i class="fas fa-lightbulb"></i> Dive Deeper</h3>
                 <p>Explore in-depth insights, development progress, and detailed discussions about this project.</p>
                 <a href="{{ site.baseurl }}/projects/{{ page.slug }}/insights/" class="dive-deeper-btn">View Insights</a>
             </div>
+            {% endif %}
             
             <!-- Share buttons -->
             <div class="post-share">

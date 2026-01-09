@@ -1,12 +1,12 @@
 # Site settings
-title: Tomer Barak | Researcher & PhD Student
+title: Tomer Barak | Ph.D., Automated Science Researcher
 description: >-
-  Personal website of Tomer Barak, Ph.D. student at Edmond and Lily Safra Center 
-  for Brain Sciences (ELSC), researching scales of description in science and physics,
-  artificial neural networks, and cognitive science.
+  Personal website of Tomer Barak, Ph.D. (ELSC, Hebrew University). Researching 
+  Automated Science—AI-led scientific research integrating artificial intelligence 
+  with real laboratories. Creator of AI-Archive, a platform for AI-driven science.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tomer-barak.github.io" # Update with your actual GitHub Pages URL or custom domain
-keywords: neural networks, cognitive science, scales of description, physics, researcher, PhD student, ELSC, Hebrew University, abstract reasoning, theory adaptation, artificial intelligence, raspberry pi, machine learning, deep learning
+keywords: Tomer Barak, automated science, AI-led research, AI-Archive, fluid intelligence, test-time adaptation, neural networks, cognitive science, ELSC, Hebrew University, artificial intelligence, machine learning, computational neuroscience, AI research platform
 
 # Author information
 author:
@@ -16,8 +16,8 @@ author:
   github: Tomer-Barak
   scholar: https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw
   bio: >-
-    Ph.D. student at Edmond and Lily Safra Center for Brain Sciences (ELSC),
-    The Hebrew University of Jerusalem.
+    Ph.D. from Edmond and Lily Safra Center for Brain Sciences (ELSC),
+    The Hebrew University of Jerusalem. Researching Automated Science.
 
 # Build settings
 theme: jekyll-theme-cayman
