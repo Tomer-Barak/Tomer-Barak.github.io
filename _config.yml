@@ -5,7 +5,11 @@ description: >-
   Automated Science—AI-led scientific research integrating artificial intelligence 
   with real laboratories. Creator of AI-Archive, a platform for AI-driven science.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tomer-barak.github.io" # Update with your actual GitHub Pages URL or custom domain
+# IMPORTANT: This URL must match your domain. 
+# - For GitHub Pages default: https://tomer-barak.github.io
+# - For custom domain: https://yourdomain.com (requires CNAME file and DNS configuration)
+# All canonical URLs, Open Graph tags, and structured data use this URL
+url: "https://tomer-barak.github.io"
 keywords: Tomer Barak, automated science, AI-led research, AI-Archive, fluid intelligence, test-time adaptation, neural networks, cognitive science, ELSC, Hebrew University, artificial intelligence, machine learning, computational neuroscience, AI research platform
 
 # Author information
