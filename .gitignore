@@ -5,3 +5,11 @@ _site/
 vendor/
 .bundle/
 progress/
+
+# Do not create CNAME file unless you own and configure a custom domain
+# The site uses GitHub Pages default domain: tomer-barak.github.io
+# To use a custom domain, you must:
+# 1. Own the domain and configure DNS
+# 2. Create CNAME file with your domain
+# 3. Update _config.yml url to match
+# CNAME
