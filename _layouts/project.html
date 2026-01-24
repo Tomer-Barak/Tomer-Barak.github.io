@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="command-line">
-    <span class="cmd-prompt">guest@tomer-site:~$</span>
+    <span class="cmd-prompt">guest@tomer:~$</span>
     <span class="cmd-command">cat</span>
     <span class="cmd-args">~/projects/{{ page.slug }}/README.md</span>
 </div>
@@ -39,7 +39,7 @@ layout: default
 {% assign project_posts = site.project_posts | where_exp: "post", "post.path contains page.slug" %}
 {% if project_posts.size > 0 %}
 <div class="command-line" style="margin-top: 2rem;">
-    <span class="cmd-prompt">guest@tomer-site:~$</span>
+    <span class="cmd-prompt">guest@tomer:~$</span>
     <span class="cmd-command">ls</span>
     <span class="cmd-args">-l insights/</span>
 </div>

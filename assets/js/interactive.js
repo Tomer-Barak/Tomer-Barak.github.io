@@ -80,7 +80,7 @@ if (input && display) {
             // Print command line
             const cmdDiv = document.createElement('div');
             cmdDiv.className = 'command-line';
-            cmdDiv.innerHTML = `<span class="cmd-prompt">guest@tomer-site:${currentPath}$</span> <span class="cmd-command">${escapeHtml(input.value)}</span>`;
+            cmdDiv.innerHTML = `<span class="cmd-prompt">guest@tomer:${currentPath}$</span> <span class="cmd-command">${escapeHtml(input.value)}</span>`;
             inputLine.parentNode.insertBefore(cmdDiv, inputLine);
 
             if (command) {
@@ -138,7 +138,7 @@ function getCurrentPathFromUrl() {
 function updatePrompt() {
     const promptSpan = document.querySelector('#terminal-input-line .cmd-prompt');
     if (promptSpan) {
-        promptSpan.textContent = `guest@tomer-site:${currentPath}$`;
+        promptSpan.textContent = `guest@tomer:${currentPath}$`;
     }
 }
 

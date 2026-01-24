@@ -279,6 +279,11 @@ li::marker {
   /* Changed from indentation to full width usually */
 }
 
+/* Fix for long filenames overflowing */
+.cmd-output a {
+  overflow-wrap: anywhere;
+}
+
 /* Footer elements */
 .terminal-footer {
   padding: 1rem 1.5rem;
@@ -348,4 +353,5 @@ li::marker {
   .nav-left {
     justify-content: center;
   }
+
 }

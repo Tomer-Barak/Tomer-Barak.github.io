@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="command-line">
-  <span class="cmd-prompt">guest@tomer-site:~$</span>
+  <span class="cmd-prompt">guest@tomer:~$</span>
   <span class="cmd-command">cat</span>
   <span class="cmd-args">about_me.txt</span>
 </div>
@@ -22,7 +22,7 @@ title: Home
 </div>
 
 <div class="command-line">
-  <span class="cmd-prompt">guest@tomer-site:~$</span>
+  <span class="cmd-prompt">guest@tomer:~$</span>
   <span class="cmd-command">ls</span>
   <span class="cmd-args">-la ~/cv/</span>
 </div>
@@ -38,7 +38,7 @@ title: Home
 </div>
 
 <div class="command-line">
-  <span class="cmd-prompt">guest@tomer-site:~$</span>
+  <span class="cmd-prompt">guest@tomer:~$</span>
   <span class="cmd-command">ls</span>
   <span class="cmd-args">-la ~/thesis/</span>
 </div>
@@ -54,7 +54,7 @@ title: Home
 </div>
 
 <div class="command-line">
-  <span class="cmd-prompt">guest@tomer-site:~$</span>
+  <span class="cmd-prompt">guest@tomer:~$</span>
   <span class="cmd-command">grep</span>
   <span class="cmd-args">"title" ~/publications/*.bib</span>
 </div>
@@ -90,7 +90,7 @@ title: Home
 </div>
 
 <div class="command-line">
-  <span class="cmd-prompt">guest@tomer-site:~$</span>
+  <span class="cmd-prompt">guest@tomer:~$</span>
   <span class="cmd-command">ls</span>
   <span class="cmd-args">-lat ~/blog_posts/ | head -n 3</span>
 </div>
@@ -116,7 +116,7 @@ title: Home
 </div>
 
 <div class="command-line">
-  <span class="cmd-prompt">guest@tomer-site:~$</span>
+  <span class="cmd-prompt">guest@tomer:~$</span>
   <span class="cmd-command">./contact.sh</span>
 </div>
 
