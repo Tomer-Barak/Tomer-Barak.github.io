@@ -1,0 +1,351 @@
+:root {
+  --bg-color: #0a0e14;
+  --terminal-bg: #1a1e24;
+  --text-color: #b3b1ad;
+  --text-bright: #e6e1cf;
+  --accent-green: #7fd962;
+  --accent-cyan: #39bae6;
+  --accent-yellow: #ffb454;
+  --accent-orange: #ff8f40;
+  --accent-red: #f07178;
+  --accent-purple: #c586c0;
+  --comment-color: #626a73;
+  --border-color: #2d3640;
+  --header-bg: #2d3640;
+}
+
+[data-theme="light"] {
+  --bg-color: #e8e8e8;
+  --terminal-bg: #fafafa;
+  --text-color: #4a4a4a;
+  --text-bright: #1a1a1a;
+  --accent-green: #2d8a2d;
+  --accent-cyan: #0969da;
+  --accent-yellow: #9a6700;
+  --accent-orange: #bc4c00;
+  --accent-red: #cf222e;
+  --accent-purple: #8250df;
+  --comment-color: #6e7781;
+  --border-color: #d0d7de;
+  --header-bg: #d0d7de;
+}
+
+::selection {
+  background: var(--accent-green);
+  color: var(--bg-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.terminal {
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--terminal-bg);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.terminal-header {
+  background-color: var(--header-bg);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btn-close {
+  background-color: #ff5f56;
+}
+
+.btn-minimize {
+  background-color: #ffbd2e;
+}
+
+.btn-maximize {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--comment-color);
+  font-family: 'Fira Code', monospace;
+}
+
+.terminal-nav {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.prompt {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.prompt::after {
+  content: " ➜ ";
+  color: var(--accent-purple);
+}
+
+.nav-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--accent-yellow);
+}
+
+.nav-link.active {
+  color: var(--accent-yellow);
+}
+
+/* Make links looking more like params or commands */
+.nav-link::before {
+  content: "./";
+  color: var(--comment-color);
+}
+
+.terminal-body {
+  padding: 2rem 1.5rem;
+  min-height: 400px;
+}
+
+/* Typography elements inside terminal body */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-bright);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: var(--accent-yellow);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--accent-cyan);
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-yellow);
+}
+
+p {
+  margin-bottom: 1.2rem;
+  color: var(--text-color);
+}
+
+blockquote {
+  border-left: 3px solid var(--accent-purple);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--comment-color);
+  font-style: italic;
+}
+
+code {
+  background-color: var(--bg-color);
+  color: var(--accent-orange);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+pre code {
+  color: var(--text-color);
+  background-color: transparent;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+li::marker {
+  color: var(--accent-orange);
+}
+
+/* Utility classes for terminal look */
+.command-line {
+  margin-bottom: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.cmd-prompt {
+  color: var(--accent-green);
+  margin-right: 0.5rem;
+}
+
+.cmd-command {
+  color: var(--accent-yellow);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.cmd-args {
+  color: var(--text-bright);
+}
+
+.cmd-output {
+  margin-bottom: 2rem;
+  padding-left: 0;
+  /* Changed from indentation to full width usually */
+}
+
+/* Footer elements */
+.terminal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--comment-color);
+  font-size: 0.85rem;
+}
+
+.footer-links i {
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover i {
+  color: var(--accent-green);
+}
+
+/* Animations */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: var(--accent-green);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* Special sections */
+.file-header {
+  color: var(--comment-color);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Interactive Input */
+#cmd-input {
+  background: transparent;
+  border: none;
+  color: var(--text-bright);
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  outline: none;
+  flex: 1;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .terminal-nav {
+    justify-content: center;
+  }
+
+  .nav-left {
+    justify-content: center;
+  }
+}

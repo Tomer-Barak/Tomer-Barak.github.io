@@ -1,190 +1,26 @@
 ---
 layout: default
 ---
-<section>
-    <div class="container">
-        <article class="blog-post project-post">
-            <header class="post-header">
-                <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
-                <h1 class="post-title">{{ page.title }}</h1>
-                <div class="post-project">
-                    <span class="project-badge">
-                        <i class="fas fa-{{ site.projects | where: 'title', page.project | map: 'icon' | first | default: 'folder' }}"></i>
-                        Project: <a href="{{ site.baseurl }}/projects/{{ page.project_slug }}/">{{ page.project }}</a>
-                    </span>
-                </div>
-                <div class="post-tags">
-                    {% for tag in page.tags %}
-                    <span class="post-tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-            </header>
-            
-            {% if page.image and page.image != "" %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="post-featured-img">
-            {% endif %}
-            
-            <div class="post-content">
-                {{ content }}
-            </div>
-            
-            <!-- Share buttons -->
-            <div class="post-share">
-                <h3>Share this article:</h3>
-                <div class="share-buttons">
-                    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}&via={{ site.twitter.username }}" target="_blank" aria-label="Share on Twitter" class="share-btn twitter">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url_encode }}&title={{ page.title | url_encode }}&summary={{ page.description | default: page.excerpt | strip_html | truncatewords: 30 | url_encode }}" target="_blank" aria-label="Share on LinkedIn" class="share-btn linkedin">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:?subject={{ page.title | url_encode }}&body=Check out this article: {{ site.url }}{{ page.url | url_encode }}" aria-label="Share by Email" class="share-btn email">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                </div>
-            </div>
-            
-            {% if site.author %}
-            <div class="author-section">
-                <div class="author-img">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="author-info">
-                    <h3 class="author-name">{{ site.author.name }}</h3>
-                    <p class="author-bio">{{ site.author.bio }}</p>
-                    <div class="author-links">
-                        {% if site.author.twitter %}
-                        <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-                        {% endif %}
-                        {% if site.author.github %}
-                        <a href="https://github.com/{{ site.author.github }}" target="_blank"><i class="fab fa-github"></i></a>
-                        {% endif %}
-                        {% if site.author.scholar %}
-                        <a href="{{ site.author.scholar }}" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            
-            <div class="navigation-links">
-                <div class="back-to-project">
-                    <a href="{{ site.baseurl }}/projects/{{ page.project_slug }}/" class="btn"><i class="fas fa-arrow-left"></i> Back to Project</a>
-                </div>
-                <div class="back-to-insights">
-                    <a href="{{ site.baseurl }}/projects/{{ page.project_slug }}/insights/" class="btn"><i class="fas fa-lightbulb"></i> All Insights</a>
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
 
-<style>
-    .project-badge {
-        display: inline-flex;
-        align-items: center;
-        background-color: #f0f8ff;
-        padding: 5px 12px;
-        border-radius: 20px;
-        margin-bottom: 15px;
-        border: 1px solid var(--primary-color);
-        color: var(--primary-color);
-    }
-    
-    .project-badge i {
-        margin-right: 8px;
-    }
-    
-    .project-badge a {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-    }
-    
-    .project-badge a:hover {
-        text-decoration: underline;
-    }
-    
-    .navigation-links {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    
-    /* Specific styling for author social links */
-    .author-links a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background-color: var(--primary-color);
-        color: white;
-        margin-right: 10px;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.3s;
-    }
-    
-    .author-links a i {
-        font-size: 18px;
-    }
-    
-    .author-links a:hover {
-        background-color: var(--accent-color);
-        transform: translateY(-3px);
-    }
-    
-    /* Share button styling */
-    .post-share {
-        margin-top: 40px;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-    }
-    
-    .post-share h3 {
-        margin-bottom: 15px;
-        font-size: 1.2rem;
-        color: var(--secondary-color);
-    }
-    
-    .share-buttons {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-    
-    .share-btn {
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 15px;
-        border-radius: 4px;
-        color: white;
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: opacity 0.3s;
-    }
-    
-    .share-btn:hover {
-        opacity: 0.9;
-    }
-    
-    .share-btn i {
-        margin-right: 8px;
-    }
-    
-    .twitter {
-        background-color: #1DA1F2;
-    }
-    
-    .linkedin {
-        background-color: #0077B5;
-    }
-    
-    .email {
-        background-color: #666;
-    }
-</style>
+<div class="command-line">
+    <span class="cmd-prompt">guest@tomer-site:~$</span>
+    <span class="cmd-command">cat</span>
+    <span class="cmd-args">~/projects/{{ page.project_slug }}/insights/{{ page.title | slugify }}.md</span>
+</div>
+
+<div class="cmd-output">
+    <div class="file-header"
+        style="color: var(--comment-color); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+        # Project: {{ page.project }} <br>
+        # Date: {{ page.date | date: "%Y-%m-%d" }}
+    </div>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <div class="post-footer" style="margin-top: 3rem; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+        <a href="{{ site.baseurl }}/projects/{{ page.project_slug }}/" style="color: var(--accent-yellow);">cd ..</a>
+        <span style="color: var(--comment-color);">(Back to project)</span>
+    </div>
+</div>

@@ -1,155 +1,29 @@
 ---
 layout: default
 ---
-<section id="projects">
-    <div class="container">
-        <h2 class="section-title">{{ page.section_title | default: "My Projects" }}</h2>
-        
-        <!-- All Projects -->
-        <div id="all" class="tab-content active">
-            <div class="projects-container">
-                {% assign all_projects = site.projects | sort: 'order' %}
-                {% for project in all_projects %}
-                <div class="project-card" id="project-{{ forloop.index }}">
-                    <div class="project-img">
-                        <i class="fas fa-{{ project.icon | default: 'code' }}"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">{{ project.title }}</h3>
-                        <p class="project-text">
-                            {% if project.subtitle %}
-                                {{ project.subtitle | truncatewords: 40 }}
-                            {% else %}
-                                {{ project.excerpt | strip_html | truncatewords: 40 }}
-                            {% endif %}
-                        </p>
-                        {% if project.features %}
-                        <ul class="project-features">
-                            {% for feature in project.features %}
-                            <li>{{ feature }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        <div class="project-links">
-                            <a href="{{ site.baseurl }}/projects/{{ project.slug }}/" class="project-btn">Learn More</a>
-                            {% if project.github %}
-                            <a href="{{ project.github }}" target="_blank" class="project-btn"><i class="fab fa-github"></i> View on GitHub</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+
+<div class="command-line">
+    <span class="cmd-prompt">guest@tomer-site:~$</span>
+    <span class="cmd-command">ls</span>
+    <span class="cmd-args">-la ~/projects/</span>
+</div>
+
+<div class="cmd-output">
+    <div class="file-header">total {{ site.projects.size }}</div>
+
+    {% assign all_projects = site.projects | sort: 'order' %}
+    {% for project in all_projects %}
+    <div class="file-entry" style="margin-bottom: 0.5rem;">
+        <span style="color: var(--accent-purple);">drwxr-xr-x</span>
+        <span style="color: var(--text-color);">1 tomer</span>
+        <span style="color: var(--accent-orange);">4096</span>
+        <span style="color: var(--text-color);">{{ "now" | date: "%b %d %H:%M" }}</span>
+        <a href="{{ site.baseurl }}/projects/{{ project.slug }}/"
+            style="color: var(--accent-cyan); font-weight: bold;">{{ project.title | slugify }}/</a>
+
+        <div style="padding-left: 1rem; color: var(--comment-color); font-size: 0.9em;">
+            # {{ project.title }}: {{ project.excerpt | strip_html | truncatewords: 20 }}
         </div>
     </div>
-</section>
-
-<style>
-    /* Project Cards Styling */
-    .projects-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-    }
-    
-    .project-card {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        overflow: hidden;
-        width: 100%;
-        max-width: 400px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        display: flex;
-        flex-direction: column;
-        height: 440px; /* Increased height for all cards */
-    }
-    
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    
-    .project-img {
-        height: 120px;
-        background-color: var(--primary-color);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0; /* Prevent the image from shrinking */
-    }
-    
-    .project-img i {
-        font-size: 3rem;
-    }
-    
-    .project-content {
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1; /* Allow content to grow and fill available space */
-        min-height: 0;
-    }
-    
-    .project-title {
-        color: var(--secondary-color);
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-size: 1.4rem;
-        flex-shrink: 0; /* Prevent title from shrinking */
-    }
-    
-    .project-text {
-        color: #555;
-        margin-bottom: 20px;
-        line-height: 1.5;
-        flex-grow: 0;
-        flex-shrink: 1;
-        overflow: hidden; /* Hide overflow text */
-        display: -webkit-box;
-        -webkit-line-clamp: 5; /* Limit to ~5 lines */
-        line-clamp: 5; /* Standard property */
-        -webkit-box-orient: vertical;
-        min-height: 0;
-    }
-    
-    .project-features {
-        list-style-type: disc;
-        padding-left: 20px;
-        margin-bottom: 20px;
-        flex-shrink: 0; /* Prevent features from shrinking */
-    }
-    
-    .project-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: auto; /* Push links to bottom */
-        flex-shrink: 0; /* Prevent links from shrinking */
-    }
-    
-    .project-btn {
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 16px;
-        background-color: var(--primary-color);
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: 500;
-        border: none;
-        cursor: pointer;
-        font-size: 0.9rem;
-        transition: background-color 0.2s;
-    }
-    
-    .project-btn i {
-        margin-right: 6px;
-    }
-    
-    .project-btn:hover {
-        background-color: var(--secondary-color);
-    }
-</style>
+    {% endfor %}
+</div>

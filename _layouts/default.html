@@ -1,372 +1,88 @@
----
----
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en_US' }}">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description"
     content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
-  <meta name="author" content="{{ site.author.name }}">
 
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
-  <meta property="og:description"
-    content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:image"
-    content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:site_name" content="{{ site.title }}">
-
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="{{ site.twitter.card }}">
-  <meta name="twitter:site" content="@{{ site.twitter.username }}">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
-  <meta name="twitter:description"
-    content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image"
-    content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-
-  <!-- Stylesheets and icons -->
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/styles.css">
 
-  <!-- MathJax for rendering mathematics -->
+  <!-- Terminal CSS -->
+  <link rel="stylesheet" href="/assets/css/terminal.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- SEO / Social Metadata -->
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+
+  <!-- MathJax -->
   <script type="text/javascript">
     window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
     };
   </script>
   <script type="text/javascript" id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-
-  <!-- Schema.org structured data for a researcher -->
-  <!-- Add this to the head section of your default.html layout -->
-
-  <!-- Structured data for Scholar -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "{{ site.url }}/#author",
-      "name": "{{ site.author.name }}",
-      "givenName": "Tomer",
-      "familyName": "Barak",
-      "url": "{{ site.url }}",
-      "image": "{{ site.url }}{{ site.logo }}",
-      "jobTitle": "Ph.D., Automated Science Researcher",
-      "email": "{{ site.author.email }}",
-      "telephone": "",
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "The Hebrew University of Jerusalem",
-        "url": "https://www.huji.ac.il/"
-      },
-      "affiliation": {
-        "@type": "EducationalOrganization",
-        "name": "Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem",
-        "url": "https://elsc.huji.ac.il/"
-      },
-      "worksFor": {
-        "@type": "EducationalOrganization",
-        "name": "Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem",
-        "url": "https://elsc.huji.ac.il/"
-      },
-      "knowsAbout": ["Automated Science", "Fluid Intelligence", "Test-Time Adaptation", "Neural Networks", "AI-led Research", "Cognitive Science", "Abstract Reasoning", "AI-Archive"],
-      "sameAs": [
-        "https://twitter.com/{{ site.author.twitter }}",
-        "https://github.com/{{ site.author.github }}",
-        "{{ site.author.scholar }}"
-      ]
-    }
-    </script>
-
-  <!-- Structured data for Website -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "{{ site.url }}/#website",
-      "url": "{{ site.url }}",
-      "name": "{{ site.title }}",
-      "description": "{{ site.description }}",
-      "publisher": {
-        "@id": "{{ site.url }}/#author"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "{{ site.url }}/search.html?query={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
-  <!-- Structured data for Organization -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ResearchOrganization",
-      "@id": "{{ site.url }}/#organization",
-      "name": "Tomer Barak Research",
-      "url": "{{ site.url }}",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "{{ site.url }}{{ site.logo }}"
-      },
-      "member": {
-        "@id": "{{ site.url }}/#author"
-      }
-    }
-    </script>
-
-  {% if page.layout == 'post' %}
-  <!-- Structured data for BlogPosting -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ site.url }}{{ page.url }}"
-      },
-      "headline": "{{ page.title }}",
-      "image": "{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}",
-      "datePublished": "{{ page.date | date_to_xmlschema }}",
-      "dateModified": "{{ page.date | date_to_xmlschema }}",
-      "author": {
-        "@id": "{{ site.url }}/#author"
-      },
-      "publisher": {
-        "@id": "{{ site.url }}/#organization"
-      },
-      "description": "{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | truncatewords: 30 }}{% endif %}",
-      "keywords": "{% if page.keywords %}{{ page.keywords }}{% else %}{{ page.tags | join: ', ' }}{% endif %}"
-    }
-    </script>
-  {% endif %}
-
-  {% if page.layout == 'default' and page.url == '/' %}
-  <!-- Structured data for collectionPage -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {% for post in site.posts limit:3 %}
-          {
-            "@type": "ListItem",
-            "position": {{ forloop.index }},
-            "url": "{{ site.url }}{{ post.url }}"
-          }{% unless forloop.last %},{% endunless %}
-          {% endfor %}
-        ]
-      }
-    }
-    </script>
-  {% endif %}
-
-  {% if page.layout == 'projects' %}
-  <!-- Structured data for Project collectionPage -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {% for project in site.projects %}
-          {
-            "@type": "ListItem",
-            "position": {{ forloop.index }},
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "{{ project.title }}",
-              "description": "{{ project.excerpt | strip_html | truncatewords: 30 }}",
-              "url": "{{ site.url }}{{ project.url }}"
-            }
-          }{% unless forloop.last %},{% endunless %}
-          {% endfor %}
-        ]
-      }
-    }
-    </script>
-  {% endif %}
-
-  {% if page.title == 'Publications' or page.url contains 'publications' or page.url == '/' %}
-  <!-- Structured data for Publications -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "ScholarlyArticle",
-            "headline": "Is it me, or is A larger than B: Uncovering the determinants of relational cognitive dissonance resolution",
-            "author": {
-              "@id": "{{ site.url }}/#author"
-            },
-            "publisher": "arXiv",
-            "datePublished": "2024-11",
-            "url": "https://arxiv.org/abs/2411.05809",
-            "description": "We studied how theories change in response to observations that contradict them. Our ANN's choice of resolution depended on the inconsistency's magnitude, highlighting flexibility in forming descriptions."
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "ScholarlyArticle",
-            "headline": "Untrained neural networks can demonstrate memorization-independent abstract reasoning",
-            "author": {
-              "@id": "{{ site.url }}/#author"
-            },
-            "publisher": "Scientific Reports",
-            "datePublished": "2024-11",
-            "url": "https://www.nature.com/articles/s41598-024-78530-z",
-            "description": "We tested an ANN's ability to extract a predictably changing feature from image sequences with various changing features. The ANN performed well on intelligence tests requiring this ability, validating its use in modeling the extraction of abstract theories."
-          }
-        }
-      ]
-    }
-    </script>
-  {% endif %}
-
-  {% if page.layout == 'post' %}
-  <!-- Additional structured data for blog posts -->
-  <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "{{ page.title }}",
-        "image": "{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.logo }}{% endif %}",
-        "datePublished": "{{ page.date | date_to_xmlschema }}",
-        "dateModified": "{{ page.date | date_to_xmlschema }}",
-        "author": {
-            "@type": "Person",
-            "name": "{{ site.author.name }}",
-            "url": "{{ site.url }}"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "{{ site.title }}",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "{{ site.url }}{{ site.logo }}"
-            }
-        },
-        "description": "{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | truncatewords: 30 }}{% endif %}"
-    }
-    </script>
-  {% endif %}
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="profile-container">
-        <img src="/assets/images/profile.jpg" alt="Tomer Barak" class="profile-img">
-        <h1 class="header-title">{{ page.header_title | default: page.title }}</h1>
-        {% if page.header_subtitle %}
-        <p class="header-subtitle">{{ page.header_subtitle }}</p>
-        {% endif %}
+  <div class="terminal">
+    <!-- Header / Window Controls -->
+    <div class="terminal-header">
+      <div class="terminal-buttons">
+        <!-- Linux-style or Empty -->
+      </div>
+      <div class="terminal-title">tomer@barak: ~</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="terminal-nav">
+      <div class="nav-left">
+        <span class="prompt">guest@tomer-site</span>
+        <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">home</a>
+        <a href="/projects/" class="nav-link {% if page.url contains 'projects' %}active{% endif %}">projects</a>
+        <a href="/blog/" class="nav-link {% if page.url contains 'blog' %}active{% endif %}">blog</a>
+        <!-- <a href="/#contact" class="nav-link">contact.sh</a> -->
       </div>
     </div>
-  </header>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="container nav-container">
-      <a href="/" class="logo">TB</a>
-      <div class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
+    <!-- Main Content -->
+    <div class="terminal-body">
+      {{ content }}
+
+      <div id="terminal-input-line" class="command-line" style="position: relative;">
+        <span class="cmd-prompt">guest@tomer-site:~$</span>
+        <span id="cmd-display"></span><span class="cursor">&nbsp;</span>
+        <input type="text" id="cmd-input" autocomplete="off" spellcheck="false"
+          style="opacity: 0; position: absolute; bottom: 0; left: 0; height: 1px; width: 1px; caret-color: transparent;">
       </div>
-      <ul class="nav-links" id="navLinks">
-        <!-- Internal links (sections on homepage) -->
-        <li><a href="/" class="internal-link">Home</a></li>
-        <li><a href="/#about" class="internal-link">About</a></li>
-        <li><a href="/#publications" class="internal-link">Publications</a></li>
-        <li><a href="/#contact" class="internal-link">Contact</a></li>
-
-        <!-- Visual separator -->
-        <li class="nav-separator">|</li>
-
-        <!-- External page links -->
-        <li><a href="/projects/" class="external-link">Projects</a></li>
-        <li><a href="/blog/" class="external-link">Blog</a></li>
-      </ul>
     </div>
-  </nav>
 
-  <main>
-    {{ content }}
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
+    <!-- Footer -->
+    <div class="terminal-footer">
+      <div class="footer-typing-row">
+        <span>&copy; {{ site.time | date: '%Y' }} Tomer Barak. All rights reserved.</span>
+      </div>
       <div class="footer-links">
-        <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" aria-label="Twitter Profile"><i
-            class="fab fa-twitter"></i></a>
-        <a href="https://github.com/{{ site.author.github }}" target="_blank" aria-label="GitHub Profile"><i
-            class="fab fa-github"></i></a>
-        <a href="{{ site.author.scholar }}" target="_blank" aria-label="Google Scholar Profile"><i
-            class="fas fa-graduation-cap"></i></a>
-        <a href="https://ai-archive.io" target="_blank" aria-label="AI-Archive"><i class="fas fa-flask"></i></a>
+        <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/{{ site.author.github }}" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="{{ site.author.scholar }}" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://ai-archive.io" target="_blank"><i class="fas fa-flask"></i></a>
       </div>
-      <p class="footer-text">© <span id="currentYear"></span> {{ site.author.name }}. All rights reserved.</p>
     </div>
-  </footer>
+  </div>
 
-  <script>
-    // Mobile menu toggle
-    document.getElementById('menuToggle').addEventListener('click', function () {
-      document.getElementById('navLinks').classList.toggle('active');
-    });
-
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', function () {
-        document.getElementById('navLinks').classList.remove('active');
-      });
-    });
-
-    // Current year for footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
-
-  {% if page.extra_js %}
-  <script>
-    { { page.extra_js } }
-  </script>
-  {% endif %}
+  <!-- Interactive Terminal Logic -->
+  <script src="/assets/js/interactive.js"></script>
 </body>
 
 </html>

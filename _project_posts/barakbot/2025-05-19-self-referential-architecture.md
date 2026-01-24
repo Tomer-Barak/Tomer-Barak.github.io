@@ -7,7 +7,7 @@ project_slug: "barakbot"
 tags: [architecture, design, self-reference, multi-agent]
 ---
 
-# Building a self-referential architecture: Sevelopment notes
+# Building a self-referential architecture: Development notes
 
 This insight post dives deeper into the implementation details and theoretical foundations of BarakBot's self-referential architecture. This is intended for those interested in the technical aspects of multi-agent systems and the philosophy behind self-referential AI designs.
 

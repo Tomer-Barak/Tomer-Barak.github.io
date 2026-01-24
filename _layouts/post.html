@@ -1,182 +1,36 @@
 ---
 layout: default
 ---
-<section>
-    <div class="container">
-        <article class="blog-post">
-            <header class="post-header">
-                <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
-                <h1 class="post-title">{{ page.title }}</h1>
-                <div class="post-tags">
-                    {% for tag in page.tags %}
-                    <span class="post-tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-            </header>
-            
-            {% if page.image and page.image != "" %}
-            {% assign image_exists = true %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="post-featured-img">
-            {% endif %}
-            
-            <div class="post-content">
-                {{ content }}
-            </div>
-            
-            <!-- Share buttons -->
-            <div class="post-share">
-                <h3>Share this article:</h3>
-                <div class="share-buttons">
-                    <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}&via={{ site.twitter.username }}" target="_blank" aria-label="Share on Twitter" class="share-btn twitter">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url | url_encode }}&title={{ page.title | url_encode }}&summary={{ page.description | default: page.excerpt | strip_html | truncatewords: 30 | url_encode }}" target="_blank" aria-label="Share on LinkedIn" class="share-btn linkedin">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:?subject={{ page.title | url_encode }}&body=Check out this article: {{ site.url }}{{ page.url | url_encode }}" aria-label="Share by Email" class="share-btn email">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Comments section -->
-            <div class="post-comments">
-                <h3>Comments</h3>
-                <div id="disqus_thread"></div>
-            </div>
-            
-            {% if site.author %}
-            <div class="author-section">
-                <div class="author-img">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="author-info">
-                    <h3 class="author-name">{{ site.author.name }}</h3>
-                    <p class="author-bio">{{ site.author.bio }}</p>
-                    <div class="author-links">
-                        {% if site.author.twitter %}
-                        <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-                        {% endif %}
-                        {% if site.author.github %}
-                        <a href="https://github.com/{{ site.author.github }}" target="_blank"><i class="fab fa-github"></i></a>
-                        {% endif %}
-                        {% if site.author.scholar %}
-                        <a href="{{ site.author.scholar }}" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            
-            {% if site.related_posts.size > 0 %}
-            <div class="related-posts">
-                <h2>Related Posts</h2>
-                <div class="related-posts-list">
-                    {% for post in site.related_posts limit:3 %}
-                    <article class="related-post {% unless post.image and post.image != "" %}no-image{% endunless %}">
-                        {% if post.image and post.image != "" %}
-                        <div class="related-post-img" style="background-image: url('{{ post.image }}');"></div>
-                        {% endif %}
-                        <div class="related-post-content">
-                            <h3 class="related-post-title">
-                                <a href="{{ post.url }}">{{ post.title }}</a>
-                            </h3>
-                            <p class="related-post-excerpt">
-                                {{ post.excerpt | strip_html | truncatewords: 20 }}
-                            </p>
-                        </div>
-                    </article>
-                    {% endfor %}
-                </div>
-            </div>
-            {% endif %}
-        </article>
+
+<div class="command-line">
+    <span class="cmd-prompt">guest@tomer-site:~$</span>
+    <span class="cmd-command">cat</span>
+    <span class="cmd-args">~/blog_posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | slugify }}.md</span>
+</div>
+
+<div class="cmd-output">
+    <div class="file-header"
+        style="border-bottom: 1px solid var(--border-color); margin-bottom: 1rem; padding-bottom: 0.5rem;">
+        <span style="color: var(--comment-color);"># Title: {{ page.title }}</span><br>
+        <span style="color: var(--comment-color);"># Date: {{ page.date | date: "%B %d, %Y" }}</span><br>
+        {% if page.tags %}
+        <span style="color: var(--comment-color);"># Tags: {{ page.tags | join: ", " }}</span>
+        {% endif %}
     </div>
-</section>
 
-<style>
-    /* Additional CSS for share buttons */
-    .post-share {
-        margin-top: 40px;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-    }
-    
-    .post-share h3 {
-        margin-bottom: 15px;
-        font-size: 1.2rem;
-        color: var(--secondary-color);
-    }
-    
-    .share-buttons {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-    
-    .share-btn {
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 15px;
-        border-radius: 4px;
-        color: white;
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: opacity 0.3s;
-    }
-    
-    .share-btn:hover {
-        opacity: 0.9;
-    }
-    
-    .share-btn i {
-        margin-right: 8px;
-    }
-    
-    .twitter {
-        background-color: #1DA1F2;
-    }
-    
-    .linkedin {
-        background-color: #0077B5;
-    }
-    
-    .email {
-        background-color: #666;
-    }
-    
-    /* Comments section styling */
-    .post-comments {
-        margin-top: 40px;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-    }
-    
-    .post-comments h3 {
-        margin-bottom: 20px;
-        font-size: 1.2rem;
-        color: var(--secondary-color);
-    }
-    
-    #disqus_thread {
-        width: 100%;
-        margin-top: 15px;
-    }
-</style>
+    <div class="post-content">
+        {{ content }}
+    </div>
 
-<!-- Disqus script -->
-<script>
-    var disqus_config = function () {
-        this.page.url = "{{ site.url }}{{ page.url }}";
-        this.page.identifier = "{{ page.url }}";
-    };
-    (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://tomer-barak.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div class="post-footer" style="margin-top: 3rem; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+        <p style="color: var(--comment-color);"># End of file</p>
+
+        <div class="share-buttons">
+            <span style="color: var(--accent-green);">Share via:</span>
+            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url | url_encode }}"
+                target="_blank">[Twitter]</a>
+            <a
+                href="mailto:?subject={{ page.title | url_encode }}&body={{ site.url }}{{ page.url | url_encode }}">[Email]</a>
+        </div>
+    </div>
+</div>

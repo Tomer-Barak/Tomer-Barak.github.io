@@ -48,10 +48,10 @@ To work with this website locally, you'll need:
 
 3. Run the site locally:
    ```
-   bundle exec jekyll serve
+   ./bin/jekyll serve
    ```
 
-4. View the site at `http://localhost:4000`
+4. View the site at `http://localhost:4001`
 
 ### Adding Content
 

@@ -6,43 +6,45 @@ layout: default
         <div class="insights-header">
             <h1>{{ page.title }}</h1>
             <p class="insights-description">{{ page.description }}</p>
-            
+
             <div class="back-to-project">
-                <a href="{{ site.baseurl }}/projects/{{ page.project_slug }}/" class="btn"><i class="fas fa-arrow-left"></i> Back to Project</a>
+                <a href="{{ site.baseurl }}/projects/{{ page.project_slug }}/" class="btn"><i
+                        class="fas fa-arrow-left"></i> Back to Project</a>
             </div>
         </div>
 
         <div class="insights-grid">
-            {% assign project_posts = site.project_posts | where: 'project_slug', page.project_slug | sort: 'date' | reverse %}
+            {% assign project_posts = site.project_posts | where: 'project_slug', page.project_slug | sort: 'date' |
+            reverse %}
             {% if project_posts.size > 0 %}
-                {% for post in project_posts %}
-                <div class="insight-card">
-                    <div class="insight-date">{{ post.date | date: "%B %d, %Y" }}</div>
-                    <h2 class="insight-title">{{ post.title }}</h2>
-                    
-                    {% if post.image and post.image != "" %}
-                    <div class="insight-image">
-                        <img src="{{ post.image }}" alt="{{ post.title }}">
-                    </div>
-                    {% endif %}
-                    
-                    <div class="insight-excerpt">
-                        {{ post.excerpt | strip_html | truncatewords: 30 }}
-                    </div>
-                    
-                    <div class="insight-tags">
-                        {% for tag in post.tags %}
-                        <span class="insight-tag">{{ tag }}</span>
-                        {% endfor %}
-                    </div>
-                    
-                    <a href="{{ post.url }}" class="read-more-btn">Read More</a>
+            {% for post in project_posts %}
+            <div class="insight-card">
+                <div class="insight-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                <h2 class="insight-title">{{ post.title }}</h2>
+
+                {% if post.image and post.image != "" %}
+                <div class="insight-image">
+                    <img src="{{ post.image }}" alt="{{ post.title }}">
                 </div>
-                {% endfor %}
+                {% endif %}
+
+                <div class="insight-excerpt">
+                    {{ post.excerpt | strip_html | truncatewords: 30 }}
+                </div>
+
+                <div class="insight-tags">
+                    {% for tag in post.tags %}
+                    <span class="insight-tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+
+                <a href="{{ post.url }}" class="read-more-btn">Read More</a>
+            </div>
+            {% endfor %}
             {% else %}
-                <div class="no-insights">
-                    <p>No insights have been published for this project yet. Check back soon!</p>
-                </div>
+            <div class="no-insights">
+                <p>No insights have been published for this project yet. Check back soon!</p>
+            </div>
             {% endif %}
         </div>
     </div>
@@ -51,110 +53,110 @@ layout: default
 <style>
     .insights-header {
         margin-bottom: 40px;
-        text-align: center;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
     }
-    
+
+    .insights-header h1 {
+        color: var(--accent-yellow);
+        font-family: 'Fira Code', monospace;
+        border-bottom: none;
+    }
+
     .insights-description {
         max-width: 800px;
-        margin: 0 auto 30px;
-        color: #666;
+        margin: 0 0 20px;
+        color: var(--text-color);
         font-size: 1.1rem;
+        font-family: 'Fira Code', monospace;
     }
-    
+
     .insights-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
+        gap: 20px;
     }
-    
+
     .insight-card {
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        background-color: var(--terminal-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
         overflow: hidden;
-        transition: transform 0.3s, box-shadow 0.3s;
+        transition: border-color 0.3s;
         display: flex;
         flex-direction: column;
         padding: 20px;
     }
-    
+
     .insight-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        border-color: var(--accent-cyan);
     }
-    
+
     .insight-date {
-        color: #666;
-        font-size: 0.9rem;
+        color: var(--comment-color);
+        font-size: 0.85rem;
         margin-bottom: 10px;
+        font-family: 'Fira Code', monospace;
     }
-    
+
     .insight-title {
-        color: var(--secondary-color);
+        color: var(--text-bright);
         margin-top: 0;
         margin-bottom: 15px;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        font-family: 'Fira Code', monospace;
     }
-    
-    .insight-image {
-        margin-bottom: 15px;
-    }
-    
-    .insight-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 4px;
-    }
-    
+
     .insight-excerpt {
         flex-grow: 1;
         margin-bottom: 15px;
-        color: #333;
+        color: var(--text-color);
+        font-size: 0.95rem;
     }
-    
+
     .insight-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 8px;
         margin-bottom: 15px;
     }
-    
+
     .insight-tag {
-        background-color: #f0f8ff;
-        color: var(--primary-color);
-        padding: 2px 8px;
-        border-radius: 12px;
+        color: var(--accent-purple);
         font-size: 0.8rem;
     }
-    
+
     .read-more-btn {
         display: inline-block;
-        padding: 8px 15px;
-        background-color: var(--primary-color);
-        color: white;
-        border-radius: 4px;
+        color: var(--accent-green);
         text-decoration: none;
-        font-weight: 500;
+        font-weight: bold;
         align-self: flex-start;
-        transition: background-color 0.3s;
     }
-    
+
     .read-more-btn:hover {
-        background-color: var(--primary-color-dark);
+        text-decoration: underline;
+        color: var(--accent-yellow);
     }
-    
+
     .no-insights {
         grid-column: 1 / -1;
         text-align: center;
         padding: 40px 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
+        color: var(--comment-color);
     }
-    
-    .back-to-project {
-        margin: 20px 0;
+
+    .back-to-project a {
+        color: var(--accent-cyan);
+        text-decoration: none;
     }
-    
+
+    .back-to-project a:hover {
+        color: var(--accent-yellow);
+        text-decoration: underline;
+    }
+
     @media (max-width: 768px) {
         .insights-grid {
             grid-template-columns: 1fr;

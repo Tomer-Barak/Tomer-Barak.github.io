@@ -1,0 +1,89 @@
+---
+layout: null
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kernel Panic - 404</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .panic-line {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="console">
+        <span class="panic-line">[ 0.000000] Linux version 5.15.0-generic (tomer@barak-lab) (gcc version 11.2.0) #42 SMP
+            Fri Jan 24 2025</span>
+        <span class="panic-line">[ 0.000123] Command line: BOOT_IMAGE=/boot/vmlinuz-5.15.0-generic root=UUID=dead-beef
+            ro quiet splash</span>
+        <span class="panic-line">[ 0.004561] KERNEL PANIC: VFS: Unable to mount root fs on unknown-block(0,0)</span>
+        <span class="panic-line">[ 0.004612] Pid: 1, comm: swapper/0 Not tainted 5.15.0-generic #42</span>
+        <span class="panic-line">[ 0.004663] Call Trace:</span>
+        <span class="panic-line">[ 0.004714] [&lt;ffffffff817e1e6b&gt;] panic+0xc8/0x20d</span>
+        <span class="panic-line">[ 0.004765] [&lt;ffffffff817e1e6b&gt;] ? printk+0x58/0x73</span>
+        <span class="panic-line">[ 0.004816] [&lt;ffffffff81234567&gt;] mount_block_root+0x2a/0x3d</span>
+        <span class="panic-line">[ 0.004867] [&lt;ffffffff81234567&gt;] mount_root+0x4b/0x5e</span>
+        <span class="panic-line">[ 0.004918] [&lt;ffffffff81234567&gt;] prepare_namespace+0x13c/0x17d</span>
+        <span class="panic-line">[ 0.004969] [&lt;ffffffff81234567&gt;] kernel_init_freeable+0x1f3/0x21c</span>
+        <span class="panic-line">[ 0.005020] [&lt;ffffffff81234567&gt;] ? rest_init+0x80/0x80</span>
+        <span class="panic-line">[ 0.005071] [&lt;ffffffff81234567&gt;] kernel_init+0xe/0xf0</span>
+        <span class="panic-line">[ 0.005122] [&lt;ffffffff81234567&gt;] ret_from_fork+0x35/0x40</span>
+        <span class="panic-line"></span>
+        <span class="panic-line" style="color: #ff5555;">[ FATAL ] Error: 404_PAGE_NOT_FOUND_EXCEPTION</span>
+        <span class="panic-line">Meaning: The requested URL was not found on this server.</span>
+        <span class="panic-line">Possible causes:</span>
+        <span class="panic-line"> - Typo in the URL (PEBKAC error)</span>
+        <span class="panic-line"> - Content moved or deleted</span>
+        <span class="panic-line"> - Cosmic rays flipping bits</span>
+        <span class="panic-line"></span>
+        <span class="panic-line">---[ end Kernel panic - not syncing: Attempted to kill init! exitcode=0x00000194
+            ]---</span>
+        <span class="panic-line"></span>
+        <span class="panic-line blink">Press any key to reboot system...</span>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function () {
+            window.location.href = "/";
+        });
+
+        // Also allow clicking for mobile users
+        document.body.addEventListener('click', function () {
+            window.location.href = "/";
+        });
+    </script>
+</body>
+
+</html>
