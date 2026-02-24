@@ -93,12 +93,6 @@ I work as an AI Advisor for scientific centers, which in practice means sitting 
 
 The job, as it has emerged, is not to advocate for AI adoption or to defend against it. It is to notice friction — and treat it as information rather than as a problem to eliminate. It is to carry signals from the human side back to how AI is being deployed, and to carry an honest account of what AI actually does and doesn't do back to the people working with it. It is to hold conflicts open long enough for something genuinely integrative to emerge, rather than resolving them prematurely in the direction of either enthusiasm or resistance.
 
-Which is, more or less precisely, what the ACC does.
-
-The neuroscience offers a useful warning here too. The ACC is under enormous metabolic demand, and it is one of the first systems to degrade under chronic stress or pressure to simply pick a side. Organizations are very good at generating exactly that pressure — consciously or not, institutions tend to want to resolve tension rather than sustain it. An integration role that is performing genuine ACC function will face pressure from both directions: from AI enthusiasts to stop slowing things down, and from skeptics to become their advocate. Both pressures are asking the role to stop being an interface and become a transmission wire instead.
-
-The other implication: a single ACC is a bottleneck. If the conflict-monitoring and integration function lives in one person, it is limited by that person's bandwidth and tenure. What an institution ultimately needs is not just someone performing this function manually, but the function distributed — cultivated in multiple people with dual legibility to both systems, and eventually built into the architecture of how the institution makes decisions about AI.
-
 ---
 
 ## What the Analogy Ultimately Suggests
@@ -111,7 +105,7 @@ What the neuroscience makes clear is that the critical variable is neither the c
 
 The question we are actually navigating — in scientific institutions, in companies, in the broader culture — is not whether AI is powerful enough to be useful or dangerous enough to be feared. It is whether we are building the interface carefully enough that the integration produces something genuinely better than either layer alone.
 
-The brain suggests this is possible. It also suggests it is not guaranteed, and that the interface requires more deliberate attention than either of the systems it connects.
+The brain suggests this is possible. 
 
 ---
 
