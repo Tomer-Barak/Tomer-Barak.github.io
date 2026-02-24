@@ -8,6 +8,20 @@ description: "An analogy from evolutionary neuroscience suggests that the critic
 keywords: AI integration, anterior cingulate cortex, human-AI collaboration, ELSC, neocortex evolution, AI advisor
 ---
 
+## Do We Still Need Scientists?
+
+The question sounds provocative. It shouldn't anymore — it's being asked seriously, in scientific institutions, in funding agencies, in PhD programs around the world.
+
+The evidence prompting it is real. Sakana AI's "AI Scientist" system autonomously generates research ideas, writes code, runs experiments, and produces complete manuscripts — its second version achieved peer review acceptance scores high enough to cross the threshold for publication, the first fully AI-generated paper to do so. In the summer of 2025, theoretical physicist Alex Lupsasca gave GPT-5 a problem he himself had spent years solving — finding new symmetries in the equations governing a black hole's event horizon. The model, working from training data gathered nine months before Lupsasca's own paper was published, independently arrived at the same result by a different route. "The world has changed in some profound way," Lupsasca wrote afterward — then moved his family to San Francisco to join OpenAI's science team. Around the same time, mathematician Ernest Ryu proved a long-standing conjecture in optimization theory through 12 hours of back-and-forth with the same model. The Department of Energy has commissioned what it describes as the world's largest autonomous-capable science system for microbial experimentation, running and redirecting experiments around the clock without human intervention. OpenAI's Deep Research synthesizes hundreds of papers into cited reports in under an hour, automating the literature review that once consumed weeks of a PhD student's life.
+
+And yet — a large-scale analysis of 41 million papers published across biology, medicine, chemistry, physics, and other fields found something unsettling underneath the impressive individual metrics: AI-driven research is prone to circling the same crowded problems, and leads to a less interconnected scientific literature, with fewer studies engaging with and building on one another. Scientists using AI are, individually, publishing more and advancing faster. But science as a collective enterprise appears to be narrowing. One researcher described this as reason for "a deep reckoning with what we do with a tool that benefits individuals but destroys science."
+
+This is the tension that actually deserves attention — not whether AI is capable enough to participate in science, but what happens to science when it does. The fear that AI will replace scientists misframes the problem. The more pressing question is whether, in integrating AI into research, we preserve the things that make science science: the diversity of questions asked, the slow building of knowledge on knowledge, the human judgment about what is worth understanding and why.
+
+That question is not primarily a technical one. It is an architectural one — about how human and AI cognition are connected. And it turns out the brain, which solved a surprisingly similar problem 200 million years ago, has something precise to say about it.
+
+---
+
 ## A 200-Million-Year-Old Precedent
 
 The human brain did not arrive fully formed. It was built in layers, across hundreds of millions of years, with each new layer growing over older structures rather than replacing them. The limbic system — a circuit encompassing the amygdala, hippocampus, hypothalamus, and related structures — emerged prominently in early mammals around 200–250 million years ago. It was the cognitive center of its era: fast emotional evaluation, threat detection, memory of place and experience, and the drives of hunger, fear, and attachment.
