@@ -9,6 +9,12 @@ keywords: scale theory, multi-scale systems, probability theory, linear algebra,
 image: /assets/images/scales_math.png
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 In our quest to understand the universe, we've developed sophisticated tools for investigating phenomena at particular scales—from quantum mechanics at the subatomic level to general relativity at the cosmic scale. Yet the relationship between these different scales of description remains one of the most profound open questions in theoretical physics. Is there a fundamental mathematical framework that could serve as a "mechanics of scales," just as Newtonian mechanics provides a foundation for understanding mechanical systems?
 
 ## The Problem of Scales

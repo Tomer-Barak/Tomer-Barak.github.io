@@ -8,6 +8,12 @@ tags: [Scale Dynamics, Renormalization Group, Nonlinear Flow, Hamiltonian Mechan
 mathjax: true
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 *This post builds on* <a href="/projects/scale-theory/2025-05-15-from-time-to-scale-dynamics/">"From Time to Scale Dynamics"</a>, <a href="/projects/scale-theory/2025-05-20-canonical-transformations-scheme-independence/">"Canonical Transformations & Scheme Independence"</a>, and <a href="/projects/scale-theory/2025-05-20-irreversible-scale-dynamics/">"Irreversible Scale Dynamics"</a>.  There we treated the renormalisation‑group (RG) β‑functions as the **sole engine** of scale evolution:
 
 $$

@@ -7,6 +7,12 @@ tags: [renormalization group, glass transition, Hamiltonian, multiscale, physics
 project_slug: "scale-theory"
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 ## Abstract
 We develop a comprehensive scale Hamiltonian formalism for multiscale systems by recasting the renormalization group (RG) flow in a Hamiltonian framework and then reformulating it in terms of Hamilton--Jacobi theory. In this picture, an effective coupling is treated as a coordinate with a conjugate momentum, and the RG evolution is governed by a scale Hamiltonian. Under reasonable assumptions, we derive an effective action that serves as an RG invariant or potential. As a concrete application, we study glass-forming liquids, where the approach naturally leads to a derivation of the Vogel--Fulcher--Tammann (VFT) law for the divergence of the relaxation time near the glass transition. Our framework provides a novel quantitative prediction linking microscopic RG parameters to measurable macroscopic properties.
 

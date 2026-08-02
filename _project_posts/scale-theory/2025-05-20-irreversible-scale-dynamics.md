@@ -9,6 +9,12 @@ tags: [Scale Dynamics, Renormalization Group, Contact Geometry, Entropy, C-theor
 mathjax: true
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 In the <a href="/projects/scale-theory/2025-05-15-from-time-to-scale-dynamics/">post "From Time to Scale Dynamics"</a> we treated scale evolution as **perfectly conservative**: a Hamiltonian $H_{\text{scale}}$ moved through *symplectic* phase‑space $(g_i,p_i)$ just like a planet through ordinary space.
 
 Real renormalization‑group (RG) flows, however, are **irreversible**.  Coarse‑graining shreds microscopic detail; only critical data survive.  Here we embed that one‑way character directly into the geometry.

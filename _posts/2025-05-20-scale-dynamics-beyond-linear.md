@@ -10,6 +10,12 @@ mathjax: true
 image: /assets/images/scales2.png
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 *This post builds on our earlier work, ["From time to scale: A gentle introduction to scale dynamics"](/blog/2025/05/15/hamiltonian-dynamics/), where we introduced the idea of treating the Hamiltonian itself as a dynamic coordinate that evolves with scale rather than time.*
 
 Over the past week, we've made significant progress in extending the scale dynamics framework. This post summarizes three key developments that deepen our understanding of how physical theories transform across scales. While the mathematical details can be intricate, the core ideas are accessible to anyone with undergraduate physics training.

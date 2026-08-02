@@ -9,6 +9,12 @@ keywords: scale dynamics, renormalization group, Hamiltonian mechanics, effectiv
 mathjax: true
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 Physics is full of **levels of description** – atoms, molecules, fluids; spins, domains, magnets. We usually *fix* the level and then ask how the variables at that level evolve in time. The idea explored here is the reverse:
 
 > **Let the *scale* flow, and ask how the Hamiltonian changes along that flow.**

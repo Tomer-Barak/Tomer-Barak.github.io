@@ -9,6 +9,12 @@ keywords: scale relativity, philosophy of physics, cosmology, multi-scale univer
 image: /assets/images/scales.png
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 The Copernican Revolution famously displaced Earth from the center of the cosmos, forcing humanity to confront its non-privileged position in space. However, I propose that we may need another revolution—one that challenges our implicit assumption that our particular spatiotemporal scale occupies a privileged position in physical theory. Just as we no longer consider ourselves spatially central, perhaps we should question whether our scale of observation is fundamentally special.
 
 ## Scale symmetry as a fundamental principle

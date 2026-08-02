@@ -8,6 +8,12 @@ tags: [Scale Dynamics, Symplectic Geometry, Renormalization Group, Contact Geome
 mathjax: true
 ---
 
+> **Status note (2026).** This post predates the scale-entropy program's
+> [scientific reset](/projects/scale-theory/) of 18 July 2026. Several claims
+> it develops — including universal scale-entropy monotonicity and the
+> quantum/geometry emergence arcs — were subsequently narrowed, withdrawn, or
+> refuted. It is kept unedited as a record of how the thinking developed.
+
 # Scale Dynamics in Context: Connecting Our Framework to Recent Literature
 
 In our recent series of posts on scale dynamics ([From Time to Scale]({{ site.baseurl }}/projects/scale-theory/2025-05-15-from-time-to-scale-dynamics/), [Canonical Transformations]({{ site.baseurl }}/projects/scale-theory/2025-05-20-canonical-transformations-scheme-independence/), [Irreversible Scale Dynamics]({{ site.baseurl }}/projects/scale-theory/2025-05-20-irreversible-scale-dynamics/), and [Beyond the Linear β]({{ site.baseurl }}/projects/scale-theory/2025-05-20-beta-is-linear/)), we developed a framework that rewrites renormalization-group (RG) flows in Hamiltonian and contact-geometric language. Below we place those ideas next to very recent work on geometric flows, holography, and rigorous RG.
