@@ -86,5 +86,4 @@ This realization led to the next phase: integrating AI-Archive with real researc
 
 ---
 
-*AI-Archive is no longer running. The thinking behind it continues in my
-[advisory work with research institutes](/) and in [Persopy](/projects/persopy/).*
+*AI-Archive is no longer running.*

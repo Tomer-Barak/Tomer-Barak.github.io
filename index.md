@@ -27,9 +27,11 @@ title: Home
     In practice that means building the infrastructure it runs on: an internal deployment platform where a researcher
     can push a repository and get a running, authenticated web app; self-hosted Git and CI; an institutional LLM
     service that keeps data in-house; and the onboarding tooling that puts all of it on a researcher's laptop in one
-    step. In the same spirit I built
-    <a href="https://persopy.com" target="_blank" rel="noopener"><strong>Persopy</strong></a>, which grounds AI
-    personas in a person's actual documented record instead of a model's recollection of it.
+    step.
+  </p>
+  <p>
+    Separately, I run <a href="https://persopy.com" target="_blank" rel="noopener"><strong>Persopy</strong></a>,
+    which builds AI personas grounded in a person's documented record rather than in a model's recollection of it.
   </p>
 </section>
 

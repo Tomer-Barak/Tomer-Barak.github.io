@@ -59,15 +59,6 @@ reconstructed into an interlocutor for study, teaching, and public engagement.
 | Santiago Ramón y Cajal (1852–1934) | Histological works and scientific writings |
 | Research groups | A working lab's own publication record, by arrangement |
 
-## Relation to Automated Science
-
-Persopy shares a premise with [AI-Archive](/projects/ai-archive/) and the wider
-[Automated Science](/projects/automated-science/) work: AI becomes genuinely
-useful in research when it is anchored in the real scholarly record rather than
-in benchmarks. Persopy applies that anchoring to a person's body of work, so the
-accumulated reasoning of a scientist or a lab stays available to the people who
-need it.
-
 ---
 
 *Persopy works with institutions on collaborations, lab distillations, and early
