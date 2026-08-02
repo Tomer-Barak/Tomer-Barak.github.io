@@ -8,7 +8,7 @@ tags: [Scale Dynamics, Renormalization Group, Nonlinear Flow, Hamiltonian Mechan
 mathjax: true
 ---
 
-*This post builds on* <a href="/projects/2025-05-15-from-time-to-scale-dynamics/">"From Time to Scale Dynamics"</a>, <a href="/projects/2025-05-20-canonical-transformations-scheme-independence/">"Canonical Transformations & Scheme Independence"</a>, and <a href="/projects/2025-05-20-irreversible-scale-dynamics/">"Irreversible Scale Dynamics"</a>.  There we treated the renormalisation‑group (RG) β‑functions as the **sole engine** of scale evolution:
+*This post builds on* <a href="/projects/scale-theory/2025-05-15-from-time-to-scale-dynamics/">"From Time to Scale Dynamics"</a>, <a href="/projects/scale-theory/2025-05-20-canonical-transformations-scheme-independence/">"Canonical Transformations & Scheme Independence"</a>, and <a href="/projects/scale-theory/2025-05-20-irreversible-scale-dynamics/">"Irreversible Scale Dynamics"</a>.  There we treated the renormalisation‑group (RG) β‑functions as the **sole engine** of scale evolution:
 
 $$
 H_{\text{scale}}(g,p)=p_i\,\beta_i(g).

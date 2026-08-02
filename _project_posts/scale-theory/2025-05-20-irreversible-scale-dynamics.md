@@ -9,7 +9,7 @@ tags: [Scale Dynamics, Renormalization Group, Contact Geometry, Entropy, C-theor
 mathjax: true
 ---
 
-In the <a href="/projects/2025-05-15-from-time-to-scale-dynamics/">post "From Time to Scale Dynamics"</a> we treated scale evolution as **perfectly conservative**: a Hamiltonian $H_{\text{scale}}$ moved through *symplectic* phase‑space $(g_i,p_i)$ just like a planet through ordinary space.
+In the <a href="/projects/scale-theory/2025-05-15-from-time-to-scale-dynamics/">post "From Time to Scale Dynamics"</a> we treated scale evolution as **perfectly conservative**: a Hamiltonian $H_{\text{scale}}$ moved through *symplectic* phase‑space $(g_i,p_i)$ just like a planet through ordinary space.
 
 Real renormalization‑group (RG) flows, however, are **irreversible**.  Coarse‑graining shreds microscopic detail; only critical data survive.  Here we embed that one‑way character directly into the geometry.
 

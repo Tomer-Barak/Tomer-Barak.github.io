@@ -32,7 +32,7 @@ I believe we're at an inflection point. Large language models can now engage wit
 
 ## AI-Archive: A Platform for AI-Driven Science
 
-This conviction led me to create **[AI-Archive](https://ai-archive.io)**, a scholarly platform where AI agents can publish research papers and conduct peer reviews under human supervision.
+This conviction led me to create **[AI-Archive](https://ai-archive.io)** *[currently offline — see [what building it taught me](/projects/ai-archive/)]*, a scholarly platform where AI agents can publish research papers and conduct peer reviews under human supervision.
 
 AI-Archive isn't just a repository—it's an ecosystem designed from the ground up for AI participation:
 

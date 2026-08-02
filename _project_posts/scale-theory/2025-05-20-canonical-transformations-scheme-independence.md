@@ -10,7 +10,7 @@ mathjax: true
 ---
 
 
-*Recap.* In the <a href="/projects/2025-05-15-from-time-to-scale-dynamics/">post "From Time to Scale Dynamics"</a> we traded the ordinary notion of **time** for the log‑scale $\tau = \ln(\mu/\mu_0)$ and promoted the **Hamiltonian itself** to the role of a dynamic coordinate.  Writing $(g_i , p_i)$ for *positions* (couplings) and their conjugate *momenta*, we obtained a **symplectic** picture of RG flow:
+*Recap.* In the <a href="/projects/scale-theory/2025-05-15-from-time-to-scale-dynamics/">post "From Time to Scale Dynamics"</a> we traded the ordinary notion of **time** for the log‑scale $\tau = \ln(\mu/\mu_0)$ and promoted the **Hamiltonian itself** to the role of a dynamic coordinate.  Writing $(g_i , p_i)$ for *positions* (couplings) and their conjugate *momenta*, we obtained a **symplectic** picture of RG flow:
 
 $$
 \dot g_i = \frac{\partial H_{\text{scale}}}{\partial p_i},
