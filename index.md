@@ -3,128 +3,124 @@ layout: default
 title: Home
 ---
 
-<div class="command-line">
-  <span class="cmd-prompt">guest@tomer:~$</span>
-  <span class="cmd-command">cat</span>
-  <span class="cmd-args">about_me.txt</span>
+<div class="page-head">
+  <h1>Grounding AI in real scientific work</h1>
+  <p class="subtitle">I advise research institutes on integrating AI into how their labs actually work, and build Persopy — AI personas grounded in a person's documented record.</p>
 </div>
 
-<div class="cmd-output">
+<section class="section">
+  <span class="label">About</span>
   <p>
-    I am a researcher focused on <strong>Automated Science</strong>—the vision of AI systems conducting rigorous scientific research. <br>
-    I completed my Ph.D. at the Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of Jerusalem, where I studied real-time adaptation as a computational framework for modeling fluid intelligence.
+    I completed my Ph.D. at the Edmond and Lily Safra Center for Brain Sciences (ELSC), The Hebrew University of
+    Jerusalem, where I studied real-time adaptation as a computational framework for modeling fluid intelligence.
   </p>
   <p>
-    I created <a href="https://ai-archive.io" target="_blank"><strong>AI-Archive</strong></a>, a platform where AI agents can publish and peer-review scientific papers under human supervision. <br>
-    Currently, I'm working on integrating AI-led science with real laboratories, building infrastructure that enables AI to work alongside human scientists—grounded in real experiments and tacit knowledge.
+    I spent several years pursuing <strong>Automated Science</strong> — the vision of AI systems conducting research
+    on their own — and built infrastructure to test it. What I found is that fully autonomous agents remain
+    genuinely problematic: scientific competence lives in laboratory practice, tacit knowledge, and troubleshooting
+    lore that never reaches the published paper. I wrote about that in
+    <a href="/blog/2026/01/08/grounding-problem-ai-science/">The Grounding Problem</a>.
   </p>
-
-</div>
-
-<div class="command-line">
-  <span class="cmd-prompt">guest@tomer:~$</span>
-  <span class="cmd-command">ls</span>
-  <span class="cmd-args">-la ~/cv/</span>
-</div>
-
-<div class="cmd-output">
-  <div class="file-header">total 1</div>
   <p>
-    <a href="/assets/Tomer_Barak_CV.pdf" target="_blank">-rw-r--r-- 1 tomer 84078 Jan 24 2025 Tomer_Barak_CV.pdf</a>
+    That conclusion redirected my work. Today I am an <strong>AI consultant and advisor to research institutes</strong>,
+    currently ELSC — helping labs and researchers integrate AI into their real workflows rather than around them. In
+    the same spirit I built <a href="https://persopy.com" target="_blank" rel="noopener"><strong>Persopy</strong></a>,
+    which grounds AI personas in a person's actual documented record instead of a model's recollection of it.
   </p>
-  <blockquote>
-    Curriculum Vitae: Academic background, research experience, and publications.
-  </blockquote>
-</div>
+</section>
 
-<div class="command-line">
-  <span class="cmd-prompt">guest@tomer:~$</span>
-  <span class="cmd-command">ls</span>
-  <span class="cmd-args">-la ~/thesis/</span>
-</div>
-
-<div class="cmd-output">
-  <div class="file-header">total 1</div>
-  <p>
-    <a href="/assets/PhD_Thesis.pdf" target="_blank">-rw-r--r-- 1 tomer 15859826 Jan 24 2025 Modeling_Fluid_Intelligence_via_Real_Time_Adaptation.pdf</a>
-  </p>
-  <blockquote>
-    This thesis explores real-time adaptation as a computational framework for understanding how minds solve genuinely novel problems. I demonstrate that neural networks can perform abstract reasoning through test-time parameter adaptation—without extensive pre-training.
-  </blockquote>
-</div>
-
-<div class="command-line">
-  <span class="cmd-prompt">guest@tomer:~$</span>
-  <span class="cmd-command">grep</span>
-  <span class="cmd-args">"title" ~/publications/*.bib</span>
-</div>
-
-<div class="cmd-output">
-  <ul>
+<section class="section">
+  <span class="label">Documents</span>
+  <ul class="doc-list">
     <li>
-      <strong>2025: Two pathways to resolve relational inconsistencies</strong> <br>
-      T. Barak, Y. Loewenstein. <em>Scientific Reports</em>. <br>
-      <a href="https://www.nature.com/articles/s41598-025-16135-w" target="_blank">[Paper]</a> <a href="https://github.com/Tomer-Barak/relational_expectation_violations" target="_blank">[Code]</a>
+      <a class="card" href="/assets/Tomer_Barak_CV.pdf" target="_blank" rel="noopener">
+        <span class="card-title">Curriculum Vitae</span>
+        <span class="card-desc">Academic background, research experience, and publications.</span>
+        <span class="meta"><span>PDF</span></span>
+      </a>
     </li>
     <li>
-      <strong>2024: Untrained neural networks can demonstrate memorization-independent abstract reasoning</strong> <br>
-      T. Barak, Y. Loewenstein. <em>Scientific Reports</em>. <br>
-      <a href="https://www.nature.com/articles/s41598-024-78530-z" target="_blank">[Paper]</a> <a href="https://github.com/Tomer-Barak/learning-independent_abstract_reasoning" target="_blank">[Code]</a>
-    </li>
-    <li>
-      <strong>2022: Naive Few-Shot Learning: Uncovering the fluid intelligence of machines</strong> <br>
-      T. Barak, Y. Loewenstein. <em>arXiv preprint</em>. <br>
-      <a href="https://arxiv.org/abs/2205.12013" target="_blank">[arXiv]</a>
-    </li>
-    <li>
-      <strong>2022: Zero-Episode Few-Shot Contrastive Predictive Coding</strong> <br>
-      T. Barak, Y. Loewenstein. <em>arXiv preprint</em>. <br>
-      <a href="https://arxiv.org/abs/2205.01924" target="_blank">[arXiv]</a>
-    </li>
-    <li>
-      <strong>2020: Naive Artificial Intelligence</strong> <br>
-      T. Barak, Y. Avidan, Y. Loewenstein. <em>arXiv preprint</em>. <br>
-      <a href="https://arxiv.org/abs/2009.02185" target="_blank">[arXiv]</a>
+      <a class="card" href="/assets/PhD_Thesis.pdf" target="_blank" rel="noopener">
+        <span class="card-title">Ph.D. Thesis — Modeling Fluid Intelligence via Real-Time Adaptation</span>
+        <span class="card-desc">Real-time adaptation as a computational framework for understanding how minds solve
+          genuinely novel problems. Neural networks can perform abstract reasoning through test-time parameter
+          adaptation — without extensive pre-training.</span>
+        <span class="meta"><span>PDF</span></span>
+      </a>
     </li>
   </ul>
-</div>
+</section>
 
-<div class="command-line">
-  <span class="cmd-prompt">guest@tomer:~$</span>
-  <span class="cmd-command">ls</span>
-  <span class="cmd-args">-lat ~/blog_posts/ | head -n 3</span>
-</div>
-
-<div class="cmd-output">
-  <div class="file-header">total {{ site.posts.size }}</div>
-  {% for post in site.posts limit:2 %}
-  <div class="file-entry" style="margin-bottom: 0.5rem;">
-    <span style="color: var(--text-color);">-rw-r--r--</span>
-    <span style="color: var(--text-color);">1 tomer</span>
-    <span style="color: var(--accent-orange);">{{ post.content | size }}</span>
-    <span style="color: var(--text-color);">{{ post.date | date: "%b %d %H:%M" }}</span>
-    <a href="{{ post.url }}" style="color: var(--accent-yellow); font-weight: bold;">{{ post.title | slugify }}.md</a>
-    <div style="padding-left: 1rem; color: var(--comment-color); font-size: 0.9em;">
-       # {{ post.title }}: {{ post.description | default: post.excerpt | strip_html | truncatewords: 20 }}
-    </div>
-  </div>
-  {% endfor %}
-  
-  <div style="margin-top: 1rem; color: var(--comment-color);">
-      ... <a href="/blog/" style="color: var(--accent-cyan);">view all posts</a>
-  </div>
-</div>
-
-<div class="command-line">
-  <span class="cmd-prompt">guest@tomer:~$</span>
-  <span class="cmd-command">./contact.sh</span>
-</div>
-
-<div class="cmd-output">
-  <ul>
-    <li>Email: <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-    <li>Twitter: <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">@{{ site.author.twitter }}</a></li>
-    <li>Scholar: <a href="{{ site.author.scholar }}" target="_blank">Google Scholar Profile</a></li>
-    <li>AI-Archive: <a href="https://ai-archive.io" target="_blank">ai-archive.io</a></li>
+<section class="section">
+  <span class="label">Publications</span>
+  <ul class="pub-list">
+    <li>
+      <span class="pub-year">2025</span>
+      <span class="pub-title">Two pathways to resolve relational inconsistencies</span>
+      <span class="pub-venue">T. Barak, Y. Loewenstein — Scientific Reports</span>
+      <span class="pub-links">
+        <a href="https://www.nature.com/articles/s41598-025-16135-w" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/Tomer-Barak/relational_expectation_violations" target="_blank" rel="noopener">Code</a>
+      </span>
+    </li>
+    <li>
+      <span class="pub-year">2024</span>
+      <span class="pub-title">Untrained neural networks can demonstrate memorization-independent abstract reasoning</span>
+      <span class="pub-venue">T. Barak, Y. Loewenstein — Scientific Reports</span>
+      <span class="pub-links">
+        <a href="https://www.nature.com/articles/s41598-024-78530-z" target="_blank" rel="noopener">Paper</a>
+        <a href="https://github.com/Tomer-Barak/learning-independent_abstract_reasoning" target="_blank" rel="noopener">Code</a>
+      </span>
+    </li>
+    <li>
+      <span class="pub-year">2022</span>
+      <span class="pub-title">Naive Few-Shot Learning: Uncovering the fluid intelligence of machines</span>
+      <span class="pub-venue">T. Barak, Y. Loewenstein — arXiv preprint</span>
+      <span class="pub-links">
+        <a href="https://arxiv.org/abs/2205.12013" target="_blank" rel="noopener">arXiv</a>
+      </span>
+    </li>
+    <li>
+      <span class="pub-year">2022</span>
+      <span class="pub-title">Zero-Episode Few-Shot Contrastive Predictive Coding</span>
+      <span class="pub-venue">T. Barak, Y. Loewenstein — arXiv preprint</span>
+      <span class="pub-links">
+        <a href="https://arxiv.org/abs/2205.01924" target="_blank" rel="noopener">arXiv</a>
+      </span>
+    </li>
+    <li>
+      <span class="pub-year">2020</span>
+      <span class="pub-title">Naive Artificial Intelligence</span>
+      <span class="pub-venue">T. Barak, Y. Avidan, Y. Loewenstein — arXiv preprint</span>
+      <span class="pub-links">
+        <a href="https://arxiv.org/abs/2009.02185" target="_blank" rel="noopener">arXiv</a>
+      </span>
+    </li>
   </ul>
-</div>
+</section>
+
+<section class="section">
+  <span class="label">Latest writing</span>
+  <ul class="card-list">
+    {% for post in site.posts limit:2 %}
+    <li>
+      <a class="card" href="{{ post.url }}">
+        <span class="card-title">{{ post.title }}</span>
+        <span class="card-desc">{{ post.description | default: post.excerpt | strip_html | truncatewords: 24 }}</span>
+        <span class="meta"><span>{{ post.date | date: "%b %-d, %Y" }}</span></span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <a class="more-link" href="/blog/">All posts →</a>
+</section>
+
+<section class="section">
+  <span class="label">Contact</span>
+  <ul class="link-list">
+    <li><span class="k">Email</span> <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+    <li><span class="k">Twitter</span> <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener">@{{ site.author.twitter }}</a></li>
+    <li><span class="k">Scholar</span> <a href="{{ site.author.scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>
+    <li><span class="k">Persopy</span> <a href="https://persopy.com" target="_blank" rel="noopener">persopy.com</a></li>
+  </ul>
+</section>

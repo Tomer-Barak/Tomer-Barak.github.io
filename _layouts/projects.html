@@ -2,28 +2,21 @@
 layout: default
 ---
 
-<div class="command-line">
-    <span class="cmd-prompt">guest@tomer:~$</span>
-    <span class="cmd-command">ls</span>
-    <span class="cmd-args">-la ~/projects/</span>
+<div class="page-head">
+  <h1>{{ page.header_title | default: page.title }}</h1>
+  {% if page.header_subtitle %}<p class="subtitle">{{ page.header_subtitle }}</p>{% endif %}
 </div>
 
-<div class="cmd-output">
-    <div class="file-header">total {{ site.projects.size }}</div>
-
+<section class="section">
+  <ul class="card-list">
     {% assign all_projects = site.projects | sort: 'order' %}
     {% for project in all_projects %}
-    <div class="file-entry" style="margin-bottom: 0.5rem;">
-        <span style="color: var(--accent-purple);">drwxr-xr-x</span>
-        <span style="color: var(--text-color);">1 tomer</span>
-        <span style="color: var(--accent-orange);">4096</span>
-        <span style="color: var(--text-color);">{{ "now" | date: "%b %d %H:%M" }}</span>
-        <a href="{{ site.baseurl }}/projects/{{ project.slug }}/"
-            style="color: var(--accent-cyan); font-weight: bold;">{{ project.title | slugify }}/</a>
-
-        <div style="padding-left: 1rem; color: var(--comment-color); font-size: 0.9em;">
-            # {{ project.title }}: {{ project.excerpt | strip_html | truncatewords: 20 }}
-        </div>
-    </div>
+    <li>
+      <a class="card" href="{{ site.baseurl }}/projects/{{ project.slug }}/">
+        <span class="card-title">{{ project.title }}</span>
+        <span class="card-desc">{{ project.subtitle | default: project.excerpt | strip_html | truncatewords: 30 }}</span>
+      </a>
+    </li>
     {% endfor %}
-</div>
+  </ul>
+</section>

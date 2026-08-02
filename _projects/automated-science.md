@@ -4,12 +4,9 @@ title: "Automated Science: AI-Enhanced Research"
 subtitle: "Building infrastructure for AI systems to conduct rigorous science alongside real laboratories, bridging the gap between AI reasoning and experimental knowledge."
 category: research
 icon: flask
-order: 3
+order: 2
 permalink: /projects/automated-science/
 ---
-
-# Automated Science: AI-Enhanced Research Infrastructure
-
 **Status**: Active Development
 
 Automated Science is my vision for the future of scientific research—where AI systems work alongside human scientists to accelerate discovery. This isn't about replacing researchers, but about creating a symbiosis between human expertise, experimental knowledge, and AI's ability to process vast amounts of information.

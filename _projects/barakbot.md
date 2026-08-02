@@ -4,12 +4,9 @@ title: "BarakBot: Telegram Assistant"
 subtitle: "BarakBot is an innovative, multi-agent AI assistant for Telegram, built on a breakthrough self-referential architecture. Specialized AI agents collaborate naturally by communicating through the same interface as users."
 category: project
 icon: robot
-order: 6
+order: 5
 permalink: /projects/barakbot/
 ---
-
-# BarakBot: Telegram Assistant
-
 BarakBot (ברק בוט) is an innovative, multi-agent AI assistant for Telegram, built on a breakthrough self-referential architecture. Specialized AI agents—such as Tasker, Scheduler, Photos, IT, and Listeners—collaborate naturally by communicating through the same interface as users. This design delivers a seamless, unified experience for managing tasks, reminders, photos, automation, diagnostics, and more, while also enabling advanced reasoning and autonomy.
 
 ## Table of Contents

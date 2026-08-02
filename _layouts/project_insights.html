@@ -1,165 +1,32 @@
 ---
 layout: default
 ---
-<section>
-    <div class="container">
-        <div class="insights-header">
-            <h1>{{ page.title }}</h1>
-            <p class="insights-description">{{ page.description }}</p>
 
-            <div class="back-to-project">
-                <a href="{{ site.baseurl }}/projects/{{ page.project_slug }}/" class="btn"><i
-                        class="fas fa-arrow-left"></i> Back to Project</a>
-            </div>
-        </div>
+<div class="page-head">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="subtitle">{{ page.description }}</p>{% endif %}
+</div>
 
-        <div class="insights-grid">
-            {% assign project_posts = site.project_posts | where: 'project_slug', page.project_slug | sort: 'date' |
-            reverse %}
-            {% if project_posts.size > 0 %}
-            {% for post in project_posts %}
-            <div class="insight-card">
-                <div class="insight-date">{{ post.date | date: "%B %d, %Y" }}</div>
-                <h2 class="insight-title">{{ post.title }}</h2>
+<section class="section">
+  {% assign project_posts = site.project_posts | where: 'project_slug', page.project_slug | sort: 'date' | reverse %}
+  {% if project_posts.size > 0 %}
+  <ul class="card-list">
+    {% for post in project_posts %}
+    <li>
+      <a class="card" href="{{ post.url }}">
+        <span class="card-title">{{ post.title }}</span>
+        <span class="card-desc">{{ post.excerpt | strip_html | truncatewords: 30 }}</span>
+        <span class="meta">
+          <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+          {% if post.tags and post.tags.size > 0 %}<span class="tag">{{ post.tags | join: " · " }}</span>{% endif %}
+        </span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No insights have been published for this project yet.</p>
+  {% endif %}
 
-                {% if post.image and post.image != "" %}
-                <div class="insight-image">
-                    <img src="{{ post.image }}" alt="{{ post.title }}">
-                </div>
-                {% endif %}
-
-                <div class="insight-excerpt">
-                    {{ post.excerpt | strip_html | truncatewords: 30 }}
-                </div>
-
-                <div class="insight-tags">
-                    {% for tag in post.tags %}
-                    <span class="insight-tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-
-                <a href="{{ post.url }}" class="read-more-btn">Read More</a>
-            </div>
-            {% endfor %}
-            {% else %}
-            <div class="no-insights">
-                <p>No insights have been published for this project yet. Check back soon!</p>
-            </div>
-            {% endif %}
-        </div>
-    </div>
+  <a class="more-link" href="{{ site.baseurl }}/projects/{{ page.project_slug }}/">← Back to project</a>
 </section>
-
-<style>
-    .insights-header {
-        margin-bottom: 40px;
-        text-align: left;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 20px;
-    }
-
-    .insights-header h1 {
-        color: var(--accent-yellow);
-        font-family: 'Fira Code', monospace;
-        border-bottom: none;
-    }
-
-    .insights-description {
-        max-width: 800px;
-        margin: 0 0 20px;
-        color: var(--text-color);
-        font-size: 1.1rem;
-        font-family: 'Fira Code', monospace;
-    }
-
-    .insights-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-    }
-
-    .insight-card {
-        background-color: var(--terminal-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        overflow: hidden;
-        transition: border-color 0.3s;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .insight-card:hover {
-        border-color: var(--accent-cyan);
-    }
-
-    .insight-date {
-        color: var(--comment-color);
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-        font-family: 'Fira Code', monospace;
-    }
-
-    .insight-title {
-        color: var(--text-bright);
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-size: 1.2rem;
-        font-family: 'Fira Code', monospace;
-    }
-
-    .insight-excerpt {
-        flex-grow: 1;
-        margin-bottom: 15px;
-        color: var(--text-color);
-        font-size: 0.95rem;
-    }
-
-    .insight-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 15px;
-    }
-
-    .insight-tag {
-        color: var(--accent-purple);
-        font-size: 0.8rem;
-    }
-
-    .read-more-btn {
-        display: inline-block;
-        color: var(--accent-green);
-        text-decoration: none;
-        font-weight: bold;
-        align-self: flex-start;
-    }
-
-    .read-more-btn:hover {
-        text-decoration: underline;
-        color: var(--accent-yellow);
-    }
-
-    .no-insights {
-        grid-column: 1 / -1;
-        text-align: center;
-        padding: 40px 20px;
-        color: var(--comment-color);
-    }
-
-    .back-to-project a {
-        color: var(--accent-cyan);
-        text-decoration: none;
-    }
-
-    .back-to-project a:hover {
-        color: var(--accent-yellow);
-        text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-        .insights-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>

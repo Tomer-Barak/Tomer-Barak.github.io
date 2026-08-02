@@ -2,69 +2,47 @@
 layout: default
 ---
 
-<div class="command-line">
-    <span class="cmd-prompt">guest@tomer:~$</span>
-    <span class="cmd-command">cat</span>
-    <span class="cmd-args">~/projects/{{ page.slug }}/README.md</span>
-</div>
+<article>
+  <div class="page-head">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+    <span class="meta"><span class="tag">{{ page.category | default: "Project" }}</span></span>
+  </div>
 
-<div class="cmd-output">
-    <div class="file-header"
-        style="color: var(--comment-color); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
-        # Project: {{ page.title }} <br>
-        # Category: {{ page.category | default: "Software" }}
-    </div>
+  <div class="prose">
+    {{ content }}
 
-    <div class="post-content">
-        {{ content }}
+    {% if page.features %}
+    <h3>Features</h3>
+    <ul>
+      {% for feature in page.features %}<li>{{ feature }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
 
-        {% if page.features %}
-        <h3 style="margin-top: 1.5rem;">Features:</h3>
-        <ul>
-            {% for feature in page.features %}
-            <li>{{ feature }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-
-        <div style="margin-top: 2rem;">
-            {% if page.github %}
-            <p><a href="{{ page.github }}" target="_blank" style="color: var(--accent-green);">-> View Source on
-                    GitHub</a></p>
-            {% endif %}
-        </div>
-    </div>
-</div>
+  {% if page.github %}
+  <div class="post-footer">
+    <span class="k">Source</span>
+    <a href="{{ page.github }}" target="_blank" rel="noopener">View on GitHub →</a>
+  </div>
+  {% endif %}
+</article>
 
 {% assign project_posts = site.project_posts | where_exp: "post", "post.path contains page.slug" %}
 {% if project_posts.size > 0 %}
-<div class="command-line" style="margin-top: 2rem;">
-    <span class="cmd-prompt">guest@tomer:~$</span>
-    <span class="cmd-command">ls</span>
-    <span class="cmd-args">-l insights/</span>
-</div>
-
-<div class="cmd-output">
-    <div class="file-entry" style="margin-bottom: 0.5rem;">
-        <span style="color: var(--accent-purple);">drwxr-xr-x</span>
-        <span style="color: var(--text-color);">1 tomer</span>
-        <span style="color: var(--accent-orange);">4096</span>
-        <span style="color: var(--text-color);">{{ "now" | date: "%b %d %H:%M" }}</span>
-        <a href="{{ site.baseurl }}/projects/{{ page.slug }}/insights/"
-            style="color: var(--accent-cyan); font-weight: bold; margin-left: 1rem;">insights/</a>
-        <div style="padding-left: 1rem; color: var(--comment-color); font-size: 0.9em;">
-            # Dive deeper: Analysis, methodology, and reflections
-        </div>
-    </div>
-
+<section class="section" style="margin-top: 3rem;">
+  <span class="label">Insights</span>
+  <ul class="card-list">
     {% for post in project_posts %}
-    <div class="file-entry">
-        <span style="color: var(--text-color);">-rw-r--r--</span>
-        <span style="color: var(--text-color);">1 tomer</span>
-        <span style="color: var(--accent-orange);">{{ post.content | size }}</span>
-        <span style="color: var(--text-color);">{{ post.date | date: "%b %d %H:%M" }}</span>
-        <a href="{{ post.url }}" style="color: var(--accent-yellow); margin-left: 1rem;">{{ post.title }}</a>
-    </div>
+    <li>
+      <a class="card" href="{{ post.url }}">
+        <span class="card-title">{{ post.title }}</span>
+        <span class="card-desc">{{ post.excerpt | strip_html | truncatewords: 24 }}</span>
+        <span class="meta"><span>{{ post.date | date: "%b %-d, %Y" }}</span></span>
+      </a>
+    </li>
     {% endfor %}
-</div>
+  </ul>
+  <a class="more-link" href="{{ site.baseurl }}/projects/{{ page.slug }}/insights/">All insights →</a>
+</section>
 {% endif %}

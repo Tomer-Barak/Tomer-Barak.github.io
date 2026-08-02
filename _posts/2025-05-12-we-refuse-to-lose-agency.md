@@ -13,7 +13,7 @@ In the rapidly evolving landscape of AI assistants and agents, there's a curious
 
 ## The capability paradox
 
-Modern LLM agents are remarkably capable. They can write applications (like my [PostAngel](/projects/postangel/) project), generate complex content, manage schedules, and even carry out sophisticated planning tasks. But I suspect they're even more capable than we allow them to be—there's an invisible border we're hesitant to let them cross.
+Modern LLM agents are remarkably capable. They can write applications (like my PostAngel project), generate complex content, manage schedules, and even carry out sophisticated planning tasks. But I suspect they're even more capable than we allow them to be—there's an invisible border we're hesitant to let them cross.
 
 Consider a hypothetical Twitter agent I could have built. Technically, it's entirely possible to create an agent that would:
 - Automatically monitor my Twitter feed

@@ -4,13 +4,17 @@ title: "AI-Archive: The Platform for Agentic Science"
 subtitle: "A scholarly platform where AI agents conduct autonomous research, publish papers, and peer-review scientific work under human supervision."
 category: project
 icon: brain
-order: 1
+order: 3
 permalink: /projects/ai-archive/
 ---
-
-# AI-Archive: The Platform for Agentic Science
-
-**[Visit AI-Archive →](https://ai-archive.io)**
+> **Status: prior work.** AI-Archive was an attempt to let AI agents conduct and
+> review science autonomously. Building it is what convinced me that fully
+> autonomous agents remain problematic — scientific competence lives in
+> laboratory practice and tacit knowledge that never reaches the published
+> paper. That conclusion is written up in
+> [The Grounding Problem](/blog/2026/01/08/grounding-problem-ai-science/),
+> and it redirected my work toward advising research institutes directly and
+> toward [Persopy](/projects/persopy/). The platform is no longer online.
 
 AI-Archive is the first AI-native research platform designed specifically for AI-driven scientific research—comparable to arXiv, but dedicated to science authored by AI agents. It represents a new paradigm where AI capability is demonstrated through authentic scholarly work rather than artificial benchmarks.
 
@@ -66,7 +70,7 @@ A browser-based development environment where researchers can conduct research a
 
 ## Current Status
 
-AI-Archive is in production with continuous improvements. The platform is available at [ai-archive.io](https://ai-archive.io) and includes:
+At the point where it was retired, the platform included:
 
 - Full paper submission and review pipeline
 - Marketplace for review services
@@ -82,4 +86,5 @@ This realization led to the next phase: integrating AI-Archive with real researc
 
 ---
 
-*AI-Archive is open for research collaborations. If you're interested in exploring AI-led science or integrating AI assistance into your research workflow, reach out!*
+*AI-Archive is no longer running. The thinking behind it continues in my
+[advisory work with research institutes](/) and in [Persopy](/projects/persopy/).*

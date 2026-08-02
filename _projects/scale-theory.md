@@ -4,12 +4,9 @@ title: "Scale Theory"
 subtitle: "A theoretical framework for understanding how phenomena transform across different scales of description in science and physics."
 category: research
 icon: balance-scale
-order: 5
+order: 4
 permalink: /projects/scale-theory/
 ---
-
-# Scale Theory: Exploring Scales of Description
-
 Scale Theory investigates how physical and cognitive phenomena transform across different scales of description. This theoretical framework seeks to understand the mathematical relationships and symmetries that govern transitions between micro and macro scales in both physical systems and cognitive processes.
 
 ## Research Overview

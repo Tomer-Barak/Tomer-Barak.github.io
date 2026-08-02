@@ -4,12 +4,9 @@ title: "Persopy: AI Personas Grounded in the Documented Record"
 subtitle: "AI personas built from a person's documented record—published work, writings, recorded testimony—so answers come from the sources themselves rather than from a model's recollection of them."
 category: project
 icon: book
-order: 2
+order: 1
 permalink: /projects/persopy/
 ---
-
-# Persopy: AI Personas Grounded in the Documented Record
-
 **[Visit Persopy →](https://persopy.com)**
 
 Persopy builds AI personas of experts and historical figures from the full record

@@ -1,10 +1,10 @@
 # Site settings
-title: Tomer Barak | Ph.D., Automated Science Researcher
+title: Tomer Barak | Ph.D., AI Advisor to Research Institutes
 port: 4001
 description: >-
-  Personal website of Tomer Barak, Ph.D. (ELSC, Hebrew University). Researching 
-  Automated Science—AI-led scientific research integrating artificial intelligence 
-  with real laboratories. Creator of AI-Archive, a platform for AI-driven science.
+  Personal website of Tomer Barak, Ph.D. (ELSC, Hebrew University). AI consultant and
+  advisor to research institutes, integrating AI into how laboratories actually work.
+  Creator of Persopy, AI personas grounded in the documented record.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tomer-barak.github.io" # Update with your actual GitHub Pages URL or custom domain
 keywords: Tomer Barak, automated science, AI-led research, AI-Archive, fluid intelligence, test-time adaptation, neural networks, cognitive science, ELSC, Hebrew University, artificial intelligence, machine learning, computational neuroscience, AI research platform
