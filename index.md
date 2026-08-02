@@ -15,23 +15,20 @@ title: Home
     Jerusalem, where I studied real-time adaptation as a computational framework for modeling fluid intelligence.
   </p>
   <p>
-    I spent several years pursuing <strong>Automated Science</strong> — the vision of AI systems conducting research
-    on their own — and built infrastructure to test it. What I found is that fully autonomous agents remain
-    genuinely problematic: scientific competence lives in laboratory practice, tacit knowledge, and troubleshooting
-    lore that never reaches the published paper. I wrote about that in
-    <a href="/blog/2026/01/08/grounding-problem-ai-science/">The Grounding Problem</a>.
+    I spent several years pursuing <strong>Automated Science</strong> — AI systems conducting research on their own —
+    and built infrastructure to test it. Fully autonomous agents turned out to be genuinely problematic: scientific
+    competence lives in laboratory practice and tacit knowledge that never reaches the published paper
+    (<a href="/blog/2026/01/08/grounding-problem-ai-science/">The Grounding Problem</a>). What that leaves is the
+    person steering the work, and the interface between them and the machine
+    (<a href="/blog/2026/02/24/acc-ai-integration/">The Brain Already Solved the Human-AI Integration Problem</a>).
   </p>
   <p>
-    That conclusion redirected my work. Today I am an <strong>AI consultant and advisor to research institutes</strong>,
-    currently ELSC — helping labs and researchers integrate AI into their real workflows rather than around them.
-    In practice that means building the infrastructure it runs on: an internal deployment platform where a researcher
-    can push a repository and get a running, authenticated web app; self-hosted Git and CI; an institutional LLM
-    service that keeps data in-house; and the onboarding tooling that puts all of it on a researcher's laptop in one
-    step.
-  </p>
-  <p>
-    Separately, I run <a href="https://persopy.com" target="_blank" rel="noopener"><strong>Persopy</strong></a>,
-    which builds AI personas grounded in a person's documented record rather than in a model's recollection of it.
+    Both conclusions point the same way, and my work follows them. At <strong>ELSC</strong> I advise on integrating AI
+    into how labs actually work, and build the infrastructure that runs it — an internal deployment platform,
+    self-hosted Git and CI, and an institutional LLM service that keeps data in-house.
+    <a href="https://persopy.com" target="_blank" rel="noopener"><strong>Persopy</strong></a> works the other end of
+    the same problem: getting closer to the person doing the steering, by grounding a persona in what they actually
+    documented.
   </p>
 </section>
 
