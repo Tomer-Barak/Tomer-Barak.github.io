@@ -4,7 +4,7 @@ title: "Scale Theory"
 subtitle: "A theoretical framework for understanding how phenomena transform across different scales of description in science and physics."
 category: research
 icon: balance-scale
-order: 4
+order: 5
 permalink: /projects/scale-theory/
 ---
 

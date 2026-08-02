@@ -4,7 +4,7 @@ title: "Automated Science: AI-Enhanced Research"
 subtitle: "Building infrastructure for AI systems to conduct rigorous science alongside real laboratories, bridging the gap between AI reasoning and experimental knowledge."
 category: research
 icon: flask
-order: 2
+order: 3
 permalink: /projects/automated-science/
 ---
 
