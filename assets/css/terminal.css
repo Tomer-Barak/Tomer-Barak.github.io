@@ -306,38 +306,11 @@ li::marker {
 }
 
 /* Animations */
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.cursor {
-  display: inline-block;
-  width: 10px;
-  height: 1.2em;
-  background-color: var(--accent-green);
-  animation: blink 1s step-end infinite;
-  vertical-align: text-bottom;
-}
-
 /* Special sections */
 .file-header {
   color: var(--comment-color);
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
-}
-
-/* Interactive Input */
-#cmd-input {
-  background: transparent;
-  border: none;
-  color: var(--text-bright);
-  font-family: 'Fira Code', monospace;
-  font-size: 1rem;
-  outline: none;
-  flex: 1;
-  width: 100%;
 }
 
 /* Responsive */
