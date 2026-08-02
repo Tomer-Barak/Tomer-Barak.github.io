@@ -61,6 +61,6 @@ reconstructed into an interlocutor for study, teaching, and public engagement.
 
 ---
 
-*Persopy works with institutions on collaborations, lab distillations, and early
-access. Testimony work is undertaken only together with the holding institution.
-Get in touch at [tomer@persopy.com](mailto:tomer@persopy.com).*
+*Persopy works with archives, memorial institutions, and research groups.
+Testimony work is undertaken only together with the holding institution.
+Get in touch at [contact@persopy.com](mailto:contact@persopy.com).*
