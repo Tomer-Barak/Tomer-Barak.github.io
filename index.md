@@ -23,9 +23,13 @@ title: Home
   </p>
   <p>
     That conclusion redirected my work. Today I am an <strong>AI consultant and advisor to research institutes</strong>,
-    currently ELSC — helping labs and researchers integrate AI into their real workflows rather than around them. In
-    the same spirit I built <a href="https://persopy.com" target="_blank" rel="noopener"><strong>Persopy</strong></a>,
-    which grounds AI personas in a person's actual documented record instead of a model's recollection of it.
+    currently ELSC — helping labs and researchers integrate AI into their real workflows rather than around them.
+    In practice that means building the infrastructure it runs on: an internal deployment platform where a researcher
+    can push a repository and get a running, authenticated web app; self-hosted Git and CI; an institutional LLM
+    service that keeps data in-house; and the onboarding tooling that puts all of it on a researcher's laptop in one
+    step. In the same spirit I built
+    <a href="https://persopy.com" target="_blank" rel="noopener"><strong>Persopy</strong></a>, which grounds AI
+    personas in a person's actual documented record instead of a model's recollection of it.
   </p>
 </section>
 
