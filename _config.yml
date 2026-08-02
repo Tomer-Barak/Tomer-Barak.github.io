@@ -13,7 +13,6 @@ keywords: Tomer Barak, automated science, AI-led research, AI-Archive, fluid int
 author:
   name: Tomer Barak
   email: tomer.barak.mail@gmail.com
-  twitter: Barak_Tomer
   github: Tomer-Barak
   scholar: https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw
   bio: >-
@@ -87,14 +86,10 @@ defaults:
 
 # Social media
 social:
-  twitter: Barak_Tomer
   github: Tomer-Barak
   scholar: https://scholar.google.co.il/citations?user=E0fWa7gAAAAJ&hl=iw
 
 # SEO settings
-twitter:
-  username: Barak_Tomer
-  card: summary_large_image
 logo: /assets/images/profile.jpg
 lang: en_US
 locale: en_US

@@ -122,7 +122,6 @@ title: Home
   <span class="label">Contact</span>
   <ul class="link-list">
     <li><span class="k">Email</span> <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-    <li><span class="k">Twitter</span> <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" rel="noopener">@{{ site.author.twitter }}</a></li>
     <li><span class="k">Scholar</span> <a href="{{ site.author.scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>
     <li><span class="k">Persopy</span> <a href="https://persopy.com" target="_blank" rel="noopener">persopy.com</a></li>
   </ul>
