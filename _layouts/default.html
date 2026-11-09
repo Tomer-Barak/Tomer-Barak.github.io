@@ -34,6 +34,16 @@
   </script>
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  {% if site.google_tag and jekyll.environment == "production" %}
+  <!-- Google tag (Google Analytics) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id={{ site.google_tag }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
+  {% endif %}
 </head>
 
 <body>

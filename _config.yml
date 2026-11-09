@@ -94,6 +94,10 @@ logo: /assets/images/profile.jpg
 lang: en_US
 locale: en_US
 
+# Google tag ID for Google Analytics (container GTM-57BXGG92 → GA4 G-RDVQC4RVBL).
+# Leave empty to disable. Only injected in production builds (GitHub Pages sets JEKYLL_ENV=production).
+google_tag: GTM-57BXGG92
+
 # Open Graph/Facebook settings
 facebook:
   app_id: # Only if you have a Facebook app
